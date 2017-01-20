@@ -351,4 +351,7 @@
     <!--
     <string name="config_defaultWellbeingPackage" translatable="false">com.samsung.android.forest</string>
     -->
+
+    <!-- FP trustled limits the number to 4. -->
+    <integer name="config_fingerprintMaxTemplatesPerUser">4</integer>
 </resources>
