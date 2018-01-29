@@ -1,0 +1,14 @@
+cc_library_shared {
+    name: "libtsp",
+    proprietary: true,
+    srcs: [
+        "tsp.c"
+    ],
+    export_include_dirs: [
+        "include"
+    ],
+    shared_libs: [
+        "libcutils",
+        "liblog",
+    ],
+}
