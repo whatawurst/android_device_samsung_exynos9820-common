@@ -182,6 +182,8 @@ BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_HOSTAPD_DRIVER             := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 
+WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
+
 # hardware/broadcom/wlan/bcmdhd/config/Android.mk
 # external/wpa_supplicant_8/Android.mk
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
