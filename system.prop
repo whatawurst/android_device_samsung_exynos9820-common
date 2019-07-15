@@ -7,6 +7,9 @@ ro.vendor.cscsupported=1
 ro.cmc.device_type=pd
 ro.cmc.version=2.0
 
+### charger
+ro.charger.enable_suspend=true
+
 ### gfx
 ro.gfx.driver.0=com.samsung.gamedriver.S10MaliG76
 ro.gfx.driver.1=com.samsung.pregpudriver.ex9820
