@@ -1,1 +1,1 @@
-# LineageOS platform tree for the Samsung universal9820
+# LineageOS platform tree for the Samsung Exynos 9820

@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-PLATFORM_PATH := device/samsung/android_device_samsung_universal9820-common
+PLATFORM_PATH := device/samsung/android_device_samsung_exynos9820-common
 
 ### BOARD
 TARGET_BOARD_PLATFORM := exynos5
@@ -40,7 +40,7 @@ ENABLE_CPUSETS := true
 
 ###
 KERNEL_VERSION := 4.14
-KERNEL_SOURCE = kernel/sony/universal9820
+KERNEL_SOURCE = kernel/sony/exynos9820
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64

@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-PLATFORM_PATH := device/samsung/universal9820-common
+PLATFORM_PATH := device/samsung/exynos9820-common
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
