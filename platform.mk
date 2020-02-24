@@ -24,9 +24,6 @@ ifeq ($(WITH_TWRP),true)
 # Add Timezone database
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+endif # WITH_TWRP
 
 include $(PLATFORM_PATH)/platform/*.mk
-
-include $(PLATFORM_PATH)/system_prop.mk
-include $(PLATFORM_PATH)/vendor_prop.mk
-endif # WITH_TWRP
