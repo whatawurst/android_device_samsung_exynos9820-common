@@ -1,1 +1,1 @@
-# android_device_samsung_universal9820
+# LineageOS platform tree for the Samsung universal9820
