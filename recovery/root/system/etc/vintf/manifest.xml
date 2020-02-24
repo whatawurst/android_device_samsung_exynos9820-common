@@ -1,0 +1,8 @@
+<manifest version="1.0" type="framework">
+    <vendor-ndk>
+        <version>28</version>
+    </vendor-ndk>
+    <system-sdk>
+        <version>28</version>
+    </system-sdk>
+</manifest>

@@ -1,0 +1,109 @@
+on fs
+    export ANDROID_ROOT /system_root
+
+on init
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+
+    # Mount cgroup for cpu accounting
+    mount cgroup none /acct cpuacct
+    mkdir /acct/uid
+
+    start hwservicemanager
+
+on fs
+    # Wait for data
+    #wait /dev/block/platform/soc/1da4000.ufshc
+
+    # IMPORTANT!
+    # This needs to be supported by the init binary!
+    install_keyring
+
+on post-fs
+    #mkdir /mnt/vendor/efs/tee 0700 system system
+    mkdir /dev/socket/iwt 0770 system system
+    mkdir /dev/socket/iwt/ca 0770 system system
+
+on boot
+    setprop crypto.ready 1
+
+on property:crypto.ready=1
+    wait_for_prop vendor.tzdaemon Ready
+    setprop vendor.TEEGRIS.loaded true
+    write /proc/iccc_ready 1
+    start tzts_service
+    wait_for_prop vendor.tzts_daemon Ready
+    start servicemanager
+
+    start gatekeeper-1-0
+    start keymaster-4-0
+
+on property:crypto.ready=0
+    stop keymaster-4-0
+    stop gatekeeper-1-0
+
+    stop servicemanager
+    stop tzts_service
+    stop tz_service
+
+service hwservicemanager /sbin/hwservicemanager
+    user root
+    group root
+    disabled
+    onrestart setprop hwservicemanager.ready false
+    seclabel u:r:recovery:s0
+
+service servicemanager /sbin/servicemanager
+    user root
+    group root readproc
+    disabled
+    seclabel u:r:recovery:s0
+    writepid /dev/cpuset/system-background/tasks
+
+service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
+
+# TEEGRIS service
+on post-fs-data
+    mkdir /data/vendor/tee 0700 system system
+
+# TEEGRIS daemon
+service tz_service /vendor/bin/tzdaemon
+    class core
+    user system
+    group system readproc
+    disabled
+    seclabel u:r:recovery:s0
+
+# TEEGRIS daemon
+service tzts_service /vendor/bin/tzts_daemon
+    class core
+    user system
+    group system
+    disabled
+    seclabel u:r:recovery:s0
+
+# Handled by TWRP
+service keystore /sbin/keystore /tmp/misc/keystore
+    disabled
+    oneshot
+    user root
+    group root drmrpc readproc
+    seclabel u:r:recovery:s0
+    writepid /dev/cpuset/foreground/tasks
+
+# Handled by TWRP
+service keystore_auth /sbin/keystore_auth
+    disabled
+    oneshot
+    user system
+    group root
+    seclabel u:r:recovery:s0

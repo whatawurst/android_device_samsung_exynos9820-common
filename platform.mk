@@ -24,6 +24,11 @@ ifeq ($(WITH_TWRP),true)
 # Add Timezone database
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
+
+# Add manifest for hwservicemanager
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/recovery/root/system/etc/vintf/manifest.xml:recovery/root/system/etc/vintf/manifest.xml \
+    $(PLATFORM_PATH)/recovery/root/vendor/etc/vintf/manifest.xml:recovery/root/vendor/etc/vintf/manifest.xml
 endif # WITH_TWRP
 
 include $(PLATFORM_PATH)/platform/*.mk
