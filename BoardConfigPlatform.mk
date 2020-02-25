@@ -20,6 +20,9 @@ TARGET_BOARD_PLATFORM := exynos5
 TARGET_SLSI_VARIANT := bsp
 TARGET_SOC := exynos9820
 TARGET_BOOTLOADER_BOARD_NAME := universal9820
+TARGET_BOARD_PLATFORM_GPU := mali-g76
+
+# Enable hardware/samsung
 BOARD_VENDOR := samsung
 
 ### PROCESSOR
@@ -36,9 +39,7 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-ENABLE_CPUSETS := true
-
-###
+### KERNEL
 KERNEL_VERSION := 4.14
 KERNEL_SOURCE = kernel/sony/exynos9820
 
@@ -48,3 +49,12 @@ TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 
 BOARD_KERNEL_BASE        := 0x10000000
 BOARD_KERNEL_PAGESIZE    := 2048
+
+### SYSTEM
+# build/make
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+# system/core and build/make
+AB_OTA_UPDATER := false
+
+### RECOVERY
+TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
