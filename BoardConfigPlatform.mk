@@ -40,8 +40,10 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ### KERNEL
-KERNEL_VERSION := 4.14
-KERNEL_SOURCE = kernel/sony/exynos9820
+TARGET_KERNEL_SOURCE = kernel/samsung/exynos9820
+# The kernel source tree ships its own toolchain
+#TARGET_KERNEL_CLANG_COMPILE := true
+BOARD_KERNEL_IMAGE_NAME := kernel
 
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
