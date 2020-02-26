@@ -13,6 +13,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+BUILD_TOP := $(shell pwd)
+
 PLATFORM_PATH := device/samsung/android_device_samsung_exynos9820-common
 
 ### BOARD
@@ -40,14 +42,10 @@ TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
 ### KERNEL
-TARGET_KERNEL_SOURCE = kernel/samsung/exynos9820
-# The kernel source tree ships its own toolchain
-#TARGET_KERNEL_CLANG_COMPILE := true
-BOARD_KERNEL_IMAGE_NAME := kernel
-
-TARGET_KERNEL_ARCH := arm64
-TARGET_KERNEL_HEADER_ARCH := arm64
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
+TARGET_KERNEL_SOURCE = kernel/samsung/exynos9820/
+TARGET_KERNEL_CLANG_COMPILE := true
+TARGET_KERNEL_CLANG_PATH := $(BUILD_TOP)/kernel/samsung/exynos9820/toolchain/clang/host/linux-x86/clang-4639204-cfp-jopp/
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 
 BOARD_KERNEL_BASE        := 0x10000000
 BOARD_KERNEL_PAGESIZE    := 2048
