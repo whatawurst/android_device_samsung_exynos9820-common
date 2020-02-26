@@ -15,7 +15,7 @@
 
 BUILD_TOP := $(shell pwd)
 
-PLATFORM_PATH := device/samsung/android_device_samsung_exynos9820-common
+PLATFORM_PATH := device/samsung/exynos9820-common
 
 ### BOARD
 TARGET_BOARD_PLATFORM := exynos5
