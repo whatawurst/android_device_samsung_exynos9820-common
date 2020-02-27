@@ -24,6 +24,9 @@ TARGET_SOC := exynos9820
 TARGET_BOOTLOADER_BOARD_NAME := universal9820
 TARGET_BOARD_PLATFORM_GPU := mali-g76
 
+# build/make/core/Makefile
+TARGET_NO_BOOTLOADER := true
+
 # Enable hardware/samsung
 BOARD_VENDOR := samsung
 
