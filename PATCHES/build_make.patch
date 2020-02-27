@@ -1,0 +1,66 @@
+From 124944376837eafd67f95f5b51c0dd726d39754c Mon Sep 17 00:00:00 2001
+From: Andreas Schneider <asn@cryptomilk.org>
+Date: Wed, 26 Feb 2020 20:51:12 +0100
+Subject: [PATCH 1/2] core: Include vendor/omni/config/BoardConfigKernel.mk
+
+Change-Id: I27c4e6ad06d5297b9b935d2b77852c053f2203d1
+---
+ core/config.mk | 2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/core/config.mk b/core/config.mk
+index f2a4001be..cc96f274d 100644
+--- a/core/config.mk
++++ b/core/config.mk
+@@ -224,6 +224,8 @@ include $(BUILD_SYSTEM)/envsetup.mk
+ # See envsetup.mk for a description of SCAN_EXCLUDE_DIRS
+ FIND_LEAVES_EXCLUDES := $(addprefix --prune=, $(SCAN_EXCLUDE_DIRS) .repo .git)
+ 
++include vendor/omni/config/BoardConfigKernel.mk
++
+ # The build system exposes several variables for where to find the kernel
+ # headers:
+ #   TARGET_DEVICE_KERNEL_HEADERS is automatically created for the current
+-- 
+2.25.1
+
+
+From 16817fa6c24b7bd0c207e662eca7490ffb913332 Mon Sep 17 00:00:00 2001
+From: Andreas Schneider <asn@cryptomilk.org>
+Date: Wed, 26 Feb 2020 20:50:57 +0100
+Subject: [PATCH 2/2] core: Add missing dependency for BOARD_PREBUILT_DTBOIMAGE
+
+Change-Id: I9eda65889cc2ff5d998cfdb65e03181fa10de0ed
+---
+ core/Makefile | 8 ++++++++
+ 1 file changed, 8 insertions(+)
+
+diff --git a/core/Makefile b/core/Makefile
+index 2f7219daa..b4e822b1b 100644
+--- a/core/Makefile
++++ b/core/Makefile
+@@ -1484,6 +1484,10 @@ endif
+ ifeq (true,$(BOARD_AVB_ENABLE))
+ $(INSTALLED_BOOTIMAGE_TARGET) : $(AVBTOOL) $(BOARD_AVB_BOOT_KEY_PATH)
+ endif
++ifdef BOARD_INCLUDE_RECOVERY_DTBO
++$(INSTALLED_RECOVERYIMAGE_TARGET): $(BOARD_PREBUILT_DTBOIMAGE)
++endif
++
+ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTFS) $(MKBOOTIMG) $(MINIGZIP) $(ADBD) \
+ 		$(INSTALLED_RAMDISK_TARGET) \
+ 		$(INTERNAL_RECOVERYIMAGE_FILES) \
+@@ -1501,6 +1505,10 @@ $(INSTALLED_BOOTIMAGE_TARGET): $(MKBOOTFS) $(MKBOOTIMG) $(MINIGZIP) $(ADBD) \
+ 		$(call build-recoveryimage-target, $@)
+ endif
+ 
++ifdef BOARD_INCLUDE_RECOVERY_DTBO
++$(INSTALLED_RECOVERYIMAGE_TARGET): $(BOARD_PREBUILT_DTBOIMAGE)
++endif
++
+ $(recovery_uncompressed_ramdisk): $(MKBOOTFS) $(ADBD) \
+ 		$(INSTALLED_RAMDISK_TARGET) \
+ 		$(INSTALLED_BOOTIMAGE_TARGET) \
+-- 
+2.25.1
+
