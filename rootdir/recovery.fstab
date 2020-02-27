@@ -1,0 +1,24 @@
+/dev/block/platform/13d60000.ufs/by-name/sec_efs    /efs        ext4    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/sec_efs    /sec_efs    ext4    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/boot       /boot       emmc    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/recovery   /recovery   emmc    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/cache      /cache      ext4    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/system     /           ext4    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/userdata   /data       ext4    defaults        wait,length=-20480
+/dev/block/platform/13d60000.ufs/by-name/radio      /modem      emmc    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/vendor     /vendor     ext4    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/misc       /misc       emmc    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/hidden     /preload    ext4    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/cpefs      /cpefs      ext4    defaults        recoveryonly
+
+/dev/block/platform/13d60000.ufs/by-name/product    /product    ext4    defaults        recoveryonly
+
+/dev/block/platform/13d60000.ufs/by-name/dtb        /dtb        emmc    default         recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/dtbo       /dtbo       emmc    default         recoveryonly
+
+/dev/block/platform/13d60000.ufs/by-name/keydata    /keydata    ext4    defaults        recoveryonly
+/dev/block/platform/13d60000.ufs/by-name/keyrefuge  /keyrefuge  ext4    defaults        recoveryonly
+
+/dev/block/platform/13d60000.ufs/by-name/cp_debug   /cp_debug   emmc    default         recoveryonly
+
+/dev/block/mmcblk0p1                                /sdcard     sdfat   defaults        recoveryonly
