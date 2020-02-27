@@ -16,11 +16,7 @@
 
 PLATFORM_PATH := device/samsung/exynos9820-common
 
-DEVICE_PACKAGE_OVERLAYS += \
-    $(PLATFORM_PATH)/overlay
-
 ### RECOVERY
-ifeq ($(WITH_TWRP),true)
 # Add Timezone database
 PRODUCT_COPY_FILES += \
     system/timezone/output_data/iana/tzdata:recovery/root/system/usr/share/zoneinfo/tzdata
@@ -31,6 +27,3 @@ PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/recovery/root/vendor/etc/vintf/manifest.xml:recovery/root/vendor/etc/vintf/manifest.xml
 
 include $(PLATFORM_PATH)/twrp.mk
-endif # WITH_TWRP
-
-include $(PLATFORM_PATH)/platform/*.mk
