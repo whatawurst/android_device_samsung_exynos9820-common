@@ -74,6 +74,8 @@ TW_NO_REBOOT_BOOTLOADER := true
 TW_HAS_DOWNLOAD_MODE := true
 
 ### DEPENDENCIES
+TARGET_RECOVERY_DEVICE_MODULES      += init.recovery.exynos9820
+
 TARGET_RECOVERY_DEVICE_MODULES      += android.hardware.keymaster@4.0-service.samsung
 TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(PRODUCT_OUT)/vendor/bin/hw/android.hardware.keymaster@4.0-service.samsung
 
