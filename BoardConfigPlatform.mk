@@ -75,6 +75,9 @@ BOARD_MKBOOTIMG_ARGS += --board $(BOARD_BOOT_HEADER_NAME)
 # build/make/core/config.mk
 TARGET_USES_64_BIT_BINDER := true
 
+### VNDK
+BOARD_VNDK_VERSION := current
+
 ### SYSTEM
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 # build/make
