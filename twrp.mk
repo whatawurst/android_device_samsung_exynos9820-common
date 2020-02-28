@@ -53,6 +53,9 @@ TW_CUSTOM_CPU_TEMP_PATH := /sys/class/thermal/thermal_zone4/temp
 TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
+# Do not set up legacy properties
+TW_NO_LEGACY_PROPS := true
+
 # Use toolbox instead of busybox
 TW_USE_TOOLBOX := true
 
