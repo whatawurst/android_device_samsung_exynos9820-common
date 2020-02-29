@@ -29,8 +29,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/recovery/root/system/etc/vintf/manifest.xml:recovery/root/system/etc/vintf/manifest.xml \
     $(PLATFORM_PATH)/recovery/root/vendor/etc/vintf/manifest.xml:recovery/root/vendor/etc/vintf/manifest.xml
-
-include $(PLATFORM_PATH)/twrp.mk
 endif # WITH_TWRP
 
 include $(PLATFORM_PATH)/platform/*.mk
