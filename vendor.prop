@@ -1,0 +1,8 @@
+# EDEN
+log.tag.EDEN=INFO
+ro.vendor.eden.devices=CPU1_GPU1_NPU1
+ro.vendor.eden.npu.version.path=/sys/devices/platform/npu@17800000/version
+
+# SAMSUNG_SLSI
+debug.slsi_platform=1
+debug.hwc.winupdate=1
