@@ -85,6 +85,15 @@ BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 # system/core and build/make
 AB_OTA_UPDATER := false
 
+BOARD_ROOT_EXTRA_FOLDERS := \
+    efs \
+    keydata \
+    keyrefuge \
+    omr
+
+BOARD_ROOT_EXTRA_SYMLINKS := \
+    /mnt/vendor/efs:/efs/efs
+
 ### VENDOR
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
