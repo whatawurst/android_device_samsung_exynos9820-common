@@ -26,6 +26,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
 
+### FINGERPRINT
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service.samsung
+
 ### GATEKEEPER
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0-impl \
@@ -45,6 +49,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung
 
+### LIVEDISPLAY
+PRODUCT_PACKAGES += \
+    lineage.livedisplay@2.0-service.samsung-exynos
+
 ### MEDIA
 PRODUCT_PACKAGES += \
     android.hardware.media.omx@1.0-impl \
@@ -60,6 +68,10 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.0 \
     android.hardware.neuralnetworks@1.1 \
     android.hardware.neuralnetworks@1.2
+
+### POWER
+PRODUCT_PACKAGES += \
+    android.hardware.power@1.2-service.samsung
 
 ### RENDERSCRIPT
 PRODUCT_PACKAGES += \
