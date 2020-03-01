@@ -53,7 +53,8 @@ TARGET_KERNEL_CLANG_VERSION := r353983c
 BOARD_KERNEL_BASE            := 0x10000000
 # See `bbootimg -i boot.img`
 BOARD_KERNEL_PAGESIZE        := 2048
-BOARD_KERNEL_IMAGE_NAME      := Image.gz
+# Looks like Samsung's sboot doesn't suppored a zipped Kernel
+BOARD_KERNEL_IMAGE_NAME      := Image
 BOARD_KERNEL_SEPARATED_DTBO  := true
 
 # See `bbootimg -i boot.img`
