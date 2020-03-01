@@ -56,6 +56,7 @@ BOARD_KERNEL_PAGESIZE        := 2048
 # Looks like Samsung's sboot doesn't suppored a zipped Kernel
 BOARD_KERNEL_IMAGE_NAME      := Image
 BOARD_KERNEL_SEPARATED_DTBO  := true
+BOARD_CUSTOM_DTBOIMG_MK      := $(PLATFORM_PATH)/dtboimage/dtbo.mk
 
 # See `bbootimg -i boot.img`
 BOARD_KERNEL_OFFSET          := 0x00008000
