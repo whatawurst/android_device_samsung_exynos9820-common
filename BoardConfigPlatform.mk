@@ -47,8 +47,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 ### KERNEL
 TARGET_KERNEL_SOURCE = kernel/samsung/exynos9820/
 TARGET_KERNEL_CLANG_COMPILE := true
-# Uses r353983c clang prebuilts copy from Android 10
-TARGET_KERNEL_CLANG_VERSION := 9.0.3
+TARGET_KERNEL_CLANG_VERSION := 6.0.2
 
 BOARD_KERNEL_BASE            := 0x10000000
 # See `bbootimg -i boot.img`
