@@ -96,4 +96,4 @@ TW_THEME := portrait_hdpi
 # Use a future date for the security patchlevel.  As TWRP doesn't do key
 # upgrades it should just be fine using it for decryption.
 PLATFORM_SECURITY_PATCH := 2025-12-31
-PLATFORM_VERSION := 16.1.0
+PLATFORM_VERSION := 10.0
