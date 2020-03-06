@@ -4,10 +4,6 @@ on fs
 on init
     write /proc/sys/kernel/hung_task_timeout_secs 0
 
-    # Mount cgroup for cpu accounting
-    mount cgroup none /acct cpuacct
-    mkdir /acct/uid
-
     start hwservicemanager
 
 on fs
