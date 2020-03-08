@@ -76,12 +76,30 @@ TW_HAS_DOWNLOAD_MODE := true
 ### DEPENDENCIES
 TARGET_RECOVERY_DEVICE_MODULES      += init.recovery.exynos9820
 
-TARGET_RECOVERY_DEVICE_MODULES      += android.hardware.keymaster@4.0-service.samsung
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(PRODUCT_OUT)/vendor/bin/hw/android.hardware.keymaster@4.0-service.samsung
+# GATEKEEPER
+TARGET_RECOVERY_DEVICE_MODULES      += android.hardware.gatekeeper@1.0-impl
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/hw/android.hardware.gatekeeper@1.0-impl.so
 
-# Add strace
+TARGET_RECOVERY_DEVICE_MODULES      += android.hardware.gatekeeper@1.0-service
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_VENDOR_EXECUTABLES)/hw/android.hardware.gatekeeper@1.0-service
+
+# KEYMASTER
+TARGET_RECOVERY_DEVICE_MODULES      += android.hardware.keymaster@4.0-service.samsung
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_VENDOR_EXECUTABLES)/hw/android.hardware.keymaster@4.0-service.samsung
+
+TARGET_RECOVERY_DEVICE_MODULES      += libkeymaster4
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_VENDOR_SHARED_LIBRARIES)/libkeymaster4.so
+
+TARGET_RECOVERY_DEVICE_MODULES      += libpuresoftkeymasterdevice
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libpuresoftkeymasterdevice.so
+
+# TZTS_DAEMON
+TARGET_RECOVERY_DEVICE_MODULES      += libuuid
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_SHARED_LIBRARIES)/libuuid.so
+
+# STRACE
 TARGET_RECOVERY_DEVICE_MODULES      += strace
-TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(PRODUCT_OUT)/system/bin/strace
+TW_RECOVERY_ADDITIONAL_RELINK_FILES += $(TARGET_OUT_EXECUTABLES)/strace
 
 ### F2FS SUPPORT
 CM_PLATFORM_SDK_VERSION := 3
