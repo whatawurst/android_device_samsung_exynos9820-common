@@ -24,4 +24,12 @@ PRODUCT_COPY_FILES += \
 # Add manifest for hwservicemanager
 PRODUCT_COPY_FILES += \
     $(PLATFORM_PATH)/recovery/root/system/etc/vintf/manifest.xml:recovery/root/system/etc/vintf/manifest.xml \
+    $(PLATFORM_PATH)/recovery/root/vendor/etc/vintf/compatibility_matrix.xml:recovery/root/vendor/etc/vintf/compatibility_matrix.xml \
     $(PLATFORM_PATH)/recovery/root/vendor/etc/vintf/manifest.xml:recovery/root/vendor/etc/vintf/manifest.xml
+
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/recovery/root/sbin/predecrypt.sh:recovery/root/sbin/predecrypt.sh
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.hardware.keystore=mdfpp \
+    ro.security.keystore.keytype=sak
