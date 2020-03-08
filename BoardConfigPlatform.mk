@@ -137,6 +137,21 @@ BOARD_AVB_ROLLBACK_INDEX := $(PLATFORM_SECURITY_PATCH_TIMESTAMP)
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flag 2
 endif # BOARD_AVB_ENABLE
 
+### WIFI
+BOARD_WLAN_DEVICE                := bcmdhd
+BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+BOARD_HOSTAPD_DRIVER             := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+
+# hardware/broadcom/wlan/bcmdhd/config/Android.mk
+# external/wpa_supplicant_8/Android.mk
+WPA_SUPPLICANT_VERSION           := VER_0_8_X
+
+# frameworks/opt/net/wifi/libwifi_hal/Android.mk
+# hardware/samsung/wifiloader/Android.mk
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+
 ### RECOVERY
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
