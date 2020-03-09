@@ -95,7 +95,8 @@ BOARD_ROOT_EXTRA_FOLDERS := \
     efs \
     keydata \
     keyrefuge \
-    omr
+    omr \
+    product
 
 BOARD_ROOT_EXTRA_SYMLINKS := \
     /mnt/vendor/efs:/efs/efs
