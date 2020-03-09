@@ -1,0 +1,8 @@
+# init.te
+
+# /efs
+allow init efs_file:dir { mounton };
+# /keydata
+allow init keydata_data_file:dir { mounton };
+# /keyrfuge
+allow init keyrefuge_data_file:dir { mounton };
