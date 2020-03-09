@@ -1,3 +1,5 @@
 type keydata_data_file, file_type;
 type keyrefuge_data_file, file_type;
 type omr_file, file_type;
+
+type tz_socket, file_type;

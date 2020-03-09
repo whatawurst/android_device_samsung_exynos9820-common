@@ -1,10 +1,22 @@
-# DEV
-/dev/block/platform/.+/by-name/efs                         u:object_r:efs_block_device:s0
-/dev/block/platform/.+/by-name/keydata                     u:object_r:keydata_block_device:s0
-/dev/block/platform/.+/by-name/keyrefuge                   u:object_r:keyrefuge_block_device:s0
-/dev/block/platform/.+/by-name/omr                         u:object_r:omr_block_device:s0
+### DEV
+/dev/block/platform/.+/by-name/efs           u:object_r:efs_block_device:s0
+/dev/block/platform/.+/by-name/keydata       u:object_r:keydata_block_device:s0
+/dev/block/platform/.+/by-name/keyrefuge     u:object_r:keyrefuge_block_device:s0
+/dev/block/platform/.+/by-name/omr           u:object_r:omr_block_device:s0
 
-# KEY DATA
-/keydata(/.*)?                                             u:object_r:keydata_data_file:s0
-/keyrefuge(/.*)?                                           u:object_r:keyrefuge_data_file:s0
-/omr(/.*)?                                                 u:object_r:omr_file:s0
+# Trustzone
+/dev/tzic                                    u:object_r:tz_device:s0
+/dev/tzirs                                   u:object_r:tz_device:s0
+/dev/tzdev                                   u:object_r:tz_user_device:s0
+/dev/tuihw                                   u:object_r:tz_device:s0
+/dev/tziwsock                                u:object_r:tz_user_device:s0
+/dev/socket/tz                               u:object_r:tz_socket:s0
+
+### KEYDATA
+/keydata(/.*)?                               u:object_r:keydata_data_file:s0
+/keyrefuge(/.*)?                             u:object_r:keyrefuge_data_file:s0
+/omr(/.*)?                                   u:object_r:omr_file:s0
+
+### VENDOR
+/(vendor|system/vendor)/bin/tzdaemon         u:object_r:tzdaemon_exec:s0
+/(vendor|system/vendor)/bin/tztsdaemon       u:object_r:tztsdaemon_exec:s0
