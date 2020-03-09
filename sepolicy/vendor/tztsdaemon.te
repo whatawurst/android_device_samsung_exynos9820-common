@@ -1,0 +1,5 @@
+type tztsdaemon, domain;
+type tztsdaemon_exec, exec_type, vendor_file_type, file_type;
+
+# tztsdaemon is started by init, type transit from init domain to tztsdaemon domain
+init_daemon_domain(tztsdaemon)
