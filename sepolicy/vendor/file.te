@@ -1,5 +1,8 @@
 # file.te
 
+# DATA
+type tee_vendor_data_file, file_type, data_file_type;
+
 # EFS
 type app_efs_file, file_type;
 type bin_nv_data_efs_file, file_type;
@@ -8,6 +11,7 @@ type sec_efs_file, file_type;
 type tee_efs_file, file_type;
 type wifi_efs_file, file_type;
 
+# ROOT
 # /keydata /keyrefuge /omr
 type keydata_data_file, file_type;
 type keyrefuge_data_file, file_type;
