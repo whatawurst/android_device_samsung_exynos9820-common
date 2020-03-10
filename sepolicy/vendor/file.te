@@ -15,3 +15,6 @@ type omr_file, file_type;
 
 # TZ
 type tz_socket, file_type;
+
+# SYSFS
+type sysfs_sec, sysfs_type, rw_fs_type, fs_type;

@@ -6,3 +6,24 @@ allow init efs_file:dir { mounton };
 allow init keydata_data_file:dir { mounton };
 # /keyrfuge
 allow init keyrefuge_data_file:dir { mounton };
+
+# /mnt/vendor/efs
+allow init mnt_vendor_file:dir { mounton };
+
+# /proc/sys/abi/swp
+allow init proc_abi:file { getattr };
+
+# /sys/kernel/sysrq
+allow init proc_sysrq:file { getattr };
+# /sys/kernel/panic_on_oops
+allow init proc_panic:file { getattr };
+# /sys/kernel/hung_task_timeout_secs
+allow init proc_hung_task:file { getattr };
+# /sys/kernel/sched*
+allow init proc_sched:file { getattr };
+
+# /sdcard
+allow init tmpfs:lnk_file { create };
+
+# /dev/event-log-tags
+allow init runtime_event_log_tags_file:file { getattr };

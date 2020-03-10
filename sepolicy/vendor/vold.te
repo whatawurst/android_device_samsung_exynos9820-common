@@ -1,0 +1,7 @@
+# vold.te
+
+# /sys/kernel/debug
+allow vold debugfs_trace_marker:file { getattr };
+
+# cgroup
+allow vold cgroup:file { getattr };

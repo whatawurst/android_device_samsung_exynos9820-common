@@ -1,0 +1,4 @@
+# genfs_contexts
+
+# SYSFS
+genfscon sysfs /class/sec                                  u:object_r:sysfs_sec:s0

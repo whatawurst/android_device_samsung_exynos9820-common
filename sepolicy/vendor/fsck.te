@@ -1,0 +1,8 @@
+# fsck.te
+
+# /efs
+allow fsck efs_block_device:blk_file rw_file_perms;
+# /keydata
+allow fsck keydata_block_device:blk_file rw_file_perms;
+# /keyrefuge
+allow fsck keyrefuge_block_device:blk_file rw_file_perms;
