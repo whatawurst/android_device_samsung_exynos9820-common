@@ -1,5 +1,17 @@
+# file.te
+
+# EFS
+type app_efs_file, file_type;
+type bin_nv_data_efs_file, file_type;
+type prov_efs_file, file_type;
+type sec_efs_file, file_type;
+type tee_efs_file, file_type;
+type wifi_efs_file, file_type;
+
+# /keydata /keyrefuge /omr
 type keydata_data_file, file_type;
 type keyrefuge_data_file, file_type;
 type omr_file, file_type;
 
+# TZ
 type tz_socket, file_type;
