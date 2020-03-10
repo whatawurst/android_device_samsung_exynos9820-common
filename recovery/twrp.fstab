@@ -10,7 +10,7 @@
 /recovery        emmc      /dev/block/platform/13d60000.ufs/by-name/recovery    flags=backup;flashimg
 /system_root     ext4      /dev/block/platform/13d60000.ufs/by-name/system      flags=backup;display="System"
 /system_image    emmc      /dev/block/platform/13d60000.ufs/by-name/system      flags=flashimg
-/vendor          ext4      /dev/block/platform/13d60000.ufs/by-name/vendor      flags=backup=1;display="Vendor";
+/vendor          ext4      /dev/block/platform/13d60000.ufs/by-name/vendor      flags=backup;wipeingui;display="Vendor"
 /vendor_image    emmc      /dev/block/platform/13d60000.ufs/by-name/vendor      flags=flashimg
 
 /sdcard1         auto     /dev/block/mmcblk0p1    /dev/block/mmcblk0            flags=display="Micro SDcard";storage;wipeingui;removable
