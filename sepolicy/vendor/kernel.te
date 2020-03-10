@@ -1,0 +1,11 @@
+# kernel.te
+
+allow kernel self:capability { mknod };
+
+# devtmpfs
+allow kernel device:dir rw_dir_perms;
+
+# /sys/devices/virtual/sec/sec_key/hall_detect
+allow kernel sysfs_sec:dir r_dir_perms;
+allow kernel sysfs_sec:file r_file_perms;
+allow kernel sysfs_sec:lnk_file r_file_perms;
