@@ -2,5 +2,7 @@ persist.rmnet.                 u:object_r:persist_rmnet_prop:s0
 persist.data.df.               u:object_r:persist_data_df_prop:s0
 persist.data.wda.              u:object_r:persist_data_wda_prop:s0
 
+vendor.secureos.               u:object_r:vendor_secureos_prop:s0
+
 vendor.tzdaemon                u:object_r:vendor_tzdaemon_prop:s0
 vendor.tzts_daemon             u:object_r:vendor_tztsdaemon_prop:s0
