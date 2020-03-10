@@ -1,0 +1,7 @@
+# hal_vendor_epic_service_default.te
+
+type hal_vendor_epic_service_default, domain;
+hal_server_domain(hal_vendor_epic_service_default, hal_configstore)
+
+type hal_vendor_epic_service_default_exec, exec_type, vendor_file_type, file_type;
+init_daemon_domain(hal_vendor_eden_runtime_default)
