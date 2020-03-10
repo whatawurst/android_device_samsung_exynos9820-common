@@ -52,3 +52,14 @@
 ### VENDOR
 /(vendor|system/vendor)/bin/tzdaemon         u:object_r:tzdaemon_exec:s0
 /(vendor|system/vendor)/bin/tztsdaemon       u:object_r:tztsdaemon_exec:s0
+
+/(vendor|system/vendor)/bin/hw/android\.hardware\.biometrics\.fingerprint@[0-9]\.[0-9]-service\.samsung    u:object_r:hal_fingerprint_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]\.[0-9]-service\.clearkey    u:object_r:hal_drm_clearkey_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.keymaster@[0-9]\.[0-9]-service\.samsung    u:object_r:hal_keymaster_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.neuralnetworks@[0-9]\.[0-9]-service\.eden-drv    u:object_r:hal_neuralnetworks_eden_drv_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.configstore@[0-9]\.[0-9]-service    u:object_r:hal_vendor_configstore_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.eden_runtime@[0-9]\.[0-9]-service    u:object_r:hal_vendor_eden_runtime_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.epic@[0-9]\.[0-9]-service    u:object_r:hal_vendor_epic_service_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.iva@1\.0-service    u:object_r:hal_camera_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.MultiFrameProcessing20@[0-9]\.[0-9]-service    u:object_r:hal_camera_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.ExynosHWCServiceTW@1\.0-service    u:object_r:hal_vendor_hwcservice_default_exec:s0
