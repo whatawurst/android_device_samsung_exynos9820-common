@@ -1,5 +1,10 @@
 # vendor_init.te
 
+set_prop(vendor_init, vold_prop)
+set_prop(vendor_init, persist_rmnet_prop)
+set_prop(vendor_init, persist_data_df_prop)
+set_prop(vendor_init, persist_data_wda_prop)
+
 # /
 allow vendor_init tmpfs:dir rw_dir_perms;
 
@@ -9,7 +14,6 @@ allow vendor_init tmpfs:lnk_file create_file_perms;
 # schedtune.*
 allow vendor_init cgroup:file { getattr };
 
-set_prop(vendor_init, vold_prop)
-set_prop(vendor_init, persist_rmnet_prop)
-set_prop(vendor_init, persist_data_df_prop)
-set_prop(vendor_init, persist_data_wda_prop)
+### /sys
+# /sys/kernel/debug/tracing/trace_marker
+allow vendor_init debugfs_trace_marker:file { getattr };
