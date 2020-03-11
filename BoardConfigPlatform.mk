@@ -93,6 +93,7 @@ AB_OTA_UPDATER := false
 
 BOARD_ROOT_EXTRA_FOLDERS := \
     efs \
+    dqmdbg \
     keydata \
     keyrefuge \
     omr

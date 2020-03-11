@@ -2,6 +2,8 @@
 
 # /efs
 allow init efs_file:dir { mounton };
+# /dqmdbg
+allow init dqmdbg_file:dir { mounton };
 # /keydata
 allow init keydata_data_file:dir { mounton };
 # /keyrfuge
