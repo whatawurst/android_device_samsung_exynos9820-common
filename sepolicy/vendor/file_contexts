@@ -51,7 +51,7 @@
 
 ### VENDOR
 /(vendor|system/vendor)/bin/tzdaemon         u:object_r:tzdaemon_exec:s0
-/(vendor|system/vendor)/bin/tztsdaemon       u:object_r:tztsdaemon_exec:s0
+/(vendor|system/vendor)/bin/tzts_daemon      u:object_r:tztsdaemon_exec:s0
 
 /(vendor|system/vendor)/bin/hw/macloader        u:object_r:macloader_exec:s0
 
