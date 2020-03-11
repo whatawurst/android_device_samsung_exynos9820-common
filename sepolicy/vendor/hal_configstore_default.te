@@ -1,0 +1,3 @@
+# hal_configstore_default.te
+
+allow hal_configstore_default cgroup:file r_file_perms;

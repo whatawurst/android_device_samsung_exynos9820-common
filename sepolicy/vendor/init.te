@@ -25,6 +25,8 @@ allow init tz_user_device:chr_file rw_file_perms;
 # /proc/sys/abi/swp
 allow init proc_abi:file { getattr };
 
+# /sys/kernel/debug/tracing/trace_marker
+allow init debugfs_trace_marker:file { getattr };
 # /sys/kernel/sysrq
 allow init proc_sysrq:file { getattr };
 # /sys/kernel/panic_on_oops
@@ -33,6 +35,9 @@ allow init proc_panic:file { getattr };
 allow init proc_hung_task:file { getattr };
 # /sys/kernel/sched*
 allow init proc_sched:file { getattr };
+
+allow init proc_dirty:file { getattr };
+allow init proc_hostname:file { getattr };
 
 # /sdcard
 allow init tmpfs:lnk_file { create };

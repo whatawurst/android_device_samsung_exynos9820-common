@@ -2,7 +2,7 @@
 
 allow kernel self:capability { mknod };
 
-# devtmpfs
+# Allow to create dirs in /dev (devtmpfs)
 allow kernel device:dir rw_dir_perms;
 
 # /sys/devices/virtual/sec/sec_key/hall_detect

@@ -12,6 +12,9 @@ type sec_efs_file, file_type;
 type tee_efs_file, file_type;
 type wifi_efs_file, file_type;
 
+# PROC
+type proc_swapiness, file_type;
+
 # ROOT
 # /keydata /keyrefuge /omr
 type keydata_data_file, file_type;
@@ -23,4 +26,6 @@ type dqmdbg_file, file_type;
 type tz_socket, file_type;
 
 # SYSFS
+type sysfs_battery, sysfs_type, r_fs_type, fs_type;
+type sysfs_lcd_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_sec, sysfs_type, rw_fs_type, fs_type;

@@ -1,0 +1,5 @@
+# hal_graphics_allocator_default.te
+
+allow hal_graphics_allocator_default cgroup:file rw_file_perms;
+
+vndbinder_use(hal_graphics_allocator_default)
