@@ -33,3 +33,21 @@ LOCAL_MODULE_STEM := skip_mount.cfg
 LOCAL_MODULE_CLASS := ETC
 LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/init/config
 include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.exynos9820
+LOCAL_SRC_FILES := init.exynos9820.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := init.exynos9820.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)/init
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.exynos9820.usb
+LOCAL_SRC_FILES := init.exynos9820.usb.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := init.exynos9820.usb.rc
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_ETC)/init
+include $(BUILD_PREBUILT)
