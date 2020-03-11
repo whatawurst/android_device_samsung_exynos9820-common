@@ -1,5 +1,8 @@
 # init.te
 
+# kmod="crypto-cts(cbc(aes))"
+allow init kernel:system module_request;
+
 # /efs
 allow init efs_file:dir { mounton };
 # /dqmdbg
@@ -11,6 +14,13 @@ allow init keyrefuge_data_file:dir { mounton };
 
 # /mnt/vendor/efs
 allow init mnt_vendor_file:dir { mounton };
+
+### DEV
+# /dev/event-log-tags
+allow init runtime_event_log_tags_file:file { getattr };
+
+# /dev/tziwsock
+allow init tz_user_device:chr_file rw_file_perms;
 
 # /proc/sys/abi/swp
 allow init proc_abi:file { getattr };
@@ -26,6 +36,3 @@ allow init proc_sched:file { getattr };
 
 # /sdcard
 allow init tmpfs:lnk_file { create };
-
-# /dev/event-log-tags
-allow init runtime_event_log_tags_file:file { getattr };
