@@ -53,7 +53,7 @@ PRODUCT_PACKAGES += \
 
 ### LIVEDISPLAY
 PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service.samsung-exynos
+    vendor.lineage.livedisplay@2.0-service.samsung-exynos
 
 ### MEDIA
 PRODUCT_PACKAGES += \
