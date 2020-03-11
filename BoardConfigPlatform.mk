@@ -122,6 +122,7 @@ DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 TARGET_KEYMASTER_VARIANT := samsung
 
 ### SEPOLICY
+-include device/lineage/sepolicy/exynos/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ### PROPERTIES
