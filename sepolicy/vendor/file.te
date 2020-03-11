@@ -6,6 +6,7 @@ type tee_vendor_data_file, file_type, data_file_type;
 # EFS
 type app_efs_file, file_type;
 type bin_nv_data_efs_file, file_type;
+type pfw_efs_file, file_type;
 type prov_efs_file, file_type;
 type sec_efs_file, file_type;
 type tee_efs_file, file_type;
