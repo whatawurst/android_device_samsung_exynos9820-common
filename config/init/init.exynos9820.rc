@@ -540,9 +540,7 @@ on post-fs-data
     chown system system /sys/devices/svc/Camera/SVC_front_module
     chown system system /sys/devices/svc/Camera/SVC_front_module2
 
-# Permissions Camera
-    mkdir /data/camera 0777 root root
-
+# Permissions Tracing
     chmod 0755 /sys/kernel/debug/tracing
     restorecon /sys/kernel/debug/tracing/trace_marker
 
