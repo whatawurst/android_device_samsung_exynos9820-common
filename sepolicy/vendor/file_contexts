@@ -4,6 +4,7 @@
 ### DEV
 /dev/block/platform/.+/by-name/cache         u:object_r:cache_block_device:s0
 /dev/block/platform/.+/by-name/efs           u:object_r:efs_block_device:s0
+/dev/block/platform/.+/by-name/dqmdbg        u:object_r:dqmdbg_block_device:s0
 /dev/block/platform/.+/by-name/keydata       u:object_r:keydata_block_device:s0
 /dev/block/platform/.+/by-name/keyrefuge     u:object_r:keyrefuge_block_device:s0
 /dev/block/platform/.+/by-name/omr           u:object_r:omr_block_device:s0
@@ -48,6 +49,7 @@
 /keydata(/.*)?                               u:object_r:keydata_data_file:s0
 /keyrefuge(/.*)?                             u:object_r:keyrefuge_data_file:s0
 /omr(/.*)?                                   u:object_r:omr_file:s0
+/dqmdbg(/.*)?                                u:object_r:dqmdbg_file:s0
 
 ### VENDOR
 /(vendor|system/vendor)/bin/tzdaemon         u:object_r:tzdaemon_exec:s0
