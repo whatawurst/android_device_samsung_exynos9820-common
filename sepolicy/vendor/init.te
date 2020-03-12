@@ -39,5 +39,11 @@ allow init proc_sched:file { getattr };
 allow init proc_dirty:file { getattr };
 allow init proc_hostname:file { getattr };
 
+# /sys/devices/platform/13d00000.dwmmc2/mmc_host/
+allow init sysfs_mmc_host:file { setattr };
+
+# /sys/devices/platform/13d60000.ufs/host0/
+allow init sysfs_scsi_host:file { setattr };
+
 # /sdcard
 allow init tmpfs:lnk_file { create };

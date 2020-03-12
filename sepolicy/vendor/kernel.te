@@ -4,6 +4,8 @@ allow kernel self:capability { mknod };
 
 # Allow to create dirs in /dev (devtmpfs)
 allow kernel device:dir rw_dir_perms;
+# neverallow rule
+dontaudit kernel device:file { create };
 
 # /sys/devices/virtual/sec/sec_key/hall_detect
 allow kernel sysfs_sec:dir r_dir_perms;
