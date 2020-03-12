@@ -6,6 +6,9 @@ init_daemon_domain(hal_vendor_configstore_default)
 
 add_hwservice(hal_vendor_configstore_default, hal_vendor_configstore_hwservice)
 
+hwbinder_use(hal_vendor_configstore_default)
+get_prop(hal_vendor_configstore_default, hwservicemanager_prop)
+
 # cgroup tasks
 allow hal_vendor_configstore_default cgroup:file getattr;
 
