@@ -7,3 +7,27 @@ type hal_vendor_eden_runtime_default_exec, exec_type, vendor_file_type, file_typ
 init_daemon_domain(hal_vendor_eden_runtime_default)
 
 vndbinder_use(hal_vendor_eden_runtime_default)
+
+add_hwservice(hal_vendor_eden_runtime_default, hal_vendor_eden_runtime_hwservice)
+
+# cgroup tasks
+allow hal_vendor_eden_runtime_default cgroup:file getattr;
+
+# /data/vendor/eden/gpu/eden_kernel_64.bin
+allow hal_vendor_eden_runtime_default npu_vendor_data_file:dir r_dir_perms;
+allow hal_vendor_eden_runtime_default npu_vendor_data_file:file r_file_perms;
+
+allow hal_vendor_eden_runtime_default eden_gpu_vendor_data_file:dir r_dir_perms;
+allow hal_vendor_eden_runtime_default eden_gpu_vendor_data_file:file r_file_perms;
+
+# /dev/ion
+allow hal_vendor_eden_runtime_default ion_device:chr_file rw_file_perms;
+
+# /dev/mali0
+allow hal_vendor_eden_runtime_default gpu_device:chr_file rw_file_perms;
+
+# /sys/devices/platform/npu@17800000/version
+allow hal_vendor_eden_runtime_default sysfs_npu_version:file r_file_perms;
+
+# /sys/kernel/debug/tracing/trace_marker
+allow hal_vendor_eden_runtime_default debugfs_trace_marker:file getattr;

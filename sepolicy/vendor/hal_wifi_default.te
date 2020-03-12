@@ -1,0 +1,4 @@
+# hal_wifi_default.te
+
+# /sys/kernel/debug/tracing/trace_marker
+allow hal_wifi_default debugfs_trace_marker:file getattr;

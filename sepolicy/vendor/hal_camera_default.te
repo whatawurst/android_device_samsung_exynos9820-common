@@ -1,0 +1,4 @@
+# hal_camera_default.te
+
+add_hwservice(hal_camera_default, hal_vendor_multiframeprocessing_hwservice)
+add_hwservice(hal_camera_default, hal_vendor_iva_hwservice)

@@ -1,0 +1,4 @@
+# hal_memtrack_default.te
+
+# /sys/kernel/debug
+allow hal_memtrack_default debugfs:dir r_dir_perms;

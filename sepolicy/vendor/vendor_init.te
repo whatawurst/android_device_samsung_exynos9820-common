@@ -17,3 +17,6 @@ allow vendor_init cgroup:file { getattr };
 ### /sys
 # /sys/kernel/debug/tracing/trace_marker
 allow vendor_init debugfs_trace_marker:file { getattr };
+
+# /sys/kernel/debug/tracing/tracing_on
+allow vendor_init debugfs_tracing:file { getattr };

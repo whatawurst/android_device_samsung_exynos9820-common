@@ -1,7 +1,13 @@
 # vold.te
 
+# cgroup tasks
+allow vold cgroup:file { getattr };
+
 # /sys/kernel/debug
 allow vold debugfs_trace_marker:file { getattr };
 
-# cgroup
-allow vold cgroup:file { getattr };
+# /sys/devices/platform/13d00000.dwmmc2/mmc_host/
+allow vold sysfs_mmc_host:file rw_file_perms;
+
+# /sys/devices/platform/13d60000.ufs/host0
+allow vold sysfs_scsi_host:file rw_file_perms;

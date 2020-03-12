@@ -6,5 +6,8 @@ type keydata_block_device, dev_type;
 type keyrefuge_block_device, dev_type;
 type omr_block_device, dev_type;
 
+type ssp_device, dev_type;
+type secmem_device, dev_type;
+
 type tz_device, dev_type;
 type tz_user_device, dev_type;

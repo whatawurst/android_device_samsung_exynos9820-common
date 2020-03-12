@@ -1,0 +1,8 @@
+# hwservice.te
+
+type hal_vendor_configstore_hwservice, hwservice_manager_type;
+type hal_vendor_eden_runtime_hwservice, hwservice_manager_type;
+type hal_vendor_epic_hwservice, hwservice_manager_type;
+type hal_vendor_multiframeprocessing_hwservice, hwservice_manager_type;
+type hal_vendor_surfaceflinger_hwservice, hwservice_manager_type;
+type hal_vendor_iva_hwservice, hwservice_manager_type;
