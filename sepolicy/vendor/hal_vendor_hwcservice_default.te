@@ -7,8 +7,9 @@ init_daemon_domain(hal_vendor_hwcservice_default)
 vndbinder_use(hal_vendor_hwcservice_default)
 allow hal_vendor_hwcservice_default vendor_surfaceflinger_vndservice:service_manager { add find };
 
-
 add_hwservice(hal_vendor_hwcservice_default, hal_vendor_surfaceflinger_hwservice)
+hwbinder_use(hal_vendor_hwcservice_default)
+get_prop(hal_vendor_hwcservice_default, hwservicemanager_prop)
 
 # /sys/kernel/debug/tracing/trace_marker
 allow hal_vendor_hwcservice_default debugfs_trace_marker:file getattr;

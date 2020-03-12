@@ -2,3 +2,6 @@
 
 add_hwservice(hal_camera_default, hal_vendor_multiframeprocessing_hwservice)
 add_hwservice(hal_camera_default, hal_vendor_iva_hwservice)
+
+# /sys/kernel/debug/tracing/trace_marker
+allow hal_camera_default debugfs_trace_marker:file getattr;

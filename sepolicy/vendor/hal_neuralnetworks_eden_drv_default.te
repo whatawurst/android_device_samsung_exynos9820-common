@@ -9,9 +9,13 @@ init_daemon_domain(hal_neuralnetworks_eden_drv_default)
 # cgroup tasks
 allow hal_neuralnetworks_eden_drv_default cgroup:file getattr;
 
-# /data/vendor/npu
+# /data/vendor/eden
 allow hal_neuralnetworks_eden_drv_default npu_vendor_data_file:dir rw_dir_perms;
 allow hal_neuralnetworks_eden_drv_default npu_vendor_data_file:file create_file_perms;
+
+# /data/vendor/eden/gpu
+allow hal_neuralnetworks_eden_drv_default eden_gpu_vendor_data_file:dir rw_dir_perms;
+allow hal_neuralnetworks_eden_drv_default eden_gpu_vendor_data_file:file create_file_perms;
 
 # /dev/ion
 allow hal_neuralnetworks_eden_drv_default ion_device:chr_file rw_file_perms;

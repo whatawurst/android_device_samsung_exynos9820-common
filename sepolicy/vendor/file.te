@@ -21,7 +21,7 @@ type tee_efs_file, file_type;
 type wifi_efs_file, file_type;
 
 # PROC
-type proc_swapiness, file_type;
+type proc_swapiness, fs_type, proc_type;
 
 # ROOT
 # /keydata /keyrefuge /omr

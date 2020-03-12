@@ -9,6 +9,7 @@ init_daemon_domain(hal_vendor_eden_runtime_default)
 vndbinder_use(hal_vendor_eden_runtime_default)
 
 add_hwservice(hal_vendor_eden_runtime_default, hal_vendor_eden_runtime_hwservice)
+get_prop(hal_vendor_eden_runtime_default, hwservicemanager_prop)
 
 # cgroup tasks
 allow hal_vendor_eden_runtime_default cgroup:file getattr;

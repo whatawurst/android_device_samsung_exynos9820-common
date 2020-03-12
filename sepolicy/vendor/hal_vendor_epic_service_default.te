@@ -7,6 +7,8 @@ init_daemon_domain(hal_vendor_epic_service_default)
 vndbinder_use(hal_vendor_epic_service_default)
 
 add_hwservice(hal_vendor_epic_service_default, hal_vendor_epic_hwservice)
+hwbinder_use(hal_vendor_epic_service_default)
+get_prop(hal_vendor_epic_service_default, hwservicemanager_prop)
 
 # cgroup tasks
 allow hal_vendor_epic_service_default cgroup:file getattr;
