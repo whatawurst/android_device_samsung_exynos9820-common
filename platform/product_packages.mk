@@ -63,6 +63,10 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.2-impl \
     android.hardware.graphics.composer@2.2-service \
 
+PRODUCT_PACKAGES += \
+    android.hardware.graphics.mapper@2.0-impl \
+    android.hardware.graphics.mapper@2.0-impl-2.1
+
 ### HEALTH
 PRODUCT_PACKAGES += \
     android.hardware.health@2.0-impl \
