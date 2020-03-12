@@ -6,3 +6,6 @@ allow fsck efs_block_device:blk_file rw_file_perms;
 allow fsck keydata_block_device:blk_file rw_file_perms;
 # /keyrefuge
 allow fsck keyrefuge_block_device:blk_file rw_file_perms;
+
+# /sys/devices/platform/battery/power_supply
+allow fsck sysfs_battery:dir search;
