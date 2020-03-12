@@ -1008,12 +1008,6 @@ on boot
     chmod 0660 /sys/class/sec/switch/uart_sel
     chown system system /sys/class/sec/switch/uart_sel
 
-on nonencrypted
-    mkdir /data/misc/mcRegistry 0775 system drmrpc
-
-on property:vold.decrypt=trigger_restart_framework
-    mkdir /data/misc/mcRegistry 0775 system drmrpc
-
 on fs
     mount_all /vendor/etc/fstab.exynos9820
     # We need to seperate mounting SEC_EFS partition from fstab file due to GSI image loading case
