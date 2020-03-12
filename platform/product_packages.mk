@@ -81,6 +81,9 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.1 \
     android.hardware.neuralnetworks@1.2
 
+PRODUCT_PACKAGES += \
+    libtextclassifier_hash.vendor
+
 ### POWER
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.samsung
