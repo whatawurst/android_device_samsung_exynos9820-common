@@ -18,6 +18,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.audio.effect@5.0-impl
 
+PRODUCT_PACKAGES += \
+    audio.bluetooth.default \
+    android.hardware.bluetooth.audio@2.0-impl
+
 ### BLUETOOTH
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-impl \
