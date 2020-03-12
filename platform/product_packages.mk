@@ -86,6 +86,20 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
 
+### OMX
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxEvrcEnc \
+    libOmxQcelp13Enc \
+    libOmxVdec \
+    libOmxVdecHevc \
+    libOmxVenc \
+    libc2dcolorconvert \
+    libmm-omxcore \
+    libstagefrighthw
+
 ### POWER
 PRODUCT_PACKAGES += \
     android.hardware.power@1.2-service.samsung
