@@ -6,6 +6,9 @@ genfscon proc /sys/vm/swappiness                           u:object_r:proc_swapi
 # SYSFS
 genfscon sysfs /class/sec                                  u:object_r:sysfs_sec:s0
 genfscon sysfs /class/power_supply                         u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/max77705-charger/type    u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/otg/type    u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/15d70000.hsi2c/i2c-14/14-003b/power_supply/mfc-charger/type    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/battery/power_supply      u:object_r:sysfs_battery:s0
 genfscon sysfs /devices/platform/panel@0/lcd/panel         u:object_r:sysfs_lcd_writable:s0
 genfscon sysfs /devices/virtual/lcd/panel                  u:object_r:sysfs_lcd_writable:s0
