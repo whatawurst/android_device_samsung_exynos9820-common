@@ -63,6 +63,11 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.2-impl \
     android.hardware.graphics.composer@2.2-service \
 
+### HEALTH
+PRODUCT_PACKAGES += \
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
+
 ### KEYMASTER
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung
