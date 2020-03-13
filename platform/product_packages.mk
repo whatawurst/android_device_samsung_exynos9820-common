@@ -118,7 +118,7 @@ PRODUCT_PACKAGES += \
 
 ### POWER
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.2-service.samsung
+    android.hardware.power@1.0-service.exynos
 
 ### RENDERSCRIPT
 PRODUCT_PACKAGES += \
