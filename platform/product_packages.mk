@@ -75,6 +75,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@4.0-service.samsung
 
+### LIGHT
+PRODUCT_PACKAGES += \
+    android.hardware.light@2.0-service.samsung
+
 ### LIVEDISPLAY
 PRODUCT_PACKAGES += \
     vendor.lineage.livedisplay@2.0-service.samsung-exynos
