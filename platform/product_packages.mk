@@ -55,7 +55,6 @@ PRODUCT_PACKAGES += \
 ### GRAPHICS
 PRODUCT_PACKAGES += \
     android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@3.0-impl \
     android.hardware.graphics.allocator@2.0-service \
 
 PRODUCT_PACKAGES += \
