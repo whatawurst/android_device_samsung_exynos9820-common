@@ -7,6 +7,10 @@ ro.vendor.eden.npu.version.path=/sys/devices/platform/npu@17800000/version
 # gralloc/exynosdisplay
 ro.vendor.ddk.set.afbc=1
 
+### KEYSTORE
+ro.hardware.keystore=mdfpp
+ro.security.keystore.keytype=sak,gak
+
 ### SAMSUNG_SLSI
 debug.slsi_platform=1
 debug.hwc.winupdate=1
