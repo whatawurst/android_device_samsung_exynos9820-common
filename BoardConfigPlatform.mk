@@ -114,6 +114,10 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ### AUDIO
 USE_XML_AUDIO_POLICY_CONF := 1
 
+### GRAPHICS
+# hardware/interfaces/configstore/1.1/default/surfaceflinger.mk
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+
 ### HIDL
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
