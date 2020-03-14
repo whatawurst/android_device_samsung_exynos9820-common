@@ -2,6 +2,7 @@
 
 # DATA
 type camera_vendor_data_file, file_type, data_file_type;
+type conn_vendor_data_file, file_type, data_file_type;
 type display_vendor_data_file, file_type, data_file_type;
 type eden_gpu_vendor_data_file, file_type, data_file_type;
 type gk_vendor_data_file, file_type, data_file_type;
@@ -58,5 +59,6 @@ type sysfs_sensors_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_sensorhub_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_spi_writeable, sysfs_type, r_fs_type, fs_type;
 type sysfs_ss_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_wifi_writable, sysfs_type, rw_fs_type, fs_type;
 
 type vendor_eden_gpu_vendor_file, file_type, vendor_file_type;
