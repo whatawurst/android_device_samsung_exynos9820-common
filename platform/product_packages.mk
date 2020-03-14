@@ -44,8 +44,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.2-service.clearkey
 
 ### FINGERPRINT
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.samsung
+#PRODUCT_PACKAGES += \
+#    android.hardware.biometrics.fingerprint@2.1-service.samsung
 
 ### GATEKEEPER
 PRODUCT_PACKAGES += \
