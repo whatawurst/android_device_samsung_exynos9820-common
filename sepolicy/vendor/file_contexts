@@ -1,5 +1,6 @@
 ### DATA
 /data/vendor/camera(/.*)?                    u:object_r:camera_vendor_data_file:s0
+/data/vendor/conn(/.*)?                      u:object_r:conn_vendor_data_file:s0
 /data/vendor/display(/.*)?                   u:object_r:display_vendor_data_file:s0
 /data/vendor/eden(/.*)?                      u:object_r:npu_vendor_data_file:s0
 /data/vendor/eden/gpu(/.*)?                  u:object_r:eden_gpu_vendor_data_file:s0
