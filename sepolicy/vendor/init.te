@@ -25,6 +25,9 @@ allow init tz_user_device:chr_file rw_file_perms;
 # /proc/sys/abi/swp
 allow init proc_abi:file { getattr };
 
+# /proc/sys/vm/extra_free_kbytes
+allow init proc_extra_free_kbytes:file { getattr };
+
 # /sys/kernel/debug/tracing/trace_marker
 allow init debugfs_trace_marker:file { getattr };
 # /sys/kernel/sysrq

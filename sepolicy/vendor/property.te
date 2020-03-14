@@ -3,7 +3,12 @@ type persist_rmnet_prop, property_type;
 type persist_data_df_prop, property_type;
 type persist_data_wda_prop, property_type;
 
-type vendor_secureos_prop, property_type;
+type rfkilldisabled_prop, property_type;
 
+type vendor_bluetooth_prop, property_type;
+type vendor_gps_prop, property_type;
+type vendor_radio_prop, property_type;
+
+type vendor_secureos_prop, property_type;
 type vendor_tzdaemon_prop, property_type;
 type vendor_tztsdaemon_prop, property_type;

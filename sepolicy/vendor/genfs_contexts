@@ -1,5 +1,10 @@
 # genfs_contexts
 
+# DEBUGFS
+genfscon debugfs /mali/mem/                                u:object_r:debugfs_mali:s0
+genfscon debugfs /dma_buf                                  u:object_r:debugfs_ion:s0
+genfscon debugfs /ion                                      u:object_r:debugfs_ion:s0
+
 # PROC
 genfscon proc /sys/vm/swappiness                           u:object_r:proc_swapiness:s0
 
@@ -8,14 +13,17 @@ genfscon proc /sys/vm/swappiness                           u:object_r:proc_swapi
 genfscon sysfs /bus/iio/devices                            u:object_r:sysfs_iio:s0
 
 # class
-genfscon sysfs /class/input/input4                         u:object_r:sysfs_sensor_writable:s0
-genfscon sysfs /class/input/input6                         u:object_r:sysfs_sensor_writable:s0
+genfscon sysfs /class/input/input4                         u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /class/input/input6                         u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /class/power_supply                         u:object_r:sysfs_battery:s0
-genfscon sysfs /class/sec                                  u:object_r:sysfs_sec:s0
-genfscon sysfs /class/sensors                              u:object_r:sysfs_sensor_writable:s0
+genfscon sysfs /class/sec/gps                              u:object_r:sysfs_sec_gps:s0
+genfscon sysfs /class/sec/sensors                          u:object_r:sysfs_sec_sensors:s0
+genfscon sysfs /class/sensors                              u:object_r:sysfs_sensors_writable:s0
 
 # devices
+genfscon sysfs /devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value u:object_r:sysfs_gps_writable:s0
 genfscon sysfs /devices/platform/10970000.spi/             u:object_r:sysfs_spi_writeable:s0
+genfscon sysfs /devices/platform/11ce0000.speedy/i2c-6/6-0003/input/input13/name u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/13d00000.dwmmc2/mmc_host  u:object_r:sysfs_mmc_host:s0
 genfscon sysfs /devices/platform/13d60000.ufs/host0        u:object_r:sysfs_scsi_host:s0
 genfscon sysfs /devices/platform/15c40000.adc/iio          u:object_r:sysfs_iio:s0
@@ -30,13 +38,21 @@ genfscon sysfs /devices/platform/19050000.decon_t/vsync    u:object_r:sysfs_ss_w
 genfscon sysfs /devices/platform/19060000.decon_s          u:object_r:sysfs_decon:s0
 genfscon sysfs /devices/platform/19060000.decon_s/vsync    u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/battery/power_supply      u:object_r:sysfs_battery:s0
+genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill0/state u:object_r:sysfs_bt_writable:s0
 genfscon sysfs /devices/platform/npu@17800000/version      u:object_r:sysfs_npu_version:s0
 genfscon sysfs /devices/platform/panel@0/lcd/panel         u:object_r:sysfs_lcd_writable:s0
 genfscon sysfs /devices/soc0/soc_id                        u:object_r:sysfs_socinfo:s0
 genfscon sysfs /devices/system/chip-id                     u:object_r:sysfs_ss_writable:s0
 
+genfscon sysfs /devices/virtual/cirrus/cirrus_bd           u:object_r:sysfs_ss_writable:s0
+genfscon sysfs /devices/virtual/cirrus/cirrus_cal          u:object_r:sysfs_ss_writable:s0
+genfscon sysfs /devices/virtual/cirrus/cirrus_pwr          u:object_r:sysfs_ss_writable:s0
+
 genfscon sysfs /devices/virtual/lcd/panel                  u:object_r:sysfs_lcd_writable:s0
-genfscon sysfs /devices/virtual/sec                        u:object_r:sysfs_sec:s0
-genfscon sysfs /devices/virtual/sensors                    u:object_r:sysfs_sensor_writable:s0
-genfscon sysfs /devices/virtual/input/input4               u:object_r:sysfs_sensor_writable:s0
-genfscon sysfs /devices/virtual/input/input6               u:object_r:sysfs_sensor_writable:s0
+genfscon sysfs /devices/virtual/sec/gps                    u:object_r:sysfs_sec_gps:s0
+genfscon sysfs /devices/virtual/sec/sec_key                u:object_r:sysfs_sec_key:s0
+genfscon sysfs /devices/virtual/sensors                    u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/input/input4               u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/input/input6               u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power    u:object_r:sysfs_sensorhub_writable:s0
+genfscon sysfs /devices/virtual/thermal/                   u:object_r:sysfs_thermal:s0

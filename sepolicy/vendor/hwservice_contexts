@@ -1,5 +1,7 @@
 # hwservice_contexts
 
+vendor.samsung.hardware.gnss::ISecGnss                         u:object_r:hal_gnss_hwservice:s0
+vendor.samsung.hardware.gnss::ISehGnss                         u:object_r:hal_gnss_hwservice:s0
 vendor.samsung_slsi.hardware.ExynosHWCServiceTW::IExynosHWCServiceTW    u:object_r:hal_vendor_surfaceflinger_hwservice:s0
 vendor.samsung_slsi.hardware.MultiFrameProcessing20::IMultiFrameProcessing20   u:object_r:hal_vendor_multiframeprocessing_hwservice:s0
 vendor.samsung_slsi.hardware.configstore::IExynosHWCConfigs    u:object_r:hal_vendor_configstore_hwservice:s0

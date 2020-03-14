@@ -5,11 +5,16 @@ type camera_vendor_data_file, file_type, data_file_type;
 type display_vendor_data_file, file_type, data_file_type;
 type eden_gpu_vendor_data_file, file_type, data_file_type;
 type gk_vendor_data_file, file_type, data_file_type;
+type gps_vendor_data_file, file_type, data_file_type;
 type log_vendor_data_file, file_type, data_file_type;
 type media_vendor_data_file, file_type, data_file_type;
 type npu_vendor_data_file, file_type, data_file_type;
 type tee_vendor_data_file, file_type, data_file_type;
 type wifi_vendor_data_file, file_type, data_file_type;
+
+# DEBUGFS
+type debugfs_mali, fs_type, debugfs_type;
+type debugfs_ion, fs_type, debugfs_type;
 
 # EFS
 type app_efs_file, file_type;
@@ -40,11 +45,16 @@ type sysfs_iio, sysfs_type, r_fs_type, fs_type;
 type sysfs_mmc_host, sysfs_type, r_fs_type, fs_type;
 type sysfs_npu_version, sysfs_type, r_fs_type, fs_type;
 type sysfs_scsi_host, sysfs_type, r_fs_type, fs_type;
-type sysfs_sec, sysfs_type, rw_fs_type, fs_type;
-type sysfs_socinfo, sysfs_type, rw_fs_type, fs_type;
+type sysfs_sec_gps, sysfs_type, r_fs_type, fs_type;
+type sysfs_sec_key, sysfs_type, r_fs_type, fs_type;
+type sysfs_sec_sensors, sysfs_type, r_fs_type, fs_type;
+type sysfs_socinfo, sysfs_type, r_fs_type, fs_type;
 
+type sysfs_bt_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_gps_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_lcd_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_sensor_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_sensors_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_sensorhub_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_spi_writeable, sysfs_type, r_fs_type, fs_type;
 type sysfs_ss_writable, sysfs_type, rw_fs_type, fs_type;
 
