@@ -117,6 +117,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 ### AUDIO
 USE_XML_AUDIO_POLICY_CONF := 1
 
+### BLUETOOTH
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/hardware/bluetooth
+
 ### GRAPHICS
 # hardware/interfaces/configstore/1.1/default/surfaceflinger.mk
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
