@@ -7,7 +7,10 @@ allow kernel device:dir rw_dir_perms;
 # neverallow rule
 dontaudit kernel device:file { create };
 
+# /efs
+allow kernel efs_file:dir search;
+
 # /sys/devices/virtual/sec/sec_key/hall_detect
-allow kernel sysfs_sec:dir r_dir_perms;
-allow kernel sysfs_sec:file r_file_perms;
-allow kernel sysfs_sec:lnk_file r_file_perms;
+allow kernel sysfs_sec_key:dir r_dir_perms;
+allow kernel sysfs_sec_key:file r_file_perms;
+allow kernel sysfs_sec_key:lnk_file r_file_perms;

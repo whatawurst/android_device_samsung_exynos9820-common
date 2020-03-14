@@ -1,0 +1,28 @@
+type gpsd, domain;
+type gpsd_exec, exec_type, vendor_file_type, file_type;
+
+# gpsd is started by init, type transit from init domain to gpsd domain
+init_daemon_domain(gpsd)
+
+get_prop(gpsd, hwservicemanager_prop)
+hwbinder_use(gpsd)
+allow gpsd system_suspend_hwservice:hwservice_manager { find };
+binder_call(gpsd, system_suspend_server)
+
+allow gpsd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
+allow gpsd self:tcp_socket create_stream_socket_perms;
+allow gpsd port:tcp_socket name_connect;
+
+# 
+get_prop(vendor_radio_prop)
+
+# /dev/socket/fwmarkd
+# neverallow: unix_socket_connect(gpsd, fwmarkd, netd);
+
+# /data/vendor/gps
+allow gpsd gps_vendor_data_file:dir rw_dir_perms;
+allow gpsd gps_vendor_data_file:file create_file_perms;
+allow gpsd gps_vendor_data_file:fifo_file create_file_perms;
+
+# /sys/kernel/debug/tracing/trace_marker
+allow gpsd debugfs_trace_marker:file getattr;
