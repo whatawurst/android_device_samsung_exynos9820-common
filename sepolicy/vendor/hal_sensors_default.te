@@ -20,6 +20,10 @@ allow hal_sensors_default app_efs_file:file { setattr rw_file_perms };
 allow hal_sensors_default sysfs_iio:dir r_dir_perms;
 allow hal_sensors_default sysfs_iio:file r_file_perms;
 
+# /sys/class/sec
+allow hal_sensors_default sysfs_sec:dir r_dir_perms;
+allow hal_sensors_default sysfs_sec:file r_file_perms;
+
 # /sys/devices/platform/10970000.spi/
 allow hal_sensors_default sysfs_spi_writeable:dir r_dir_perms;
 allow hal_sensors_default sysfs_spi_writeable:file rw_file_perms;
