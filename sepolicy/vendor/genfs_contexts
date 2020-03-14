@@ -56,3 +56,5 @@ genfscon sysfs /devices/virtual/input/input4               u:object_r:sysfs_sens
 genfscon sysfs /devices/virtual/input/input6               u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power    u:object_r:sysfs_sensorhub_writable:s0
 genfscon sysfs /devices/virtual/thermal/                   u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /wifi                                       u:object_r:sysfs_wifi:s0

@@ -13,9 +13,6 @@ allow gpsd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow gpsd self:tcp_socket create_stream_socket_perms;
 allow gpsd port:tcp_socket name_connect;
 
-# 
-get_prop(vendor_radio_prop)
-
 # /dev/socket/fwmarkd
 # neverallow: unix_socket_connect(gpsd, fwmarkd, netd);
 

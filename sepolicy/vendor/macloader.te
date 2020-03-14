@@ -3,3 +3,7 @@ type macloader_exec, exec_type, vendor_file_type, file_type;
 
 # macloader is started by init, type transit from init domain to macloader domain
 init_daemon_domain(macloader)
+
+# /sys/class/net
+allow macloader sysfs_net:dir r_dir_perms;
+allow macloader sysfs_net:file r_file_perms;

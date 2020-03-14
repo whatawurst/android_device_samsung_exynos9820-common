@@ -49,6 +49,7 @@ type sysfs_sec_gps, sysfs_type, r_fs_type, fs_type;
 type sysfs_sec_key, sysfs_type, r_fs_type, fs_type;
 type sysfs_sec_sensors, sysfs_type, r_fs_type, fs_type;
 type sysfs_socinfo, sysfs_type, r_fs_type, fs_type;
+type sysfs_wifi, sysfs_type, r_fs_type, fs_type;
 
 type sysfs_bt_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_gps_writable, sysfs_type, rw_fs_type, fs_type;
