@@ -10,6 +10,3 @@ allow hal_gnss_default gps_vendor_data_file:fifo_file create_file_perms;
 
 # /mnt/vendor
 allow hal_gnss_default mnt_vendor_file:dir search;
-
-# /sys/kernel/debug/tracing/trace_marker
-allow hal_gnss_default debugfs_trace_marker:file getattr;

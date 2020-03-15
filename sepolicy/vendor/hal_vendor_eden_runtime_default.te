@@ -29,6 +29,3 @@ allow hal_vendor_eden_runtime_default gpu_device:chr_file rw_file_perms;
 
 # /sys/devices/platform/npu@17800000/version
 allow hal_vendor_eden_runtime_default sysfs_npu_version:file r_file_perms;
-
-# /sys/kernel/debug/tracing/trace_marker
-allow hal_vendor_eden_runtime_default debugfs_trace_marker:file getattr;

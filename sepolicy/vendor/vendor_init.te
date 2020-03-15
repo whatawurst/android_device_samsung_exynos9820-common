@@ -19,8 +19,5 @@ allow vendor_init cgroup:file { getattr };
 allow vendor_init proc_swapiness:file rw_file_perms;
 
 ### /sys
-# /sys/kernel/debug/tracing/trace_marker
-allow vendor_init debugfs_trace_marker:file { getattr };
-
 # /sys/kernel/debug/tracing/tracing_on
 allow vendor_init debugfs_tracing:file { getattr };

@@ -1,4 +1,1 @@
 # hal_fingerprint_default.te
-
-# /sys/kernel/debug/tracing/trace_marker
-allow hal_fingerprint_default debugfs_trace_marker:file getattr;

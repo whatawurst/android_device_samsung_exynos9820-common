@@ -33,6 +33,3 @@ allow lhd sysfs_sensorhub_writable:file rw_file_perms;
 
 # /sys/class/sec/gps/GPS_PWR_EN/value
 allow lhd sysfs_gps_writable:file rw_file_perms;
-
-# /sys/kernel/debug/tracing/trace_marker
-allow lhd debugfs_trace_marker:file getattr;

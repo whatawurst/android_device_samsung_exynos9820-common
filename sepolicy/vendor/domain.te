@@ -1,0 +1,4 @@
+# domain.te
+
+# /sys/kernel/debug/tracing/trace_marker
+allow domain debugfs_trace_marker:file getattr;
