@@ -11,6 +11,3 @@ get_prop(hal_vendor_configstore_default, hwservicemanager_prop)
 
 # cgroup tasks
 allow hal_vendor_configstore_default cgroup:file getattr;
-
-# /sys/kernel/debug/tracing/trace_marker
-allow hal_vendor_configstore_default debugfs_trace_marker:file getattr;

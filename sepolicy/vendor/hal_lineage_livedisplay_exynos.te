@@ -7,6 +7,3 @@ allow hal_lineage_livedisplay_exynos display_vendor_data_file:file r_file_perms;
 # /sys/devices/platform/panel@0/lcd/panel/mdnie/sensorRGB
 allow hal_lineage_livedisplay_exynos sysfs_lcd_writable:dir r_dir_perms;
 allow hal_lineage_livedisplay_exynos sysfs_lcd_writable:file rw_file_perms;
-
-# /sys/kernel/debug/tracing/trace_marker
-allow hal_lineage_livedisplay_exynos debugfs_trace_marker:file getattr;

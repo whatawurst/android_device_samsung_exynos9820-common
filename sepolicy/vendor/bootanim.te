@@ -1,7 +1,0 @@
-# bootanim.te
-
-# /sys/kernel/debug/mali
-allow bootanim debugfs_mali:dir search;
-
-# /sys/kernel/debug/dma_buf/footprint/
-allow bootanim debugfs_ion:dir search;

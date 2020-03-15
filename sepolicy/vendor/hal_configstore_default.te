@@ -2,6 +2,3 @@
 
 # cgroup tasks
 allow hal_configstore_default cgroup:file getattr;
-
-# /sys/kernel/debug/tracing/trace_marker
-allow hal_configstore_default debugfs_trace_marker:file getattr;
