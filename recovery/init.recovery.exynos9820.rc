@@ -29,9 +29,10 @@ on post-fs
     mkdir /tmp/vendor/efs/tee/srt 0770 system system
     mkdir /tmp/vendor/tee 0770 system system
 
-    start predecrypt
-
 on boot
+    start predecrypt
+    wait_for_prop vendor.predecrypt Ready
+
     setprop crypto.ready 1
 
 on property:crypto.ready=1
