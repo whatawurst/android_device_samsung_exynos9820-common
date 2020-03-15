@@ -1,3 +1,9 @@
+### AUDIO
+audio.offload.min.duration.secs=30
+aaudio.mmap_policy=2
+aaudio.mmap_exclusive_policy=2
+aaudio.hw_burst_min_usec=2000
+
 ### EDEN
 log.tag.EDEN=INFO
 ro.vendor.eden.devices=CPU1_GPU1_NPU1
