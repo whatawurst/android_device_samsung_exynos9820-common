@@ -133,7 +133,10 @@ TARGET_KEYMASTER_VARIANT := samsung
 
 ### SEPOLICY
 include device/lineage/sepolicy/exynos/sepolicy.mk
+
+BOARD_SEPOLICY_TEE_FLAVOR := teegris
 include device/exynos/sepolicy/sepolicy.mk
+
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy/vendor
 
 ### PROPERTIES

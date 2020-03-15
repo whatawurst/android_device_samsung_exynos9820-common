@@ -1,8 +1,6 @@
 # hal_gatekeeper_default.te
 
-get_prop(hal_gatekeeper_default, vendor_tztsdaemon_prop)
-
+# /acct/tasks
 allow hal_gatekeeper_default cgroup:file r_file_perms;
 
-# /dev/tzdev
-allow hal_gatekeeper_default tz_user_device:chr_file rw_file_perms;
+teegris_use(hal_gatekeeper_default)
