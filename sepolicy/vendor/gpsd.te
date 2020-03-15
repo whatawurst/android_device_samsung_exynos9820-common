@@ -17,7 +17,7 @@ allow gpsd port:tcp_socket { name_bind name_connect };
 allow gpsd node:tcp_socket node_bind;
 
 # cgroups task
-allow gpsd cgroups:file getattr;
+allow gpsd cgroup:file getattr;
 
 # /dev/socket/fwmarkd
 allow gpsd fwmarkd_socket:sock_file write;
