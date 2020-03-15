@@ -16,8 +16,11 @@ allow gpsd self:tcp_socket create_stream_socket_perms;
 allow gpsd port:tcp_socket { name_bind name_connect };
 allow gpsd node:tcp_socket node_bind;
 
-# cgroups task
+# /acct/tasks
 allow gpsd cgroup:file getattr;
+
+# /dev/socket/dnsproxyd
+allow gpsd dnsproxyd_socket:sock_file write;
 
 # /dev/socket/fwmarkd
 allow gpsd fwmarkd_socket:sock_file write;
