@@ -15,9 +15,3 @@ ro.spid.gps.                   u:object_r:vendor_gps_prop:s0
 # RADIO
 ro.vendor.multisim.simslotcount u:object_r:vendor_radio_prop:s0
 vendor.gsm.                    u:object_r:vendor_radio_prop:s0
-
-# TEEGRIS
-vendor.secureos.               u:object_r:vendor_secureos_prop:s0
-
-vendor.tzdaemon                u:object_r:vendor_tzdaemon_prop:s0
-vendor.tzts_daemon             u:object_r:vendor_tztsdaemon_prop:s0

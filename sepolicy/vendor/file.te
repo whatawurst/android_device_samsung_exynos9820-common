@@ -10,7 +10,6 @@ type gps_vendor_data_file, file_type, data_file_type;
 type log_vendor_data_file, file_type, data_file_type;
 type media_vendor_data_file, file_type, data_file_type;
 type npu_vendor_data_file, file_type, data_file_type;
-type tee_vendor_data_file, file_type, data_file_type;
 type wifi_vendor_data_file, file_type, data_file_type;
 
 # DEBUGFS
@@ -37,9 +36,6 @@ type keydata_data_file, file_type;
 type keyrefuge_data_file, file_type;
 type omr_file, file_type;
 type dqmdbg_file, file_type;
-
-# TZ
-type tz_socket, file_type;
 
 # SYSFS
 type sysfs_battery, sysfs_type, r_fs_type, fs_type;

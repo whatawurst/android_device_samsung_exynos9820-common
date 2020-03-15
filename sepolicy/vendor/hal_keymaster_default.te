@@ -1,6 +1,3 @@
 # hal_keymaster_default.te
 
-get_prop(hal_keymaster_default, vendor_tztsdaemon_prop)
-
-# /dev/tzdev
-allow hal_keymaster_default tz_user_device:chr_file rw_file_perms;
+teegris_use(hal_keymaster_default)
