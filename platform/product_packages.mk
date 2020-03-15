@@ -7,6 +7,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libaudioroute \
     libtinyalsa \
+    libtinycompress \
     tinymix
 
 PRODUCT_PACKAGES += \
