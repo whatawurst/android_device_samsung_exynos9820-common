@@ -42,8 +42,8 @@ on property:crypto.ready=1
     wait_for_prop vendor.tzts_daemon Ready
     start servicemanager
 
-    start gatekeeper-1-0
     start keymaster-4-0
+    start gatekeeper-1-0
 
 on property:crypto.ready=0
     stop keymaster-4-0
@@ -51,6 +51,7 @@ on property:crypto.ready=0
 
     stop servicemanager
     stop tzts_service
+    stop tz_service
 
 service predecrypt /sbin/predecrypt.sh
     oneshot
