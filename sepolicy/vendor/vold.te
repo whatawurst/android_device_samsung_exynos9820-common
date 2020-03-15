@@ -3,6 +3,15 @@
 # cgroup tasks
 allow vold cgroup:file { getattr };
 
+# /keydata
+allow vold keydata_data_file:dir r_dir_perms;
+
+# /keydata
+allow vold keyrefuge_data_file:dir r_dir_perms;
+
+# /mnt/vendor
+allow vold mnt_vendor_file:dir r_dir_perms;
+
 # /sys/kernel/debug
 allow vold debugfs_trace_marker:file { getattr };
 
