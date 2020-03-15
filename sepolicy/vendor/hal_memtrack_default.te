@@ -3,9 +3,18 @@
 # /sys/kernel/debug
 allow hal_memtrack_default debugfs:dir r_dir_perms;
 
-# /sys/kernel/debug/mali/mem/*/mem_profile
+# /sys/kernel/debug/mali/mem
+allow hal_memtrack_default debugfs_mali:dir r_dir_perms;
 allow hal_memtrack_default debugfs_mali:file r_file_perms;
 
-# /sys/kernel/debug/dma_buf/footprint/[0-9]+
+# /sys/kernel/debug/mali/mem/*/mem_profile
+allow hal_memtrack_default debugfs_mali_mem:dir r_dir_perms;
+allow hal_memtrack_default debugfs_mali_mem:file r_file_perms;
+
+# /sys/kernel/debug/ion/
 allow hal_memtrack_default debugfs_ion:dir r_dir_perms;
 allow hal_memtrack_default debugfs_ion:file r_file_perms;
+
+# /sys/kernel/debug/dma_buf/footprint/[0-9]+
+allow hal_memtrack_default debugfs_ion_dma:dir r_dir_perms;
+allow hal_memtrack_default debugfs_ion_dma:file r_file_perms;
