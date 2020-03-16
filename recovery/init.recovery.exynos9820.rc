@@ -89,7 +89,7 @@ service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service
     seclabel u:r:recovery:s0
 
 # TEEGRIS daemon
-service tz_service /vendor/bin/tzdaemon
+service tz_service /vendor/bin/tzdaemon --verbose=dbg
     user root
     group system
     disabled
