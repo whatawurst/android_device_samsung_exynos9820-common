@@ -12,6 +12,9 @@ on init
 on fs
     export ANDROID_ROOT /system_root
 
+    mkdir /mnt/vendor 0770 root system
+    mkdir /mnt/vendor/efs 0770 root system
+
     # IMPORTANT!
     # This needs to be supported by the init binary!
     install_keyring
@@ -23,12 +26,6 @@ on post-fs
     mkdir /dev/socket/iwt 0770 system system
     mkdir /dev/socket/iwt/ca 0770 system system
 
-    mkdir /tmp/vendor 0770 system system
-    mkdir /tmp/vendor/efs 0770 system system
-    mkdir /tmp/vendor/efs/tee 0770 system system
-    mkdir /tmp/vendor/efs/tee/srt 0770 system system
-    mkdir /tmp/vendor/tee 0770 system system
-
 on boot
     start predecrypt
     wait_for_prop vendor.predecrypt Ready
@@ -36,6 +33,8 @@ on boot
     setprop crypto.ready 1
 
 on property:crypto.ready=1
+    mount ext4 /dev/block/platform/13d60000.ufs/by-name/efs /mnt/vendor/efs noatime,nosuid,nodev wait
+
     start tz_service
     wait_for_prop vendor.tzdaemon Ready
     setprop vendor.TEEGRIS.loaded true
@@ -53,6 +52,8 @@ on property:crypto.ready=0
     stop servicemanager
     stop tzts_service
     stop tz_service
+
+    umount /mnt/vendor/efs
 
 service predecrypt /sbin/predecrypt.sh
     oneshot
