@@ -355,6 +355,9 @@ on fs
     chown system system /sys/class/mdnie/mdnie/bypass
     chown system system /sys/class/mdnie/mdnie/mdnie_ldu
     chown system system /sys/class/mdnie/mdnie/hdr
+    # ISunlightEnhancement
+    chown system system /sys/class/mdnie/mdnie/lux
+    chmod 0644 /sys/class/mdnie/mdnie/lux
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
