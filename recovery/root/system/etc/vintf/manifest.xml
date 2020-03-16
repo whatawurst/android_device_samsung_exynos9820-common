@@ -1,4 +1,13 @@
 <manifest version="1.0" type="framework">
+    <hal>
+        <name>android.hidl.manager</name>
+        <transport>hwbinder</transport>
+        <version>1.1</version>
+        <interface>
+            <name>IServiceManager</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
     <vendor-ndk>
         <version>28</version>
     </vendor-ndk>
