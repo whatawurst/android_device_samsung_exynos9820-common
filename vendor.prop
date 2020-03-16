@@ -20,3 +20,7 @@ ro.security.keystore.keytype=sak,gak
 ### SAMSUNG_SLSI
 debug.slsi_platform=1
 debug.hwc.winupdate=1
+
+### DEVELOPER SETTINGS
+# Disable invocation of oem_lock
+ro.frp.pst=/dev/block/persistent
