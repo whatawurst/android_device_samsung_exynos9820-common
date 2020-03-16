@@ -115,6 +115,6 @@ service keystore /sbin/keystore /tmp/misc/keystore
 service keystore_auth /sbin/keystore_auth
     disabled
     oneshot
-    user root
-    group system
+    user system
+    group root
     seclabel u:r:recovery:s0
