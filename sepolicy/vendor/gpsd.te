@@ -11,6 +11,8 @@ hwbinder_use(gpsd)
 allow gpsd system_suspend_hwservice:hwservice_manager { find };
 binder_call(gpsd, system_suspend_server)
 
+allow gpsd fwk_sensor_hwservice:hwservice_manager { find };
+
 allow gpsd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow gpsd self:{ tcp_socket udp_socket } create_stream_socket_perms;
 allow gpsd port:tcp_socket { name_bind name_connect };
