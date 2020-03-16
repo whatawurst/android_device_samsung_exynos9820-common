@@ -3,6 +3,10 @@
 # /efs
 allow tzdaemon efs_file:dir r_dir_perms;
 
-# /efs/tee
-allow tzdaemon tee_efs_file:dir r_dir_perms;
-allow tzdaemon tee_efs_file:file r_file_perms;
+# /efs/tee/
+# /mnt/vendor/efs/tee/
+allow tzdaemon tee_efs_file:dir create_dir_perms;
+allow tzdaemon tee_efs_file:file create_file_perms;
+
+# /mnt/vendor/
+allow tzdaemon mnt_vendor_file:dir r_dir_perms;
