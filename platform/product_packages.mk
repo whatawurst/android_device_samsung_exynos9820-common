@@ -131,6 +131,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service
 
+### SHIMS
+PRODUCT_PACKAGES += \
+    libshim_stagefright_foundation
+
 ## SOUNDTRIGGER
 PRODUCT_PACKAGES += \
     android.hardware.soundtrigger@2.2-impl \
