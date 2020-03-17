@@ -6,5 +6,6 @@ type persist_data_wda_prop, property_type;
 type rfkilldisabled_prop, property_type;
 
 type vendor_bluetooth_prop, property_type;
+type sec_camera_prop, property_type;
 type vendor_gps_prop, property_type;
 type vendor_radio_prop, property_type;
