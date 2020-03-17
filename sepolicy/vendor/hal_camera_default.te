@@ -1,4 +1,17 @@
 # hal_camera_default.te
 
+vndbinder_use(hal_camera_default)
+
+allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
+get_prop(hal_camera_default, hwservicemanager_prop)
+
+get_prop(hal_camera_default, sec_camera_prop)
+
 add_hwservice(hal_camera_default, hal_vendor_multiframeprocessing_hwservice)
 add_hwservice(hal_camera_default, hal_vendor_iva_hwservice)
+
+# /sys/class/camera 
+allow hal_camera_default sysfs_camera:file { r_file_perms };
+allow hal_camera_default sysfs_camera:dir { r_dir_perms };
+
+allow hal_camera_default camera_vendor_data_file:dir { r_dir_perms };
