@@ -126,6 +126,10 @@ Return<Status> Vibrator::setAmplitude(uint8_t amplitude)
     }
     LOG(DEBUG) << "setting intensity: " << intensity;
 
+    if (doesNodeExist(VIBRATOR_INTENSITY_PATH)) {
+        return writeNode(VIBRATOR_INTENSITY_PATH, intensity);
+    }
+
     if (doesNodeExist(VIBRATOR_HAPTIC_PATH)) {
         std::string haptic = android::base::StringPrintf("4 %u %u %u %u",
                                                          CLICK_TIMING_MS,
@@ -134,10 +138,6 @@ Return<Status> Vibrator::setAmplitude(uint8_t amplitude)
                                                          1);
 
         return writeNode(VIBRATOR_HAPTIC_PATH, haptic);
-    }
-
-    if (doesNodeExist(VIBRATOR_INTENSITY_PATH)) {
-        return writeNode(VIBRATOR_INTENSITY_PATH, intensity);
     }
 
     return Status::OK;
