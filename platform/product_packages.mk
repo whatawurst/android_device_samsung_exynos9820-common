@@ -143,7 +143,7 @@ PRODUCT_PACKAGES += \
 
 ### VIBRATOR
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.samsung-haptic
+    android.hardware.vibrator@1.0-service.exynos
 
 ### WIFI
 PRODUCT_PACKAGES += \
