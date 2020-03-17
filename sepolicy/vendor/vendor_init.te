@@ -21,3 +21,6 @@ allow vendor_init proc_swapiness:file rw_file_perms;
 ### /sys
 # /sys/kernel/debug/tracing/tracing_on
 allow vendor_init debugfs_tracing:file { getattr };
+
+### LD_SHIM_LIBS
+allow vendor_init mediacodec:process { noatsecure };
