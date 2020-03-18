@@ -39,6 +39,7 @@ type dqmdbg_file, file_type;
 type sysfs_battery, sysfs_type, r_fs_type, fs_type;
 type sysfs_camera, sysfs_type, r_fs_type, fs_type;
 type sysfs_decon, sysfs_type, r_fs_type, fs_type;
+type sysfs_ems, sysfs_type, r_fs_type, fs_type;
 type sysfs_iio, sysfs_type, r_fs_type, fs_type;
 type sysfs_mmc_host, sysfs_type, r_fs_type, fs_type;
 type sysfs_npu_version, sysfs_type, r_fs_type, fs_type;

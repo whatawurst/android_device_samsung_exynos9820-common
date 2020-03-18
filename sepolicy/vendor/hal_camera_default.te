@@ -15,3 +15,7 @@ allow hal_camera_default sysfs_camera:file { r_file_perms };
 allow hal_camera_default sysfs_camera:dir { r_dir_perms };
 
 allow hal_camera_default camera_vendor_data_file:dir { r_dir_perms };
+
+# /sys/kernel/ems/frt/disable_cpufreq
+allow hal_camera_default sysfs_ems:dir r_dir_perms;
+allow hal_camera_default sysfs_ems:file r_file_perms;
