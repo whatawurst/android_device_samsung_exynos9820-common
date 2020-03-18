@@ -131,6 +131,10 @@ DEVICE_MATRIX_FILE := $(PLATFORM_PATH)/compatibility_matrix.xml
 ### KEYMASTER
 TARGET_KEYMASTER_VARIANT := samsung
 
+### SHIMS
+TARGET_LD_SHIM_LIBS += \
+    /vendor/lib/vndk/libstagefright_omx_utils.so|libshim_stagefright_foundation.so
+
 ### SEPOLICY
 include device/lineage/sepolicy/exynos/sepolicy.mk
 
