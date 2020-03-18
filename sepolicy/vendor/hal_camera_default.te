@@ -10,6 +10,9 @@ get_prop(hal_camera_default, sec_camera_prop)
 add_hwservice(hal_camera_default, hal_vendor_multiframeprocessing_hwservice)
 add_hwservice(hal_camera_default, hal_vendor_iva_hwservice)
 
+# /dev/jsqz
+allow hal_camera_default jsqz_device:chr_file rw_file_perms;
+
 # /sys/class/camera 
 allow hal_camera_default sysfs_camera:file { r_file_perms };
 allow hal_camera_default sysfs_camera:dir { r_dir_perms };

@@ -22,6 +22,9 @@
 # Bluetooth
 /dev/ttySAC[0-9]                             u:object_r:bt_device:s0
 
+# Camera
+/dev/jsqz                                    u:object_r:jsqz_device:s0
+
 # USB
 /dev/android_ssusbcon(/.*)?                  u:object_r:usb_device:s0
 /dev/usb(/.*)?                               u:object_r:usb_device:s0
