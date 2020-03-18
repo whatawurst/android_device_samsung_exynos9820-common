@@ -13,6 +13,7 @@ vendor.bluetooth_fw_ver        u:object_r:wifi_log_prop:s0
 sys.cameramode.                u:object_r:sec_camera_prop:s0
 ro.camera.req.fmq.size         u:object_r:sec_camera_prop:s0
 ro.camera.res.fmq.size         u:object_r:sec_camera_prop:s0
+persist.vendor.sys.camera.     u:object_r:vendor_camera_prop:s0
 
 # GPS
 ro.spid.gps.                   u:object_r:vendor_gps_prop:s0
