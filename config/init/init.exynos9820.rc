@@ -15,9 +15,6 @@ on init
 
     export SECONDARY_STORAGE /storage/sdcard:/storage/usb1:/storage/usb2
 
-# SHIM
-    export LD_SHIM_LIBS "/vendor/lib/vndk/libstagefright_omx_utils.so|libshim_stagefright_foundation.so"
-
     # Support legacy paths
     symlink /storage/sdcard /mnt/ext_sd
     symlink /data/app /factory
