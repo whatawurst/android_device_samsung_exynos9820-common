@@ -173,6 +173,11 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 # hardware/samsung/wifiloader/Android.mk
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
 
+### RIL
+# Use stock RIL stack
+ENABLE_VENDOR_RIL_SERVICE := true
+
+
 ### RECOVERY
 BOARD_HAS_DOWNLOAD_MODE := true
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
