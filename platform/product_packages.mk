@@ -142,7 +142,7 @@ PRODUCT_PACKAGES += \
 ### SHIMS
 PRODUCT_PACKAGES += \
     libshim_stagefright_foundation \
-    libshim_sensorndkbridge.so
+    libshim_sensorndkbridge
 
 ## SOUNDTRIGGER
 PRODUCT_PACKAGES += \
