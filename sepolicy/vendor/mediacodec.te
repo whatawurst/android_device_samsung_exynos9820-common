@@ -1,0 +1,15 @@
+# mediacodec
+
+# /sys/class/video4linux/
+allow mediacodec sysfs_v4l:dir r_dir_perms;
+
+# /sys/class/video4linux/v4l-subdev[0-9]+/name
+# /sys/class/video4linux/video[0-9]+/name
+allow mediacodec sysfs_v4l_mfc:dir r_dir_perms;
+allow mediacodec sysfs_v4l_mfc:file r_file_perms;
+
+allow mediacodec sysfs_v4l_fimc:dir r_dir_perms;
+allow mediacodec sysfs_v4l_fimc:file r_file_perms;
+
+allow mediacodec sysfs_v4l_gdc:dir r_dir_perms;
+allow mediacodec sysfs_v4l_gdc:file r_file_perms;
