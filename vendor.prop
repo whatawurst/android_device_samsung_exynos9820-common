@@ -17,6 +17,11 @@ ro.vendor.ddk.set.afbc=1
 ro.hardware.keystore=mdfpp
 ro.security.keystore.keytype=sak,gak
 
+### RIL
+vendor.rild.libpath=/vendor/lib64/libsec-ril.so
+vendor.sec.rild.libpath=/vendor/lib64/libsec-ril.so
+vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
+
 ### SAMSUNG_SLSI
 debug.slsi_platform=1
 debug.hwc.winupdate=1
