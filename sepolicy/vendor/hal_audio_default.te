@@ -1,0 +1,10 @@
+# hal_audio_default.te
+
+get_prop(hal_audio_default, vendor_radio_prop)
+
+# /mnt/vendor/efs/
+allow hal_audio_default efs_file:dir r_dir_perms;
+
+# /mnt/vendor/efs/afc
+allow hal_audio_default sec_efs_file:dir r_dir_perms;
+allow hal_audio_default sec_efs_file:file r_file_perms;
