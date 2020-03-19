@@ -24,6 +24,13 @@
 
 # Camera
 /dev/jsqz                                    u:object_r:jsqz_device:s0
+/dev/m2m1shot_scaler0                        u:object_r:m2m1shot_device:s0
+
+# Eden
+/dev/vertex10                                u:object_r:npu_device:s0
+
+# Geotrans
+/dev/video155                                u:object_r:geotrans_device:s0
 
 # USB
 /dev/android_ssusbcon(/.*)?                  u:object_r:usb_device:s0
