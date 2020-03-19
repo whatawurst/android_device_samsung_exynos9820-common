@@ -1,7 +1,7 @@
 # mount point    fstype    device            [device2]                          fstype2
 /boot            emmc      /dev/block/platform/13d60000.ufs/by-name/boot
 /cache           ext4      /dev/block/platform/13d60000.ufs/by-name/cache
-/data            ext4      /dev/block/platform/13d60000.ufs/by-name/userdata    flags=fileencryption=ice
+/data            ext4      /dev/block/platform/13d60000.ufs/by-name/userdata    flags=fileencryption=ice,length=-20480
 /efs             ext4      /dev/block/platform/13d60000.ufs/by-name/efs         flags=backup;display="EFS"
 /misc            emmc      /dev/block/platform/13d60000.ufs/by-name/misc        flags=display="Misc"
 /modem           emmc      /dev/block/platform/13d60000.ufs/by-name/radio       flags=backup;display="Modem Firmware"
