@@ -8,7 +8,10 @@ type omr_block_device, dev_type;
 
 type bbd_device, dev_type;
 type bt_device, dev_type;
+type geotrans_device, dev_type;
 type io_device, dev_type;
 type jsqz_device, dev_type;
-type ssp_device, dev_type;
+type m2m1shot_device, dev_type;
+type npu_device, dev_type;
 type secmem_device, dev_type;
+type ssp_device, dev_type;
