@@ -58,6 +58,7 @@ genfscon sysfs /devices/system/chip-id                     u:object_r:sysfs_ss_w
 
 genfscon sysfs /devices/virtual/camera                     u:object_r:sysfs_camera:s0
 genfscon sysfs /devices/virtual/camera/rear/fw_update      u:object_r:sysfs_camera_writable:s0
+genfscon sysfs /devices/virtual/camera/rear/ssrm_camera_info u:object_r:sysfs_camera_writable:s0
 
 genfscon sysfs /devices/virtual/cirrus/cirrus_bd           u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/virtual/cirrus/cirrus_cal          u:object_r:sysfs_ss_writable:s0
