@@ -1,0 +1,3 @@
+# hal_power_default
+
+allow hal_power_default hal_miscpower_hwservice:hwservice_manager { add find };

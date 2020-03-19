@@ -1,4 +1,4 @@
-# mediacodec
+# mediacodec.te
 
 # /sys/class/video4linux/
 allow mediacodec sysfs_v4l:dir r_dir_perms;
