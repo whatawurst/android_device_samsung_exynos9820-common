@@ -21,6 +21,7 @@ genfscon sysfs /class/power_supply                         u:object_r:sysfs_batt
 genfscon sysfs /class/sec/gps                              u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /class/sec/sensors                          u:object_r:sysfs_sec_sensors:s0
 genfscon sysfs /class/sensors                              u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:s0
 
 # devices
 genfscon sysfs /devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value u:object_r:sysfs_gps_writable:s0
@@ -33,6 +34,14 @@ genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/otg/type    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/15d70000.hsi2c/i2c-14/14-003b/power_supply/mfc-charger/type    u:object_r:sysfs_batteryinfo:s0
+genfscon sysfs /devices/platform/17030000.fimc_is_sensor/video4linux u:object_r:sysfs_v4l_fimc:s0
+genfscon sysfs /devices/platform/17040000.fimc_is_sensor/video4linux u:object_r:sysfs_v4l_fimc:s0
+genfscon sysfs /devices/platform/17050000.fimc_is_sensor2/video4linux u:object_r:sysfs_v4l_fimc:s0
+genfscon sysfs /devices/platform/17060000.fimc_is_sensor/video4linux u:object_r:sysfs_v4l_fimc:s0
+genfscon sysfs /devices/platform/17090000.fimc_is_sensor/video4linux u:object_r:sysfs_v4l_fimc:s0
+genfscon sysfs /devices/platform/170e0000.fimc_is/video4linux u:object_r:sysfs_v4l_fimc:s0
+genfscon sysfs /devices/platform/17530000.gdc/video4linux u:object_r:sysfs_v4l_gdc:s0
+genfscon sysfs /devices/platform/188d0000.mfc/video4linux  u:object_r:sysfs_v4l_mfc:s0
 genfscon sysfs /devices/platform/19030000.decon_f          u:object_r:sysfs_decon:s0
 genfscon sysfs /devices/platform/19030000.decon_f/vsync    u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/19050000.decon_t          u:object_r:sysfs_decon:s0
@@ -43,6 +52,7 @@ genfscon sysfs /devices/platform/battery/power_supply      u:object_r:sysfs_batt
 genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill0/state u:object_r:sysfs_bt_writable:s0
 genfscon sysfs /devices/platform/npu@17800000/version      u:object_r:sysfs_npu_version:s0
 genfscon sysfs /devices/platform/panel@0/lcd/panel         u:object_r:sysfs_lcd_writable:s0
+
 genfscon sysfs /devices/soc0/soc_id                        u:object_r:sysfs_socinfo:s0
 genfscon sysfs /devices/system/chip-id                     u:object_r:sysfs_ss_writable:s0
 
