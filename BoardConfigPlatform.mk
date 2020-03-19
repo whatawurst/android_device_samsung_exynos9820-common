@@ -177,6 +177,8 @@ WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path
 # Use stock RIL stack
 ENABLE_VENDOR_RIL_SERVICE := true
 
+### ALLOW VENDOR FILE OVERRIDE
+BUILD_BROKEN_DUP_RULES := true
 
 ### RECOVERY
 BOARD_HAS_DOWNLOAD_MODE := true
