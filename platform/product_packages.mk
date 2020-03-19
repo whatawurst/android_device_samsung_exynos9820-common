@@ -40,6 +40,9 @@ PRODUCT_PACKAGES += \
     camera.device@3.4-impl \
     camera.device@3.5-impl
 
+PRODUCT_PACKAGES += \
+    Snap
+
 ### DRM
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-impl \
