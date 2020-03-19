@@ -57,6 +57,7 @@ genfscon sysfs /devices/soc0/soc_id                        u:object_r:sysfs_soci
 genfscon sysfs /devices/system/chip-id                     u:object_r:sysfs_ss_writable:s0
 
 genfscon sysfs /devices/virtual/camera                     u:object_r:sysfs_camera:s0
+genfscon sysfs /devices/virtual/camera/rear/fw_update      u:object_r:sysfs_camera_writable:s0
 
 genfscon sysfs /devices/virtual/cirrus/cirrus_bd           u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/virtual/cirrus/cirrus_cal          u:object_r:sysfs_ss_writable:s0
@@ -73,3 +74,4 @@ genfscon sysfs /devices/virtual/thermal/                   u:object_r:sysfs_ther
 
 genfscon sysfs /kernel/ems/                                u:object_r:sysfs_ems:s0
 genfscon sysfs /kernel/ems/frt/disable_cpufreq             u:object_r:sysfs_ems_writable:s0
+genfscon sysfs /kernel/mm/vmscan/mem_boost_mode            u:object_r:sysfs_mem_boost_writable:s0
