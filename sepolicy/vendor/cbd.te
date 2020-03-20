@@ -15,7 +15,8 @@ allow cbd block_device:dir search;
 allow cbd log_vendor_data_file:dir search;
 
 # /data/vendor/log/cbd
-allow cbd log_cbd_vendor_data_file:file rw_file_perms;
+allow cbd log_cbd_vendor_data_file:dir create_dir_perms;
+allow cbd log_cbd_vendor_data_file:file create_file_perms;
 
 # /dev/block/platform/.+/by-name/radio
 allow cbd radio_block_device:blk_file r_file_perms;
