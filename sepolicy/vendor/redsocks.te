@@ -1,0 +1,7 @@
+# at_distributor.te
+
+type at_distributor, domain, coredomain;
+type at_distributor_exec, exec_type, system_file_type, file_type;
+
+# at_distributor is started by init, type transit from init domain to at_distributor domain
+init_daemon_domain(at_distributor)

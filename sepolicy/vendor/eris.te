@@ -1,0 +1,7 @@
+# eris.te
+
+type eris, domain, coredomain;
+type eris_exec, exec_type, system_file_type, file_type;
+
+# eris is started by init, type transit from init domain to eris domain
+init_daemon_domain(eris)

@@ -1,0 +1,7 @@
+# diagexe.te
+
+type diagexe, domain, coredomain;
+type diagexe_exec, exec_type, system_file_type, file_type;
+
+# diagexe is started by init, type transit from init domain to diagexe domain
+init_daemon_domain(diagexe)

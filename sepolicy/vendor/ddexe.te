@@ -1,0 +1,7 @@
+# ddexe.te
+
+type ddexe, domain, coredomain;
+type ddexe_exec, exec_type, system_file_type, file_type;
+
+# ddexe is started by init, type transit from init domain to ddexe domain
+init_daemon_domain(ddexe)

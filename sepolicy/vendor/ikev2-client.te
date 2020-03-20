@@ -1,0 +1,7 @@
+# ikev2-client.te
+
+type ikev2-client, domain, coredomain;
+type ikev2-client_exec, exec_type, system_file_type, file_type;
+
+# ikev2-client is started by init, type transit from init domain to ikev2-client domain
+init_daemon_domain(ikev2-client)
