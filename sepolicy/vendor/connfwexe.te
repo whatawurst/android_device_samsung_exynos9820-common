@@ -5,3 +5,7 @@ type connfwexe_exec, exec_type, system_file_type, file_type;
 
 # connfwexe is started by init, type transit from init domain to connfwexe domain
 init_daemon_domain(connfwexe)
+
+# /data/.consocket_stream
+allow connfwexe system_data_file:dir remove_name;
+file_type_auto_trans(connfwexe, system_data_file, connfwexe_socket)

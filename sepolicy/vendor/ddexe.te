@@ -8,9 +8,23 @@ init_daemon_domain(ddexe)
 
 allow ddexe self:capability { setuid };
 
+# /data/.socket_stream
+allow ddexe system_data_file:dir remove_name;
+file_type_auto_trans(ddexe, system_data_file, ddexe_socket)
+
+# /dev/ttyGS0
+allow ddexe serial_device:chr_file rw_file_perms;
+
 # /mnt/vendor/efs
 allow ddexe efs_file:dir r_dir_perms;
+
+# /mnt/vendor/efs/Factory
+allow ddexe app_efs_file:dir r_dir_perms;
+allow ddexe app_efs_file:file r_file_perms;
 
 # /sys/devices/virtual/sec/switch/
 allow ddexe sysfs_sec_switch:dir r_dir_perms;
 allow ddexe sysfs_sec_switch:file r_file_perms;
+
+# ro.hardware.chipname
+get_prop(ddexe, vendor_default_prop)
