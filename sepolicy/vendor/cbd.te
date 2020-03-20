@@ -8,6 +8,9 @@ allow cbd self:capability setuid;
 # cbd is started by init, type transit from init domain to cbd domain
 init_daemon_domain(cbd)
 
+# /dev/block/
+allow cbd block_device:dir search;
+
 # /data/vendor/log
 allow cbd log_vendor_data_file:dir search;
 
@@ -22,6 +25,9 @@ allow cbd kmsg_device:chr_file rw_file_perms;
 
 # /dev/umts_*
 allow cbd vendor_radio_device:chr_file rw_file_perms;
+
+# /mnt/vendor/
+allow cbd mnt_vendor_file:dir search;
 
 # /mnt/vendor/efs/
 allow cbd efs_file:dir r_dir_perms;
