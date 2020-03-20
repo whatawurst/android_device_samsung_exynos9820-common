@@ -49,6 +49,7 @@
 
 # Radio
 /dev/umts_boot0                              u:object_r:vendor_radio_device:s0
+/dev/umts_ipc[0-1]                           u:object_r:vendor_radio_device:s0
 /dev/umts_dm0                                u:object_r:vendor_radio_device:s0
 /dev/umts_rfs0                               u:object_r:vendor_radio_device:s0
 /dev/umts_router                             u:object_r:vendor_radio_device:s0
