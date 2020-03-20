@@ -3,5 +3,16 @@
 type diagexe, domain, coredomain;
 type diagexe_exec, exec_type, system_file_type, file_type;
 
+allow diagexe self:capability { setuid };
+
 # diagexe is started by init, type transit from init domain to diagexe domain
 init_daemon_domain(diagexe)
+
+# /dev/ttyGS1
+allow diagexe serial_device:chr_file rw_file_perms;
+
+# /dev/umts_*
+allow diagexe vendor_radio_device:chr_file rw_file_perms;
+
+# /storage
+allow diagexe storage_file:dir search;

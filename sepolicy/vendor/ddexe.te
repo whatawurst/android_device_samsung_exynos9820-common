@@ -5,3 +5,12 @@ type ddexe_exec, exec_type, system_file_type, file_type;
 
 # ddexe is started by init, type transit from init domain to ddexe domain
 init_daemon_domain(ddexe)
+
+allow ddexe self:capability { setuid };
+
+# /mnt/vendor/efs
+allow ddexe efs_file:dir r_dir_perms;
+
+# /sys/devices/virtual/sec/switch/
+allow ddexe sysfs_sec_switch:dir r_dir_perms;
+allow ddexe sysfs_sec_switch:file r_file_perms;

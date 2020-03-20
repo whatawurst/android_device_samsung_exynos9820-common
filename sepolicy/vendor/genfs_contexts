@@ -25,6 +25,7 @@ genfscon sysfs /class/sensors                              u:object_r:sysfs_sens
 genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:s0
 
 # devices
+genfscon sysfs /devices/platform/10000.mif_pdata/sim/      u:object_r:sysfs_sim:s0
 genfscon sysfs /devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value u:object_r:sysfs_gps_writable:s0
 genfscon sysfs /devices/platform/10970000.spi/             u:object_r:sysfs_spi_writeable:s0
 genfscon sysfs /devices/platform/11ce0000.speedy/i2c-6/6-0003/input/input13/name u:object_r:sysfs_ss_writable:s0
@@ -69,6 +70,7 @@ genfscon sysfs /devices/virtual/cirrus/cirrus_pwr          u:object_r:sysfs_ss_w
 genfscon sysfs /devices/virtual/lcd/panel                  u:object_r:sysfs_lcd_writable:s0
 genfscon sysfs /devices/virtual/sec/gps                    u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /devices/virtual/sec/sec_key                u:object_r:sysfs_sec_key:s0
+genfscon sysfs /devices/virtual/sec/switch                 u:object_r:sysfs_sec_switch:s0
 genfscon sysfs /devices/virtual/sensors                    u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/input/input4               u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/input/input6               u:object_r:sysfs_sensors_writable:s0

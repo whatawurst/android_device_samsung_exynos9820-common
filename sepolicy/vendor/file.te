@@ -48,6 +48,8 @@ type sysfs_scsi_host, sysfs_type, r_fs_type, fs_type;
 type sysfs_sec_gps, sysfs_type, r_fs_type, fs_type;
 type sysfs_sec_key, sysfs_type, r_fs_type, fs_type;
 type sysfs_sec_sensors, sysfs_type, r_fs_type, fs_type;
+type sysfs_sec_switch, sysfs_type, r_fs_type, fs_type;
+type sysfs_sim, sysfs_type, r_fs_type, fs_type;
 type sysfs_socinfo, sysfs_type, r_fs_type, fs_type;
 type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
 type sysfs_v4l_fimc, sysfs_type, r_fs_type, fs_type;
