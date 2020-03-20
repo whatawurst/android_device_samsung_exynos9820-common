@@ -10,6 +10,7 @@ type log_vendor_data_file, file_type, data_file_type;
 type media_vendor_data_file, file_type, data_file_type;
 type npu_vendor_data_file, file_type, data_file_type;
 type radio_vendor_data_file, file_type, data_file_type;
+type log_cbd_vendor_data_file, file_type, data_file_type;
 
 # DEBUGFS
 type debugfs_mali, fs_type, debugfs_type;

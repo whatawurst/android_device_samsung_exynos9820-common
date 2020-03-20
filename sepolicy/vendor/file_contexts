@@ -4,6 +4,7 @@
 /data/vendor/eden(/.*)?                      u:object_r:npu_vendor_data_file:s0
 /data/vendor/eden/gpu(/.*)?                  u:object_r:eden_gpu_vendor_data_file:s0
 /data/vendor/log(/.*)?                       u:object_r:log_vendor_data_file:s0
+/data/vendor/log/cbd(/.*)?                   u:object_r:log_cbd_vendor_data_file:s0
 /data/vendor/media(/.*)?                     u:object_r:media_vendor_data_file:s0
 /data/vendor/gk(/.*)?                        u:object_r:gk_vendor_data_file:s0
 /data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
