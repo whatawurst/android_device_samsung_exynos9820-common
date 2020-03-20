@@ -1,0 +1,7 @@
+# smdexe.te
+
+type smdexe, domain, coredomain;
+type smdexe_exec, exec_type, system_file_type, file_type;
+
+# smdexe is started by init, type transit from init domain to smdexe domain
+init_daemon_domain(smdexe)

@@ -1,0 +1,7 @@
+# connfwexe.te
+
+type connfwexe, domain, coredomain;
+type connfwexe_exec, exec_type, system_file_type, file_type;
+
+# connfwexe is started by init, type transit from init domain to connfwexe domain
+init_daemon_domain(connfwexe)
