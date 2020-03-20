@@ -3,6 +3,9 @@
 # /mnt/vendor
 allow macloader mnt_vendor_file:dir search;
 
+# /mnt/vendor/efs
+allow macloader efs_file:dir rw_dir_perms;
+
 # /mnt/vendor/efs/wifi
 allow macloader wifi_efs_file:dir rw_dir_perms;
 allow macloader wifi_efs_file:file rw_file_perms;
