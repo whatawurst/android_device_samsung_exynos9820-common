@@ -5,3 +5,24 @@ type cbd_exec, exec_type, vendor_file_type, file_type;
 
 # cbd is started by init, type transit from init domain to cbd domain
 init_daemon_domain(cbd)
+
+# /dev/umts_*
+allow cbd vendor_radio_device:chr_file rw_file_perms;
+
+# /mnt/vendor/efs/
+allow cbd efs_file:dir r_dir_perms;
+
+# /mnt/vendor/efs/nv_data.bin
+allow cbd bin_nv_data_efs_file:file r_file_perms;
+
+# /proc/cmdline
+allow cbd proc_cmdline:file r_file_perms;
+
+# /sys/power/wake_unlock
+allow cbd sysfs_wake_lock:file rw_file_perms;
+
+# /sys/devices/platform/10000.mif_pdata/sim/ds_detect
+allow cbd sysfs_sim:file rw_file_perms;
+
+# vendor.cbd.
+set_prop(cbd, vendor_cbd_prop)
