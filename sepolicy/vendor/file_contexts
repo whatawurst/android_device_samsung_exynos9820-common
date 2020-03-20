@@ -7,6 +7,7 @@
 /data/vendor/media(/.*)?                     u:object_r:media_vendor_data_file:s0
 /data/vendor/gk(/.*)?                        u:object_r:gk_vendor_data_file:s0
 /data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
+/data/vendor/secradio(/.*)?                  u:object_r:radio_vendor_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 
 ### DEV
@@ -36,6 +37,10 @@
 /dev/android_ssusbcon(/.*)?                  u:object_r:usb_device:s0
 /dev/usb(/.*)?                               u:object_r:usb_device:s0
 /dev/usb_mtp                                 u:object_r:mtp_device:s0
+
+# Radio
+/dev/umts_boot0                              u:object_r:vendor_radio_device:s0
+/dev/umts_rfs0                               u:object_r:vendor_radio_device:s0
 
 # Serial
 /dev/ttyGS[0-9]*                             u:object_r:serial_device:s0
