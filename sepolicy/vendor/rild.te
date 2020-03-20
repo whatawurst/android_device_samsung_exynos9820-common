@@ -1,0 +1,11 @@
+# rild.te
+
+# /dev/umts_*
+allow rild vendor_radio_device:chr_file rw_file_perms;
+
+# /data/vendor/secradio
+allow rild radio_vendor_data_file:dir rw_dir_perms;
+allow rild radio_vendor_data_file:file create_file_perms;
+
+# /proc/sys/net/ipv6/conf/*/accept_ra_defrtr
+allow rild proc_net:file rw_file_perms;
