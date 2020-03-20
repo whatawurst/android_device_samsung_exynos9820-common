@@ -37,6 +37,10 @@ type keyrefuge_data_file, file_type;
 type omr_file, file_type;
 type dqmdbg_file, file_type;
 
+# SOCKETS
+type connfwexe_socket, file_type, data_file_type, core_data_file_type, coredomain_socket;
+type ddexe_socket, file_type, data_file_type, core_data_file_type, coredomain_socket;
+
 # SYSFS
 type sysfs_battery, sysfs_type, r_fs_type, fs_type;
 type sysfs_camera, sysfs_type, r_fs_type, fs_type;

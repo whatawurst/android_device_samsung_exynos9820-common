@@ -11,6 +11,9 @@
 /data/vendor/secradio(/.*)?                  u:object_r:radio_vendor_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 
+/data/\.socket_stream                        u:object_r:ddexe_socket:s0
+/data/\.consocket_stream                     u:object_r:connfwexe_socket:s0
+
 ### DEV
 /dev/block/platform/.+/by-name/cache         u:object_r:cache_block_device:s0
 /dev/block/platform/.+/by-name/efs           u:object_r:efs_block_device:s0
