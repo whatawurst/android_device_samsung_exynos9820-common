@@ -7,13 +7,17 @@ init_daemon_domain(gpsd)
 allow gpsd rild:unix_stream_socket connectto;
 
 get_prop(gpsd, vendor_radio_prop)
+get_prop(gpsd, vendor_public_radio_prop)
+get_prop(gpsd, vendor_public_config_prop)
 
 get_prop(gpsd, hwservicemanager_prop)
 hwbinder_use(gpsd)
 allow gpsd system_suspend_hwservice:hwservice_manager { find };
-binder_call(gpsd, system_suspend_server)
-
 allow gpsd fwk_sensor_hwservice:hwservice_manager { find };
+
+binder_call(gpsd, system_suspend_server)
+binder_call(gpsd, system_server)
+binder_call(system_server, gpsd)
 
 allow gpsd self:netlink_kobject_uevent_socket create_socket_perms_no_ioctl;
 allow gpsd self:{ tcp_socket udp_socket } create_stream_socket_perms;
@@ -26,6 +30,7 @@ allow gpsd cgroup:file getattr;
 
 # /dev/socket/dnsproxyd
 allow gpsd dnsproxyd_socket:sock_file write;
+# neverallow: unix_socket_connect(gpsd, dnsproxyd, netd);
 
 # /dev/socket/fwmarkd
 allow gpsd fwmarkd_socket:sock_file write;
