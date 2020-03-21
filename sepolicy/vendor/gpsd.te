@@ -1,4 +1,4 @@
-type gpsd, domain;
+type gpsd, domain, netdomain;
 type gpsd_exec, exec_type, vendor_file_type, file_type;
 
 # gpsd is started by init, type transit from init domain to gpsd domain
@@ -27,10 +27,6 @@ allow gpsd node:{ tcp_socket udp_socket } node_bind;
 
 # /acct/tasks
 allow gpsd cgroup:file getattr;
-
-# /dev/socket/dnsproxyd
-allow gpsd dnsproxyd_socket:sock_file write;
-# neverallow: unix_socket_connect(gpsd, dnsproxyd, netd);
 
 # /dev/socket/fwmarkd
 allow gpsd fwmarkd_socket:sock_file write;
