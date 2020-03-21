@@ -25,6 +25,9 @@ persist.vendor.sys.camera.     u:object_r:vendor_camera_prop:s0
 # GPS
 ro.spid.gps.                   u:object_r:vendor_gps_prop:s0
 
+# MDC
+mdc.                           u:object_r:vendor_mdc_prop:s0
+
 # RADIO
 persist.ril.                   u:object_r:radio_prop:s0
 ro.vendor.multisim.simslotcount u:object_r:vendor_radio_prop:s0
