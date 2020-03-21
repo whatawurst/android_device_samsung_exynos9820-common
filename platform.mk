@@ -17,8 +17,7 @@
 PLATFORM_PATH := device/samsung/exynos9820-common
 
 DEVICE_PACKAGE_OVERLAYS += \
-    $(PLATFORM_PATH)/overlay \
-    $(PLATFORM_PATH)/overlay-lineage
+    $(PLATFORM_PATH)/overlay
 
 ### RECOVERY
 ifeq ($(WITH_TWRP),true)
