@@ -24,6 +24,8 @@ set_prop(hal_camera_default, vendor_camera_prop)
 add_hwservice(hal_camera_default, hal_vendor_multiframeprocessing_hwservice)
 add_hwservice(hal_camera_default, hal_vendor_iva_hwservice)
 
+binder_call(hal_camera_default, system_server)
+
 # /acct/tasks
 allow hal_camera_default cgroup:file getattr;
 
