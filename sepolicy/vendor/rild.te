@@ -65,3 +65,6 @@ get_prop(rild, vendor_public_csc_prop);
 
 # vendor.cbd.
 set_prop(rild, vendor_cbd_prop)
+
+# ro.boot.cpboot, ril.NwNmId[0-9]
+get_prop(rild, vendor_public_radio_prop)
