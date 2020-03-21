@@ -4,6 +4,8 @@ type gpsd_exec, exec_type, vendor_file_type, file_type;
 # gpsd is started by init, type transit from init domain to gpsd domain
 init_daemon_domain(gpsd)
 
+allow gpsd rild:unix_stream_socket connectto;
+
 get_prop(gpsd, vendor_radio_prop)
 
 get_prop(gpsd, hwservicemanager_prop)
