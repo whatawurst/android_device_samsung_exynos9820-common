@@ -55,13 +55,13 @@ allow rild proc_qtaguid_stat:file r_file_perms;
 allow rild proc_net:file rw_file_perms;
 
 # mdc.
-get_prop(rild, vendor_mdc_prop);
+get_prop(rild, vendor_public_config_prop);
 
 # persist.sys.omc_support
-set_prop(rild, vendor_omc_prop)
+set_prop(rild, vendor_public_omc_prop)
 
 # ro.csc.
-get_prop(rild, vendor_csc_prop);
+get_prop(rild, vendor_public_csc_prop);
 
 # vendor.cbd.
 set_prop(rild, vendor_cbd_prop)
