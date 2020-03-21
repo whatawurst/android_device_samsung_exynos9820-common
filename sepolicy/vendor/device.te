@@ -7,6 +7,7 @@ type keyrefuge_block_device, dev_type;
 type modem_block_device, dev_type;
 type omr_block_device, dev_type;
 type radio_block_device, dev_type;
+type sec_efs_block_device, dev_type;
 
 type bbd_device, dev_type;
 type bt_device, dev_type;
