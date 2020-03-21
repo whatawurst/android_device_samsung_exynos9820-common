@@ -5,6 +5,9 @@ vndbinder_use(hal_camera_default)
 allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
 get_prop(hal_camera_default, hwservicemanager_prop)
 
+# ro.csc
+get_prop(hal_camera_default, vendor_csc_prop)
+
 set_prop(hal_camera_default, sec_camera_prop)
 set_prop(hal_camera_default, vendor_camera_prop)
 
