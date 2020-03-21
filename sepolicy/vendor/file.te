@@ -21,6 +21,7 @@ type debugfs_ion_dma, fs_type, debugfs_type;
 # EFS
 type app_efs_file, file_type;
 type bin_nv_data_efs_file, file_type;
+type imei_efs_file, file_type;
 type pfw_efs_file, file_type;
 type prov_efs_file, file_type;
 type sec_efs_file, file_type;
