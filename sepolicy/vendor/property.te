@@ -9,5 +9,6 @@ type sec_camera_prop, property_type;
 type vendor_bluetooth_prop, property_type;
 type vendor_cbd_prop, property_type;
 type vendor_camera_prop, property_type;
+type vendor_csc_prop, property_type;
 type vendor_gps_prop, property_type;
 type vendor_radio_prop, property_type;

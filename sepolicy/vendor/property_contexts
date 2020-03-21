@@ -6,6 +6,9 @@ persist.data.wda.              u:object_r:persist_data_wda_prop:s0
 vendor.cbd.                    u:object_r:vendor_cbd_prop:s0
 persist.vendor.cbd.            u:object_r:vendor_radio_prop:s0
 
+# CSC
+ro.csc.                        u:object_r:vendor_csc_prop:s0
+
 # RFKILL
 ro.rfkilldisabled              u:object_r:rfkilldisabled_prop:s0
 
