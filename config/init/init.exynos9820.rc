@@ -1019,6 +1019,10 @@ on boot
     chown system system /sys/class/sec/tsp/input/enabled
     chown system system /sys/class/power_supply/battery/lcd
 
+# Sensors permissions
+    chown system system /sys/class/sec/tsp/cmd
+    chown system system /sys/class/sec/tsp/ear_detect_enable
+
 # Permission for UART SWITCH
     chmod 0660 /sys/class/sec/switch/uart_sel
     chown system system /sys/class/sec/switch/uart_sel
