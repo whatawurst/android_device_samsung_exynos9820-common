@@ -6,19 +6,17 @@ allow hal_camera_default hal_graphics_mapper_hwservice:hwservice_manager find;
 get_prop(hal_camera_default, hwservicemanager_prop)
 
 # ro.build.PDA
-get_prop(hal_camera_default, vendor_public_build_prop)
+get_prop(hal_camera_default, exported2_default_prop)
 
 # ro.csc
-get_prop(hal_camera_default, vendor_public_csc_prop)
+# mdc.set_partnerid
+get_prop(hal_camera_default, exported_config_prop)
 
 # ril.NwNmId[0-9]
-get_prop(hal_camera_default, vendor_public_radio_prop)
-
-# mdc.set_partnerid
-get_prop(hal_camera_default, vendor_public_config_prop);
+get_prop(hal_camera_default, exported_radio_prop)
 
 # sys.cameramode
-set_prop(hal_camera_default, vendor_public_camera_prop)
+set_prop(hal_camera_default, exported_camera_prop)
 set_prop(hal_camera_default, vendor_camera_prop)
 
 add_hwservice(hal_camera_default, hal_vendor_multiframeprocessing_hwservice)

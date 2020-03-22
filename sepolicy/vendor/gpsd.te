@@ -7,8 +7,8 @@ init_daemon_domain(gpsd)
 allow gpsd rild:unix_stream_socket connectto;
 
 get_prop(gpsd, vendor_radio_prop)
-get_prop(gpsd, vendor_public_radio_prop)
-get_prop(gpsd, vendor_public_config_prop)
+get_prop(gpsd, exported_radio_prop)
+get_prop(gpsd, exported_config_prop)
 
 get_prop(gpsd, hwservicemanager_prop)
 hwbinder_use(gpsd)
