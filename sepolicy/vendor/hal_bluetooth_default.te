@@ -5,7 +5,7 @@ get_prop(hal_bluetooth_default, rfkilldisabled_prop)
 # vendor.bluetooth_fw_ver
 set_prop(hal_bluetooth_default, wifi_log_prop)
 # sys.bluetooth.tty
-set_prop(hal_bluetooth_default, vendor_public_bluetooth_prop)
+set_prop(hal_bluetooth_default, exported_bluetooth_prop)
 
 # /dev/ttySAC[0-9]
 allow hal_bluetooth_default bt_device:chr_file rw_file_perms;
