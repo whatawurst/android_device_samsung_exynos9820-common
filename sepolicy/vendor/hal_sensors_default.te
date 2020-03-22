@@ -27,6 +27,9 @@ allow hal_sensors_default sysfs_iio:file r_file_perms;
 allow hal_sensors_default sysfs_sec_sensors:dir r_dir_perms;
 allow hal_sensors_default sysfs_sec_sensors:file r_file_perms;
 
+# /sys/class/sensors/ssp_sensor/enable
+allow hal_sensors_default sysfs_sensors_writable:file rw_file_perms;
+
 # /sys/devices/platform/10970000.spi/
 allow hal_sensors_default sysfs_spi_writeable:dir r_dir_perms;
 allow hal_sensors_default sysfs_spi_writeable:file rw_file_perms;
@@ -37,13 +40,21 @@ allow hal_sensors_default sysfs_lcd_writable:file r_file_perms;
 
 # /sys/devices/virtual/input/input4
 # /sys/devices/virtual/input/input6
-allow hal_sensors_default sysfs_sensors_writable:dir r_dir_perms;
-allow hal_sensors_default sysfs_sensors_writable:file rw_file_perms;
+allow hal_sensors_default sysfs_sensors:dir r_dir_perms;
+allow hal_sensors_default sysfs_sensors:file r_file_perms;
 
 # /sys/devices/virtual/sensors/magnetic_sensor/vendor
-allow hal_sensors_default sysfs_sensors_writable:dir r_dir_perms;
-allow hal_sensors_default sysfs_sensors_writable:file r_file_perms;
+allow hal_sensors_default sysfs_sensors:dir r_dir_perms;
+allow hal_sensors_default sysfs_sensors:file r_file_perms;
 
 # /sys/devices/virtual/sec/sec_key/hall_detect
 allow hal_sensors_default sysfs_sec_key:dir r_dir_perms;
 allow hal_sensors_default sysfs_sec_key:file r_file_perms;
+
+# /sys/class/sec/tsp/
+allow hal_sensors_default sysfs_sec_touchscreen:dir r_dir_perms;
+allow hal_sensors_default sysfs_sec_touchscreen:file r_file_perms;
+
+# /sys/class/sec/tsp/ear_detect_enable
+# /sys/class/sec/tsp/cmd
+allow hal_sensors_default sysfs_touchscreen_writable:file rw_file_perms;

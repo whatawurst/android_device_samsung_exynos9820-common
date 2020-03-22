@@ -16,13 +16,13 @@ genfscon sysfs /bus/iio/devices                            u:object_r:sysfs_iio:
 # class
 genfscon sysfs /class/android_usb/android0                 u:object_r:sysfs_android_usb:s0
 genfscon sysfs /class/camera                               u:object_r:sysfs_camera:s0
-genfscon sysfs /class/input/input4                         u:object_r:sysfs_sensors_writable:s0
-genfscon sysfs /class/input/input6                         u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /class/input/input4                         u:object_r:sysfs_sensors:s0
+genfscon sysfs /class/input/input6                         u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/power_supply                         u:object_r:sysfs_battery:s0
 genfscon sysfs /class/sec/gps                              u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /class/sec/sensors                          u:object_r:sysfs_sec_sensors:s0
 genfscon sysfs /class/sec/tsp                              u:object_r:sysfs_sec_touchscreen:s0
-genfscon sysfs /class/sensors                              u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /class/sensors                              u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:s0
 
 # devices
@@ -75,7 +75,12 @@ genfscon sysfs /devices/virtual/sec/gps                    u:object_r:sysfs_sec_
 genfscon sysfs /devices/virtual/sec/sec_key                u:object_r:sysfs_sec_key:s0
 genfscon sysfs /devices/virtual/sec/switch                 u:object_r:sysfs_sec_switch:s0
 genfscon sysfs /devices/virtual/sec/tsp                    u:object_r:sysfs_sec_touchscreen:s0
-genfscon sysfs /devices/virtual/sensors                    u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sec/tsp/cmd                u:object_r:sysfs_sec_touchscreen:s0
+genfscon sysfs /devices/virtual/sec/tsp/ear_detect_enable  u:object_r:sysfs_sec_touchscreen:s0
+genfscon sysfs /devices/virtual/sensors                    u:object_r:sysfs_sensors:s0
+genfscon sysfs /devices/virtual/sensors/ssp_sensor/enable  u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sensors/ssp_sensor/ssp_flush u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/sensors/hidden_hole/hh_check_coef u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/input/input4               u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/input/input6               u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power    u:object_r:sysfs_sensorhub_writable:s0
