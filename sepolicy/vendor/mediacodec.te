@@ -1,5 +1,7 @@
 # mediacodec.te
 
+hal_client_domain(mediacodec, hal_power);
+
 # /sys/class/video4linux/
 allow mediacodec sysfs_v4l:dir r_dir_perms;
 
