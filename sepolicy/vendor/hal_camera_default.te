@@ -15,6 +15,9 @@ get_prop(hal_camera_default, exported_config_prop)
 # ril.NwNmId[0-9]
 get_prop(hal_camera_default, exported_radio_prop)
 
+# ro.factory.factory_binary
+get_prop(hal_camera_default, vendor_factory_prop)
+
 # sys.cameramode
 set_prop(hal_camera_default, exported_camera_prop)
 set_prop(hal_camera_default, vendor_camera_prop)
@@ -24,6 +27,8 @@ add_hwservice(hal_camera_default, hal_vendor_iva_hwservice)
 
 binder_call(hal_camera_default, system_server)
 binder_call(system_server, hal_camera_default)
+
+allow hal_camera_default hal_graphics_composer_default:fd use;
 
 # /acct/tasks
 allow hal_camera_default cgroup:file getattr;
