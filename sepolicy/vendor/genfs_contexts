@@ -76,8 +76,9 @@ genfscon sysfs /devices/virtual/sec/gps                    u:object_r:sysfs_sec_
 genfscon sysfs /devices/virtual/sec/sec_key                u:object_r:sysfs_sec_key:s0
 genfscon sysfs /devices/virtual/sec/switch                 u:object_r:sysfs_sec_switch:s0
 genfscon sysfs /devices/virtual/sec/tsp                    u:object_r:sysfs_sec_touchscreen:s0
-genfscon sysfs /devices/virtual/sec/tsp/cmd                u:object_r:sysfs_sec_touchscreen:s0
-genfscon sysfs /devices/virtual/sec/tsp/ear_detect_enable  u:object_r:sysfs_sec_touchscreen:s0
+genfscon sysfs /devices/virtual/sec/tsp/cmd                u:object_r:sysfs_touchscreen_writable:s0
+genfscon sysfs /devices/virtual/sec/tsp/ear_detect_enable  u:object_r:sysfs_touchscreen_writable:s0
+genfscon sysfs /devices/virtual/sensor_event               u:object_r:sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sensors                    u:object_r:sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sensors/ssp_sensor/enable  u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/sensors/ssp_sensor/ssp_flush u:object_r:sysfs_sensors_writable:s0
