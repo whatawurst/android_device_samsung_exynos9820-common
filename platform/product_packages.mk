@@ -50,7 +50,10 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.0-service \
     android.hardware.drm@1.2-service.clearkey
 
-### FINGERPRINT
+### BIOMETRICS
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.face@1.0
+
 #PRODUCT_PACKAGES += \
 #    android.hardware.biometrics.fingerprint@2.1-service.samsung
 
