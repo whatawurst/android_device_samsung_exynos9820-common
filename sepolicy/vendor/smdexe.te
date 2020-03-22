@@ -6,6 +6,13 @@ type smdexe_exec, exec_type, system_file_type, file_type;
 # smdexe is started by init, type transit from init domain to smdexe domain
 init_daemon_domain(smdexe)
 
+allow smdexe self:capability setuid;
+
+get_prop(smdexe, exported_config_prop)
+get_prop(smdexe, exported_radio_prop)
+
+allow smdexe ddexe:unix_stream_socket connectto;
+
 # /data/
 allow smdexe system_data_file:dir rw_dir_perms;
 
