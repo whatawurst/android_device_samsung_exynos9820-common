@@ -1,0 +1,5 @@
+# cameraserver.te
+typeattribute cameraserver system_writes_vendor_properties_violators;
+
+# service.camera.running
+set_prop(cameraserver, exported_camera_prop)
