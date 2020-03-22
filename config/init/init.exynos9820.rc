@@ -1014,6 +1014,10 @@ on boot
     mkdir /efs/biometrics 0770 system system
     mkdir /efs/biometrics/meta 0770 system system
 
+# Misc Power permissions
+# strings vendor.samsung.hardware.miscpower@2.0-service | grep ^/sys
+    chown system system /sys/class/sec/tsp/input/enabled
+    chown system system /sys/class/power_supply/battery/lcd
 
 # Permission for UART SWITCH
     chmod 0660 /sys/class/sec/switch/uart_sel
