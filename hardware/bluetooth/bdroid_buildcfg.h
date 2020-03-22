@@ -45,11 +45,10 @@ static inline const char* getBTDefaultName()
 #define BTM_DEF_LOCAL_NAME getBTDefaultName()
 #endif /* OS_GENERIC */
 
-/* Wide-band speech support */
-#define BTM_WBS_INCLUDED TRUE
-#define BTIF_HF_WBS_PREFERRED TRUE
-
-/* Vendor extensions */
+/*
+ * Toggles support for vendor specific extensions such as RPA offloading,
+ * feature discovery, multi-adv etc.
+ */
 #define BLE_VND_INCLUDED TRUE
 
 #pragma pop_macro("PROPERTY_VALUE_MAX")
