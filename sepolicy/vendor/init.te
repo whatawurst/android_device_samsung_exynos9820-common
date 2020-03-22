@@ -22,6 +22,9 @@ allow init runtime_event_log_tags_file:file { getattr };
 # /dev/tziwsock
 allow init tz_user_device:chr_file rw_file_perms;
 
+# sap_uim_socket1
+allow init socket_device:sock_file { create setattr unlink };
+
 # /proc/sys/abi/swp
 allow init proc_abi:file { getattr };
 
