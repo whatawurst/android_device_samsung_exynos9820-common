@@ -23,6 +23,7 @@ genfscon sysfs /class/sec/gps                              u:object_r:sysfs_sec_
 genfscon sysfs /class/sec/sensors                          u:object_r:sysfs_sec_sensors:s0
 genfscon sysfs /class/sec/tsp                              u:object_r:sysfs_sec_touchscreen:s0
 genfscon sysfs /class/sensors                              u:object_r:sysfs_sensors:s0
+genfscon sysfs /class/sensor_event                         u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:s0
 
 # devices
