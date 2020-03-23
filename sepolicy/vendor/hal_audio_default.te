@@ -1,5 +1,8 @@
 # hal_audio_default.te
 
+allow hal_audio_default system_suspend_hwservice:hwservice_manager find;
+binder_call(hal_audio_default, system_suspend_server)
+
 get_prop(hal_audio_default, vendor_radio_prop)
 
 allow hal_audio_default rild:unix_stream_socket connectto;
