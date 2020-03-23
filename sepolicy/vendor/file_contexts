@@ -79,6 +79,10 @@
 # Secmem
 /dev/s5p-smem                                u:object_r:secmem_device:s0
 
+# Epic
+/dev/mode                                    u:object_r:epic_device:s0
+/dev/socket/epic                             u:object_r:epicd_socket:s0
+
 ### EFS
 /efs/DAK(/.*)?                               u:object_r:prov_efs_file:s0
 /efs/afc(/.*)?                               u:object_r:sec_efs_file:s0
@@ -127,6 +131,7 @@
 
 ### VENDOR
 /(vendor|system/vendor)/bin/cbd              u:object_r:cbd_exec:s0
+/(vendor|system/vendor)/bin/epic             u:object_r:epicd_exec:s0
 
 /(vendor|system/vendor)/bin/hw/gpsd          u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/hw/lhd           u:object_r:lhd_exec:s0
