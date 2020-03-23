@@ -150,6 +150,9 @@
          autodetected from the Configuration. -->
     <bool name="config_showNavigationBar">true</bool>
 
+    <!-- Whether UI for multi user should be shown -->
+    <bool name="config_enableMultiUserUI">false</bool>
+
     <!-- Remote server that can provide NTP responses. -->
     <string translatable="false" name="config_ntpServer">1.android.pool.ntp.org</string>
 
