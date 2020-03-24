@@ -18,6 +18,7 @@ type io_device, dev_type;
 type jsqz_device, dev_type;
 type m2m1shot_device, dev_type;
 type npu_device, dev_type;
+type pm_qos_device, dev_type;
 type secmem_device, dev_type;
 type ssp_device, dev_type;
 type vendor_radio_device, dev_type;
