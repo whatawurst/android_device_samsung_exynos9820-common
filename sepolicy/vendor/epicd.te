@@ -12,6 +12,11 @@ allow epicd vendor_shell_exec:file execute_no_trans;
 # execve("/vendor/bin/getprop", ["getprop", "ro.hardware"]
 allow epicd vendor_toolbox_exec:file execute_no_trans;
 
+# /dev/cluster[0-9]_freq_(max|min)
+# /dev/*_throughput*
+# /dev/gpu_freq_(max|min)
+allow epicd pm_qos_device:chr_file rw_file_perms;
+
 # /dev/socket/
 allow epicd socket_device:dir w_dir_perms;
 
