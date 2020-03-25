@@ -12,6 +12,9 @@ allow vold keyrefuge_data_file:dir r_dir_perms;
 # /mnt/vendor
 allow vold mnt_vendor_file:dir r_dir_perms;
 
+# /mnt/vendor/efs
+allow vold efs_file:dir r_dir_perms;
+
 # /sys/kernel/debug
 allow vold debugfs_trace_marker:file { getattr };
 
