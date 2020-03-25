@@ -18,10 +18,8 @@ genfscon sysfs /class/android_usb/android0                 u:object_r:sysfs_andr
 genfscon sysfs /class/camera                               u:object_r:sysfs_camera:s0
 genfscon sysfs /class/input/input4                         u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/input/input6                         u:object_r:sysfs_sensors:s0
-genfscon sysfs /class/power_supply                         u:object_r:sysfs_battery:s0
 genfscon sysfs /class/sec/gps                              u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /class/sec/sensors                          u:object_r:sysfs_sec_sensors:s0
-genfscon sysfs /class/sec/tsp                              u:object_r:sysfs_sec_touchscreen:s0
 genfscon sysfs /class/sensors                              u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/sensor_event                         u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:s0
@@ -53,8 +51,6 @@ genfscon sysfs /devices/platform/19050000.decon_t          u:object_r:sysfs_deco
 genfscon sysfs /devices/platform/19050000.decon_t/vsync    u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/19060000.decon_s          u:object_r:sysfs_decon:s0
 genfscon sysfs /devices/platform/19060000.decon_s/vsync    u:object_r:sysfs_ss_writable:s0
-genfscon sysfs /devices/platform/battery/power_supply      u:object_r:sysfs_battery:s0
-genfscon sysfs /devices/platform/battery/power_supply/battery/lcd   u:object_r:sysfs_battery_writable:s0
 genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill0/state u:object_r:sysfs_bt_writable:s0
 genfscon sysfs /devices/platform/npu@17800000/version      u:object_r:sysfs_npu_version:s0
 genfscon sysfs /devices/platform/panel@0/lcd/panel         u:object_r:sysfs_lcd_writable:s0
@@ -75,9 +71,6 @@ genfscon sysfs /devices/virtual/lcd/panel                  u:object_r:sysfs_lcd_
 genfscon sysfs /devices/virtual/sec/gps                    u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /devices/virtual/sec/sec_key                u:object_r:sysfs_sec_key:s0
 genfscon sysfs /devices/virtual/sec/switch                 u:object_r:sysfs_sec_switch:s0
-genfscon sysfs /devices/virtual/sec/tsp                    u:object_r:sysfs_sec_touchscreen:s0
-genfscon sysfs /devices/virtual/sec/tsp/cmd                u:object_r:sysfs_touchscreen_writable:s0
-genfscon sysfs /devices/virtual/sec/tsp/ear_detect_enable  u:object_r:sysfs_touchscreen_writable:s0
 genfscon sysfs /devices/virtual/sensor_event               u:object_r:sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sensors                    u:object_r:sysfs_sensors:s0
 genfscon sysfs /devices/virtual/sensors/ssp_sensor/enable  u:object_r:sysfs_sensors_writable:s0
