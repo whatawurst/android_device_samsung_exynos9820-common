@@ -434,14 +434,14 @@
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio</name>
         <transport>hwbinder</transport>
-        <version>2.0</version>
+        <version>2.1</version>
         <interface>
             <name>ISehRadio</name>
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
-        <fqname>@2.0::ISehRadio/slot1</fqname>
-        <fqname>@2.0::ISehRadio/slot2</fqname>
+        <fqname>@2.1::ISehRadio/slot1</fqname>
+        <fqname>@2.1::ISehRadio/slot2</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.radio.bridge</name>
@@ -534,22 +534,12 @@
     <hal format="hidl">
         <name>vendor.samsung.hardware.snap</name>
         <transport>hwbinder</transport>
-        <version>1.0</version>
+        <version>1.1</version>
         <interface>
             <name>ISehSnap</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.0::ISehSnap/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.tlc.atn</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehAtn</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehAtn/default</fqname>
+        <fqname>@1.1::ISehSnap/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.tlc.ddar</name>
@@ -562,16 +552,6 @@
         <fqname>@1.0::ISehDdar/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.tlc.iccc</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehIccc</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehIccc/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.tlc.payment</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -580,16 +560,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::ISehTlcPayment/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.tlc.tima</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehTima</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehTima/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.tlc.ucm</name>
