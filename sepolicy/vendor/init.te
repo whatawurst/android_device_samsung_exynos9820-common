@@ -16,6 +16,9 @@ allow init keyrefuge_data_file:dir { mounton };
 allow init mnt_vendor_file:dir { mounton };
 
 ### DEV
+# /dev/block/platform/13d60000.ufs/by-name/misc
+allow init misc_block_device:file rw_file_perms;
+
 # /dev/event-log-tags
 allow init runtime_event_log_tags_file:file { getattr };
 
