@@ -174,6 +174,8 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 # hardware/samsung/wifiloader/Android.mk
 WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
 
+WIFI_HIDL_FEATURE_DISABLE_AP_MAC_RANDOMIZATION := true
+
 ### RIL
 # Use stock RIL stack
 ENABLE_VENDOR_RIL_SERVICE := true
