@@ -15,10 +15,9 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "ExynosVibrator-HAL"
+#define LOG_TAG "vibrator@1.0-exynos9820"
 
 #include <android-base/logging.h>
-
 #include <android-base/stringprintf.h>
 
 #include <hardware/hardware.h>
