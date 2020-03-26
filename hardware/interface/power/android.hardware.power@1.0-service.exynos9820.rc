@@ -1,0 +1,7 @@
+service sec-miscpower-1-0 /vendor/bin/true
+    disabled
+
+service power-hal-1-0 /vendor/bin/hw/android.hardware.power@1.0-service.exynos9820
+    class hal
+    user system
+    group system
