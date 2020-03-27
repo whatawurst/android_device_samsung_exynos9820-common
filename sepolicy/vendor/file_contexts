@@ -61,10 +61,6 @@
 /dev/bbd_urgent_patch                        u:object_r:bbd_device:s0
 /dev/ttyBCM[0-9]*                            u:object_r:bbd_device:s0
 
-# Sensors
-/dev/ssp_sensorhub                           u:object_r:ssp_device:s0
-/dev/batch_io                                u:object_r:io_device:s0
-
 # Secmem
 /dev/s5p-smem                                u:object_r:secmem_device:s0
 
