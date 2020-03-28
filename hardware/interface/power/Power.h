@@ -39,6 +39,8 @@ struct Power : public IPower {
     Return<void> getPlatformLowPowerStats(getPlatformLowPowerStats_cb _hidl_cb) override;
 
   private:
+    bool mDoubleTapEnabled;
+
     InteractionHandler mInteractionHandler;
     std::vector<std::string> interactiveNodes;
 };

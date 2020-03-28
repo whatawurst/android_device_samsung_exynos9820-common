@@ -88,8 +88,14 @@ Power::Power() {
 Return<void> Power::setInteractive(bool interactive) {
     writeNode("/sys/power/cpufreq_max_limit",
               interactive ? "2730000" : "1560000");
+
     for (size_t i = 0; i < interactiveNodes.size(); i++) {
         writeNode(interactiveNodes[i], interactive ? "1" : "0");
+    }
+
+    if (mDoubleTapEnabled) {
+        /* Enable double tap to wake */
+        writeNode("/sys/class/sec/tsp/cmd", "aot_enable,1");
     }
 
     return Void();
@@ -106,7 +112,22 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data) {
     return Void();
 }
 
-Return<void> Power::setFeature(Feature, bool)  {
+Return<void> Power::setFeature(Feature feature, bool activate)
+{
+    switch (feature) {
+    case Feature::POWER_FEATURE_DOUBLE_TAP_TO_WAKE:
+        if (activate) {
+            LOG(INFO) << "Enable double tap to wake";
+            mDoubleTapEnabled = true;
+        } else {
+            LOG(INFO) << "Disable double tap to wake";
+            mDoubleTapEnabled = false;
+        }
+        break;
+    default:
+        break;
+    }
+
     return Void();
 }
 
