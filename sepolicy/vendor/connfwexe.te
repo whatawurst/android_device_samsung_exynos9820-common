@@ -14,6 +14,7 @@ file_type_auto_trans(connfwexe, system_data_file, connfwexe_socket)
 
 # /data/.tcpdump_stream
 allow connfwexe system_data_file:dir remove_name;
+allow connfwexe system_data_file:sock_file unlink;
 file_type_auto_trans(connfwexe, system_data_file, connfwexe_socket)
 
 # /data/.socket_stream
