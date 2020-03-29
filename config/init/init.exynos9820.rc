@@ -597,6 +597,7 @@ on post-fs-data
     chown system system /dev/freezer/frozen
     chown system system /dev/freezer/frozen/tasks
     chown system system /dev/freezer/frozen/cgroup.procs
+    chown system system /dev/freezer/frozen/freezer.state
     chown system system /dev/freezer/thaw
     chown system system /dev/freezer/thaw/tasks
     chown system system /dev/freezer/thaw/cgroup.procs
@@ -604,12 +605,27 @@ on post-fs-data
 # MARs for freecess
     chmod 0644 /dev/freezer/frozen/tasks
     chmod 0644 /dev/freezer/frozen/cgroup.procs
+    chmod 0644 /dev/freezer/frozen/freezer.state
     chmod 0644 /dev/freezer/thaw/tasks
     chmod 0644 /dev/freezer/thaw/cgroup.procs
+
+# Slowdown freezer
+    mkdir /dev/freezer/abnormal
+    write /dev/freezer/abnormal/freezer.state THAWED
+    chown system system /dev/freezer/abnormal
+    chown system system /dev/freezer/abnormal/tasks
+    chown system system /dev/freezer/abnormal/cgroup.procs
+    chown system system /dev/freezer/abnormal/freezer.state
+    chmod 0644 /dev/freezer/abnormal/tasks
+    chmod 0644 /dev/freezer/abnormal/cgroup.procs
+    chmod 0644 /dev/freezer/abnormal/freezer.state
 
 on boot
 # SSWAP
     write /proc/sys/vm/swappiness 160
+
+#Samsung Members logging
+    setprop persist.vendor.members.cp_sup on
 
 # Bluetooth
     chown bluetooth bluetooth /dev/ttySAC1
