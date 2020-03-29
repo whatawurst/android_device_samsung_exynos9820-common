@@ -109,6 +109,7 @@
 /system/bin/smdexe                           u:object_r:smdexe_exec:s0
 
 ### VENDOR
+/(vendor|system/vendor)/bin/cass             u:object_r:cassd_exec:s0
 /(vendor|system/vendor)/bin/cbd              u:object_r:cbd_exec:s0
 /(vendor|system/vendor)/bin/epic             u:object_r:epicd_exec:s0
 
