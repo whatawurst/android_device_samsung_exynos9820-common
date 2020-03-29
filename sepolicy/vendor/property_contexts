@@ -17,7 +17,8 @@ ro.spid.gps.                   u:object_r:vendor_gps_prop:s0
 
 # RADIO
 persist.ril.                   u:object_r:radio_prop:s0
-ro.vendor.multisim.simslotcount u:object_r:vendor_radio_prop:s0
+ro.multisim.                   u:object_r:vendor_radio_prop:s0
+ro.vendor.multisim.            u:object_r:vendor_radio_prop:s0
 ro.vendor.radio.default_network u:object_r:vendor_radio_prop:s0
 vendor.gsm.                    u:object_r:vendor_radio_prop:s0
 
