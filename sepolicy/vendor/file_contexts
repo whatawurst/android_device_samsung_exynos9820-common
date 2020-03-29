@@ -114,6 +114,7 @@
 /(vendor|system/vendor)/bin/cass             u:object_r:cassd_exec:s0
 /(vendor|system/vendor)/bin/cbd              u:object_r:cbd_exec:s0
 /(vendor|system/vendor)/bin/epic             u:object_r:epicd_exec:s0
+/(vendor|system/vendor)/bin/secril_config_svc    u:object_r:secril_config_svc_exec:s0
 
 /(vendor|system/vendor)/bin/hw/gpsd          u:object_r:gpsd_exec:s0
 /(vendor|system/vendor)/bin/hw/lhd           u:object_r:lhd_exec:s0
