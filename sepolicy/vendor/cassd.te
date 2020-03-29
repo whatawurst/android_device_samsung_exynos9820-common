@@ -1,0 +1,17 @@
+# cassd.te
+
+type cassd, domain;
+type cassd_exec, exec_type, vendor_file_type, file_type;
+
+# cassd is started by init, type transit from init domain to cassd domain
+init_daemon_domain(cassd)
+
+# /dev/kmsg
+allow cassd kmsg_device:chr_file r_file_perms;
+
+# /dev/umts_boot0
+# /dev/umts_cass
+allow cassd vendor_radio_device:chr_file rw_file_perms;
+
+# /sys/power/wake_lock
+allow cassd sysfs_wake_lock:file rw_file_perms;
