@@ -265,4 +265,5 @@
 /dev/bbd_reliable         0660   system     system
 /dev/bbd_sio              0660   system     system
 /dev/bbd_patch            0660   system     system
+/dev/bbd_urgent_patch     0660   system     system
 /dev/ttyBCM*              0660   system     system
