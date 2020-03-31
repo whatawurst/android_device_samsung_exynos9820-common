@@ -238,8 +238,8 @@
 
         </module>
 
-        <!-- A2DP Audio HAL -->
-        <xi:include href="a2dp_audio_policy_configuration.xml"/>
+        <!-- A2DP Input Audio HAL -->
+        <xi:include href="a2dp_in_audio_policy_configuration.xml"/>
 
         <!-- Usb Audio HAL -->
         <xi:include href="usb_audio_policy_configuration.xml"/>
@@ -249,6 +249,9 @@
 
         <!-- Hearing aid Audio HAL -->
         <xi:include href="hearing_aid_audio_policy_configuration.xml"/>
+
+        <!-- Bluetooth Audio HAL -->
+        <xi:include href="/vendor/etc/bluetooth_audio_policy_configuration.xml"/>
 
         <!-- Tms Audio HAL -->
         <!-- WHATAWURST
