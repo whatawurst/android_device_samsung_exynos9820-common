@@ -51,6 +51,9 @@ static inline const char* getBTDefaultName()
  */
 #define BLE_VND_INCLUDED TRUE
 
+/* 'strings libbluetooth.so' */
+#define BTA_AV_SINK_INCLUDED TRUE
+
 #pragma pop_macro("PROPERTY_VALUE_MAX")
 #endif
 
