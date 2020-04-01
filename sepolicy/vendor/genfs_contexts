@@ -14,15 +14,20 @@ genfscon proc /sys/vm/swappiness                           u:object_r:proc_swapi
 # class
 genfscon sysfs /class/android_usb/android0                 u:object_r:sysfs_android_usb:s0
 genfscon sysfs /class/camera                               u:object_r:sysfs_camera:s0
+genfscon sysfs /class/input/input4                         u:object_r:sysfs_sensors:s0
+genfscon sysfs /class/input/input6                         u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/sec/gps                              u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:s0
 
 # devices
+genfscon sysfs /devices/platform/104b0000.hsi2c/i2c-4/4-0048/input/input1/enabled u:object_r:sysfs_touchscreen_writable:s0
+genfscon sysfs /devices/platform/10970000.spi/             u:object_r:sysfs_spi_writeable:s0
 genfscon sysfs /devices/platform/10000.mif_pdata/sim/      u:object_r:sysfs_sim:s0
+genfscon sysfs /devices/platform/10000.mif_pdata/sim/ds_detect u:object_r:sysfs_sim_writable:s0
 genfscon sysfs /devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value u:object_r:sysfs_gps_writable:s0
 genfscon sysfs /devices/platform/11ce0000.speedy/i2c-6/6-0003/input/input13/name u:object_r:sysfs_ss_writable:s0
-genfscon sysfs /devices/platform/13d00000.dwmmc2/mmc_host  u:object_r:sysfs_mmc_host:s0
-genfscon sysfs /devices/platform/13d60000.ufs/host0        u:object_r:sysfs_scsi_host:s0
+genfscon sysfs /devices/platform/13d00000.dwmmc2/mmc_host  u:object_r:sysfs_mmc_host_writable:s0
+genfscon sysfs /devices/platform/13d60000.ufs/host0        u:object_r:sysfs_scsi_host_writable:s0
 genfscon sysfs /devices/platform/15c40000.adc/iio          u:object_r:sysfs_iio:s0
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/max77705-charger/type    u:object_r:sysfs_batteryinfo:s0
 genfscon sysfs /devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/otg/type    u:object_r:sysfs_batteryinfo:s0
@@ -53,6 +58,8 @@ genfscon sysfs /devices/virtual/camera                     u:object_r:sysfs_came
 genfscon sysfs /devices/virtual/camera/rear/fw_update      u:object_r:sysfs_camera_writable:s0
 genfscon sysfs /devices/virtual/camera/rear/ssrm_camera_info u:object_r:sysfs_camera_writable:s0
 genfscon sysfs /devices/virtual/camera/flash/rear_flash    u:object_r:sysfs_camera_writable:s0
+genfscon sysfs /devices/virtual/input/input4               u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/input/input6               u:object_r:sysfs_sensors_writable:s0
 
 genfscon sysfs /devices/virtual/cirrus/cirrus_bd           u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/virtual/cirrus/cirrus_cal          u:object_r:sysfs_ss_writable:s0
