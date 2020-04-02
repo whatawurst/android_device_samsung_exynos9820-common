@@ -112,6 +112,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
 
+### NFC
+PRODUCT_PACKAGES += \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag
+
 ### OMX
 PRODUCT_PACKAGES += \
     libOmxAacEnc \
