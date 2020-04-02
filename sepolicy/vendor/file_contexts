@@ -37,6 +37,9 @@
 # Geotrans
 /dev/video155                                u:object_r:geotrans_device:s0
 
+# NFC
+/dev/sec-nfc                                 u:object_r:nfc_device:s0
+
 # USB
 /dev/android_ssusbcon(/.*)?                  u:object_r:usb_device:s0
 /dev/usb(/.*)?                               u:object_r:usb_device:s0
