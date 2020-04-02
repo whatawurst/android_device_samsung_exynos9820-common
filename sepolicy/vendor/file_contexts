@@ -11,6 +11,8 @@
 /data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
 /data/vendor/secradio(/.*)?                  u:object_r:radio_vendor_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
+/data/nfc(/.*)?                              u:object_r:nfc_data_file:s0
+/data/nfc_log(/.*)?                          u:object_r:nfc_data_file:s0
 
 /data/\.socket_stream                        u:object_r:ddexe_socket:s0
 /data/\.consocket_stream                     u:object_r:connfwexe_socket:s0
