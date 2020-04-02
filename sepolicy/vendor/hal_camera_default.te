@@ -45,7 +45,9 @@ allow hal_camera_default sysfs_camera:dir r_dir_perms;
 allow hal_camera_default sysfs_camera:file r_file_perms;
 
 # /sys/class/camera/rear/fw_update
+# /sys/class/camera/flash/rear_flash
 allow hal_camera_default sysfs_camera_writable:file rw_file_perms;
+
 # /sys/kernel/ems/
 allow hal_camera_default sysfs_ems:dir r_dir_perms;
 allow hal_camera_default sysfs_ems:file r_file_perms;
