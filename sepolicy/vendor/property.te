@@ -7,4 +7,5 @@ type vendor_cbd_prop, property_type;
 type vendor_camera_prop, property_type;
 type vendor_factory_prop, property_type;
 type vendor_gps_prop, property_type;
+type vendor_nfc_prop, property_type;
 type vendor_radio_prop, property_type;
