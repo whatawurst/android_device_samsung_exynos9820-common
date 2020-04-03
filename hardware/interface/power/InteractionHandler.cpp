@@ -10,7 +10,6 @@
 #include <android-base/logging.h>
 #include <android-base/file.h>
 
-#include <dlfcn.h>
 #include <fcntl.h>
 #include <poll.h>
 #include <time.h>
@@ -47,8 +46,6 @@ bool InteractionHandler::Init()
     mThread = std::unique_ptr<std::thread>(
         new std::thread(&InteractionHandler::Routine, this));
 
-    openEpic();
-
     return true;
 }
 
@@ -63,36 +60,6 @@ void InteractionHandler::Exit()
 
     mCond.notify_all();
     mThread->join();
-}
-
-bool InteractionHandler::openEpic()
-{
-    void *handle = NULL;
-
-    handle = dlopen("libepic_helper.so", RTLD_NOW);
-    if (handle == nullptr) {
-        LOG(ERROR) << "Failed to load libepic_helper.so";
-        return false;
-    }
-
-    _epic_alloc_request = reinterpret_cast<typeof(_epic_alloc_request)>(dlsym(handle, "epic_alloc_request"));
-    _epic_free_request = reinterpret_cast<typeof(_epic_free_request)>(dlsym(handle, "epic_free_request"));
-    _epic_acquire = reinterpret_cast<typeof(_epic_acquire)>(dlsym(handle, "epic_acquire"));
-    _epic_release = reinterpret_cast<typeof(_epic_release)>(dlsym(handle, "epic_release"));
-
-    if (_epic_alloc_request == nullptr ||
-        _epic_free_request == nullptr ||
-        _epic_acquire == nullptr ||
-        _epic_release == nullptr) {
-        LOG(ERROR) << "Failed to bind symbols from libepic_helper.so";
-        return false;
-    }
-
-    LOG(INFO) << "Epic is ready";
-
-    /* TODO: Find out how to call them ... */
-    mEpicAvailable = true;
-    return true;
 }
 
 void InteractionHandler::PerfLock()
