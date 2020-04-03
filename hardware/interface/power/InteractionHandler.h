@@ -25,7 +25,6 @@ struct InteractionHandler {
     void Acquire(int32_t duration);
 
  private:
-    bool openEpic();
     void Release();
     void Routine();
 
@@ -43,12 +42,6 @@ struct InteractionHandler {
     struct timespec mLastTimespec;
 
     bool mHandled;
-
-    int64_t (*_epic_alloc_request)(void);
-    int64_t (*_epic_free_request)(void);
-    int64_t (*_epic_acquire)(void);
-    int64_t (*_epic_release)(void);
-    bool mEpicAvailable;
 
     std::unique_ptr<std::thread> mThread;
     std::mutex mLock;
