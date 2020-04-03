@@ -69,10 +69,12 @@ static bool doesNodeExist(const std::string& path)
 }
 
 Power::Power() {
-    mInteractionHandler.Init();
     size_t inode_size = ARRAY_SIZE(interactive_node_paths);
 
     //android::base::SetMinimumLogSeverity(android::base::VERBOSE);
+
+    mInteractionHandler.Init();
+    mEpic.Init();
 
     LOG(DEBUG) << "Looking for touchsceen/lcd nodes";
     for (size_t i = 0; i < inode_size; i++) {
@@ -106,6 +108,10 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data) {
     case PowerHint::INTERACTION:
         mInteractionHandler.Acquire(data);
         break;
+    case PowerHint::VIDEO_ENCODE: {
+        mEpic.videoEncode(hint);
+        break;
+    }
     default:
         return Void();
     }

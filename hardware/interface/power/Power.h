@@ -13,6 +13,7 @@
 #include <hardware/power.h>
 
 #include "InteractionHandler.h"
+#include "Epic.h"
 
 #include <fstream>
 
@@ -42,6 +43,7 @@ struct Power : public IPower {
     bool mDoubleTapEnabled;
 
     InteractionHandler mInteractionHandler;
+    Epic mEpic;
     std::vector<std::string> interactiveNodes;
 };
 
