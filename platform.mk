@@ -16,6 +16,10 @@
 
 PLATFORM_PATH := device/samsung/exynos9820-common
 
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(PLATFORM_PATH)
+
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
 
