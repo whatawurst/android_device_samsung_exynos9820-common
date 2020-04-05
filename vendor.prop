@@ -17,6 +17,10 @@ ro.vendor.ddk.set.afbc=1
 # 1 = COLOR_MODE_SATURATED
 persist.sys.sf.native_mode=1
 
+ro.gfx.driver.0=com.samsung.gamedriver.S10MaliG76
+ro.gfx.driver.1=com.samsung.pregpudriver.ex9820
+ro.hardware.egl=mali
+
 ### KEYSTORE
 ro.hardware.keystore=mdfpp
 ro.security.keystore.keytype=sak,gak
