@@ -18,10 +18,10 @@ BUILD_TOP := $(shell pwd)
 PLATFORM_PATH := device/samsung/exynos9820-common
 
 ### BOARD
-TARGET_BOARD_PLATFORM := exynos5
+TARGET_BOARD_PLATFORM := universal9820
 TARGET_SLSI_VARIANT := bsp
 TARGET_SOC := exynos9820
-TARGET_BOOTLOADER_BOARD_NAME := universal9820
+TARGET_BOOTLOADER_BOARD_NAME := exynos9820
 TARGET_BOARD_PLATFORM_GPU := mali-g76
 
 # build/make/core/Makefile
