@@ -88,8 +88,14 @@ Power::Power() {
 
 // Methods from ::android::hardware::power::V1_0::IPower follow.
 Return<void> Power::setInteractive(bool interactive) {
+#if 0
+    /*
+     * Setting CPU frequencies don't really seem to work. The same issues exist
+     * with as CPU hot plugging. You turn CPU off and it wont boot again.
+     */
     writeNode("/sys/power/cpufreq_max_limit",
               interactive ? "2730000" : "1560000");
+#endif
 
     for (size_t i = 0; i < interactiveNodes.size(); i++) {
         writeNode(interactiveNodes[i], interactive ? "1" : "0");
@@ -103,11 +109,17 @@ Return<void> Power::setInteractive(bool interactive) {
     return Void();
 }
 
-Return<void> Power::powerHint(PowerHint hint, int32_t data) {
+Return<void> Power::powerHint(PowerHint hint, int32_t data __unused) {
     switch (hint) {
+#if 0
+    /*
+     * Setting CPU frequencies don't really seem to work. The same issues exist
+     * with as CPU hot plugging. You turn CPU off and it wont boot again.
+     */
     case PowerHint::INTERACTION:
         mInteractionHandler.Acquire(data);
         break;
+#endif
     case PowerHint::VIDEO_ENCODE: {
         mEpic.videoEncode(hint);
         break;
