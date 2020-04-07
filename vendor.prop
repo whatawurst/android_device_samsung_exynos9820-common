@@ -42,6 +42,10 @@ vendor.sec.rild.libpath2=/vendor/lib64/libsec-ril-dsds.so
 debug.slsi_platform=1
 debug.hwc.winupdate=1
 
+### SURFACEFLINGER
+# Disable backpressure propagation
+debug.sf.disable_backpressure=1
+
 ### DEVELOPER SETTINGS
 # Disable invocation of oem_lock
 ro.frp.pst=/dev/block/persistent
