@@ -10,6 +10,9 @@ log.tag.EDEN=INFO
 ro.vendor.eden.devices=CPU1_GPU1_NPU1
 ro.vendor.eden.npu.version.path=/sys/devices/platform/npu@17800000/version
 
+### DALVIK
+dalvik.vm.lockprof.threshold=500
+
 ### GRAPHICS
 # gralloc/exynosdisplay
 ro.vendor.ddk.set.afbc=1
