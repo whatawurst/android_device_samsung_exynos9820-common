@@ -16,6 +16,5 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter beyond0lte,beyond2lte, $(TARGET_DEVICE)),)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+
