@@ -11,7 +11,6 @@ type media_vendor_data_file, file_type, data_file_type;
 type mediadrm_vendor_data_file, file_type, data_file_type;
 type npu_vendor_data_file, file_type, data_file_type;
 type radio_vendor_data_file, file_type, data_file_type;
-type log_cbd_vendor_data_file, file_type, data_file_type;
 
 # DEBUGFS
 type debugfs_mali, fs_type, debugfs_type;
@@ -44,7 +43,6 @@ type sysfs_npu_version, sysfs_type, r_fs_type, fs_type;
 type sysfs_scsi_host, sysfs_type, r_fs_type, fs_type;
 type sysfs_sec_gps, sysfs_type, r_fs_type, fs_type;
 type sysfs_sec_switch, sysfs_type, r_fs_type, fs_type;
-type sysfs_sim, sysfs_type, r_fs_type, fs_type;
 type sysfs_socinfo, sysfs_type, r_fs_type, fs_type;
 type sysfs_v4l, sysfs_type, r_fs_type, fs_type;
 type sysfs_v4l_fimc, sysfs_type, r_fs_type, fs_type;
@@ -59,7 +57,6 @@ type sysfs_mem_boost_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_mmc_host_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_scsi_host_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_sensorhub_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_sim_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ss_writable, sysfs_type, rw_fs_type, fs_type;
 
 # VENDOR
