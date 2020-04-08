@@ -88,14 +88,12 @@ Power::Power() {
 
 // Methods from ::android::hardware::power::V1_0::IPower follow.
 Return<void> Power::setInteractive(bool interactive) {
-#if 0
     /*
-     * Setting CPU frequencies don't really seem to work. The same issues exist
-     * with as CPU hot plugging. You turn CPU off and it wont boot again.
+     * Scaling the MID and BIG cluster doesn't seem to work. So only
+     * scale down the default one.
      */
-    writeNode("/sys/power/cpufreq_max_limit",
-              interactive ? "2730000" : "1560000");
-#endif
+    writeNode("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
+              interactive ? "1950000" : "1053000");
 
     /* Enable dt2w before turning TSP off */
     if (mDoubleTapEnabled && !interactive) {

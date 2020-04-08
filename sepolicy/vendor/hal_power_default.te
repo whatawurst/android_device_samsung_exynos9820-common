@@ -17,3 +17,6 @@ allow hal_power_default sysfs_battery_writable:file rw_file_perms;
 allow hal_power_default sysfs_sec_touchscreen:dir r_dir_perms;
 allow hal_power_default sysfs_sec_touchscreen:lnk_file r_file_perms;
 allow hal_power_default sysfs_touchscreen_writable:file rw_file_perms;
+
+# /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+allow hal_power_default sysfs_devices_system_cpu:file rw_file_perms;
