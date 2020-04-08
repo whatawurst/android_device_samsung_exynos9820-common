@@ -7,7 +7,6 @@
 /data/vendor/mediadrm(/.*)?                  u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/gk(/.*)?                        u:object_r:gk_vendor_data_file:s0
 /data/vendor/gps(/.*)?                       u:object_r:gps_vendor_data_file:s0
-/data/vendor/secradio(/.*)?                  u:object_r:radio_vendor_data_file:s0
 /data/camera(/.*)?                           u:object_r:camera_data_file:s0
 /data/nfc(/.*)?                              u:object_r:nfc_data_file:s0
 /data/nfc_log(/.*)?                          u:object_r:nfc_data_file:s0
@@ -25,9 +24,6 @@
 # Camera
 /dev/jsqz                                    u:object_r:jsqz_device:s0
 /dev/m2m1shot_scaler0                        u:object_r:m2m1shot_device:s0
-
-# DRB
-/dev/drb		                             u:object_r:drb_device:s0
 
 # Eden
 /dev/vertex10                                u:object_r:npu_device:s0
