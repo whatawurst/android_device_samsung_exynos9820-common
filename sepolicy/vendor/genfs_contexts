@@ -47,6 +47,7 @@ genfscon sysfs /devices/platform/19050000.decon_t          u:object_r:sysfs_deco
 genfscon sysfs /devices/platform/19050000.decon_t/vsync    u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/19060000.decon_s          u:object_r:sysfs_decon:s0
 genfscon sysfs /devices/platform/19060000.decon_s/vsync    u:object_r:sysfs_ss_writable:s0
+genfscon sysfs /devices/platform/argos                     u:object_r:sysfs_argos:s0
 genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill0/state u:object_r:sysfs_bt_writable:s0
 genfscon sysfs /devices/platform/npu@17800000/version      u:object_r:sysfs_npu_version:s0
 
@@ -69,6 +70,8 @@ genfscon sysfs /devices/virtual/sec/gps                    u:object_r:sysfs_sec_
 genfscon sysfs /devices/virtual/sec/switch                 u:object_r:sysfs_sec_switch:s0
 genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power    u:object_r:sysfs_sensorhub_writable:s0
 genfscon sysfs /devices/virtual/thermal/                   u:object_r:sysfs_thermal:s0
+
+genfscon sysfs /firmware/devicetree/base/argos             u:object_r:sysfs_argos:s0
 
 genfscon sysfs /kernel/ems/                                u:object_r:sysfs_ems:s0
 genfscon sysfs /kernel/ems/frt/disable_cpufreq             u:object_r:sysfs_ems_writable:s0

@@ -35,6 +35,7 @@ type ddexe_socket, file_type, data_file_type, core_data_file_type, coredomain_so
 type epicd_socket, file_type, data_file_type;
 
 # SYSFS
+type sysfs_argos, sysfs_type, r_fs_type, fs_type;
 type sysfs_camera, sysfs_type, r_fs_type, fs_type;
 type sysfs_decon, sysfs_type, r_fs_type, fs_type;
 type sysfs_ems, sysfs_type, r_fs_type, fs_type;
