@@ -46,7 +46,6 @@ genfscon sysfs /devices/platform/19050000.decon_t          u:object_r:sysfs_deco
 genfscon sysfs /devices/platform/19050000.decon_t/vsync    u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/19060000.decon_s          u:object_r:sysfs_decon:s0
 genfscon sysfs /devices/platform/19060000.decon_s/vsync    u:object_r:sysfs_ss_writable:s0
-genfscon sysfs /devices/platform/argos                     u:object_r:sysfs_argos:s0
 genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill0/state u:object_r:sysfs_bt_writable:s0
 genfscon sysfs /devices/platform/npu@17800000/version      u:object_r:sysfs_npu_version:s0
 
