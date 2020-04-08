@@ -2,7 +2,6 @@
 
 type bbd_device, dev_type;
 type bt_device, dev_type;
-type drb_device, dev_type;
 type epic_device, dev_type;
 type geotrans_device, dev_type;
 type jsqz_device, dev_type;
