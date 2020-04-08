@@ -30,5 +30,6 @@ cc_binary {
         "libhardware",
         "libtsp",
         "android.hardware.power@1.0",
+        "vendor.lineage.power@1.0",
     ],
 }
