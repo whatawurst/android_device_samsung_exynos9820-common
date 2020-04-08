@@ -5,8 +5,6 @@ type camera_vendor_data_file, file_type, data_file_type;
 type display_vendor_data_file, file_type, data_file_type;
 type eden_gpu_vendor_data_file, file_type, data_file_type;
 type gk_vendor_data_file, file_type, data_file_type;
-type gps_vendor_data_file, file_type, data_file_type;
-type log_vendor_data_file, file_type, data_file_type;
 type media_vendor_data_file, file_type, data_file_type;
 type mediadrm_vendor_data_file, file_type, data_file_type;
 type npu_vendor_data_file, file_type, data_file_type;
