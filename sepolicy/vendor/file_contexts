@@ -48,16 +48,6 @@
 /dev/mali[0-9]                               u:object_r:gpu_device:s0
 /dev/g2d                                     u:object_r:graphics_device:s0
 
-# GNSS/GPS
-/dev/bbd_control                             u:object_r:bbd_device:s0
-/dev/bbd_packet                              u:object_r:bbd_device:s0
-/dev/bbd_patch                               u:object_r:bbd_device:s0
-/dev/bbd_reliable                            u:object_r:bbd_device:s0
-/dev/bbd_sensor                              u:object_r:bbd_device:s0
-/dev/bbd_sio                                 u:object_r:bbd_device:s0
-/dev/bbd_urgent_patch                        u:object_r:bbd_device:s0
-/dev/ttyBCM[0-9]*                            u:object_r:bbd_device:s0
-
 # Secmem
 /dev/s5p-smem                                u:object_r:secmem_device:s0
 
