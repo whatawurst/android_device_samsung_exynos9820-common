@@ -16,7 +16,6 @@ genfscon sysfs /class/android_usb/android0                 u:object_r:sysfs_andr
 genfscon sysfs /class/camera                               u:object_r:sysfs_camera:s0
 genfscon sysfs /class/input/input4                         u:object_r:sysfs_sensors:s0
 genfscon sysfs /class/input/input6                         u:object_r:sysfs_sensors:s0
-genfscon sysfs /class/sec/gps                              u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:s0
 
 # devices
@@ -66,7 +65,6 @@ genfscon sysfs /devices/virtual/cirrus/cirrus_bd           u:object_r:sysfs_ss_w
 genfscon sysfs /devices/virtual/cirrus/cirrus_cal          u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/virtual/cirrus/cirrus_pwr          u:object_r:sysfs_ss_writable:s0
 
-genfscon sysfs /devices/virtual/sec/gps                    u:object_r:sysfs_sec_gps:s0
 genfscon sysfs /devices/virtual/sec/switch                 u:object_r:sysfs_sec_switch:s0
 genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power    u:object_r:sysfs_sensorhub_writable:s0
 genfscon sysfs /devices/virtual/thermal/                   u:object_r:sysfs_thermal:s0

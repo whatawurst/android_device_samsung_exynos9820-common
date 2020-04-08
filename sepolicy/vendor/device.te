@@ -1,6 +1,5 @@
 # device.te
 
-type bbd_device, dev_type;
 type bt_device, dev_type;
 type epic_device, dev_type;
 type geotrans_device, dev_type;
