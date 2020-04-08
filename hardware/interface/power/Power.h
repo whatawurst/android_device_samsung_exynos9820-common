@@ -11,6 +11,7 @@
 #include <hidl/MQDescriptor.h>
 #include <hidl/Status.h>
 #include <hardware/power.h>
+#include <vendor/lineage/power/1.0/ILineagePower.h>
 
 #include "InteractionHandler.h"
 #include "Epic.h"
@@ -29,7 +30,18 @@ using ::android::hardware::power::V1_0::IPower;
 using ::android::hardware::Return;
 using ::android::hardware::Void;
 
-struct Power : public IPower {
+using ::vendor::lineage::power::V1_0::ILineagePower;
+using ::vendor::lineage::power::V1_0::LineageFeature;
+using ::vendor::lineage::power::V1_0::LineagePowerHint;
+
+enum PowerProfile {
+    POWER_SAVE = 0,
+    BALANCED,
+    HIGH_PERFORMANCE,
+    MAX
+};
+
+struct Power : public IPower, public ILineagePower {
     // Methods from ::android::hardware::power::V1_0::IPower follow.
 
     Power();
@@ -39,12 +51,17 @@ struct Power : public IPower {
     Return<void> setFeature(Feature feature, bool activate) override;
     Return<void> getPlatformLowPowerStats(getPlatformLowPowerStats_cb _hidl_cb) override;
 
+    Return<int32_t> getFeature(LineageFeature feature) override;
+
   private:
     bool mDoubleTapEnabled;
 
     InteractionHandler mInteractionHandler;
     Epic mEpic;
     std::vector<std::string> mInteractiveNodes;
+    PowerProfile mCurrentProfile;
+
+    void setProfile(PowerProfile profile);
 };
 
 }  // namespace implementation

@@ -86,6 +86,8 @@ Power::Power() {
             mInteractiveNodes.push_back(node_path);
         }
     }
+
+    mCurrentProfile = PowerProfile::BALANCED;
 }
 
 // Methods from ::android::hardware::power::V1_0::IPower follow.
@@ -115,6 +117,13 @@ Return<void> Power::setInteractive(bool interactive) {
 }
 
 Return<void> Power::powerHint(PowerHint hint, int32_t data __unused) {
+    /* Bail out if low-power mode is active */
+    if (mCurrentProfile == PowerProfile::POWER_SAVE && hint != PowerHint::LOW_POWER &&
+        hint != static_cast<PowerHint>(LineagePowerHint::SET_PROFILE)) {
+        LOG(VERBOSE) << "PROFILE_POWER_SAVE active, ignoring hint " << static_cast<int32_t>(hint);
+        return Void();
+    }
+
     switch (hint) {
 #if 0
     /*
@@ -125,13 +134,19 @@ Return<void> Power::powerHint(PowerHint hint, int32_t data __unused) {
         mInteractionHandler.Acquire(data);
         break;
 #endif
-    case PowerHint::VIDEO_ENCODE: {
+    case PowerHint::VIDEO_ENCODE:
         mEpic.videoEncode(hint);
         break;
-    }
+    case PowerHint::LOW_POWER:
+        LOG(DEBUG) << "PowerHint: LOW_POWER";
+        break;
     default:
-        return Void();
+        if (hint == static_cast<PowerHint>(LineagePowerHint::SET_PROFILE)) {
+            LOG(DEBUG) << "LineagePowerHint: SET_PROFILE=" << data;
+        }
+        break;
     }
+
     return Void();
 }
 
@@ -158,6 +173,37 @@ Return<void> Power::getPlatformLowPowerStats(getPlatformLowPowerStats_cb _hidl_c
     hidl_vec<PowerStatePlatformSleepState> states;
     _hidl_cb(states, Status::SUCCESS);
     return Void();
+}
+
+Return<int32_t> Power::getFeature(LineageFeature feature) {
+    switch (feature) {
+    case LineageFeature::SUPPORTED_PROFILES:
+        return static_cast<int32_t>(PowerProfile::MAX);
+    default:
+        break;
+    }
+
+    return -1;
+}
+
+void Power::setProfile(PowerProfile profile) {
+    if (mCurrentProfile == profile) {
+        return;
+    }
+
+    switch (profile) {
+    case PowerProfile::POWER_SAVE:
+        writeNode("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
+                  "1300000");
+        break;
+    case PowerProfile::BALANCED:
+    case PowerProfile::HIGH_PERFORMANCE:
+        writeNode("/sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq",
+                  "1950000");
+        break;
+    default:
+        break;
+    }
 }
 
 }  // namespace implementation
