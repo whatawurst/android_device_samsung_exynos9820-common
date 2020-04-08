@@ -43,6 +43,11 @@ debug.hwc.winupdate=1
 # Disable backpressure propagation
 debug.sf.disable_backpressure=1
 
+# Enable wide gamut and color management
+ro.surface_flinger.has_wide_color_display=true
+ro.surface_flinger.has_HDR_display=true
+ro.surface_flinger.use_color_management=true
+
 ### DEVELOPER SETTINGS
 # Disable invocation of oem_lock
 ro.frp.pst=/dev/block/persistent
