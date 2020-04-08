@@ -52,6 +52,7 @@
 /dev/umts_dm0                                u:object_r:vendor_radio_device:s0
 /dev/umts_rfs0                               u:object_r:vendor_radio_device:s0
 /dev/umts_router                             u:object_r:vendor_radio_device:s0
+/dev/network_throughput                      u:object_r:radio_qos_device:s0
 
 # Serial
 /dev/ttyGS[0-9]*                             u:object_r:serial_device:s0
@@ -106,6 +107,7 @@
 /sys/class/sec/gps/GPS_PWR_EN/value          u:object_r:sysfs_gps_writable:s0
 /sys/devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value u:object_r:sysfs_gps_writable:s0
 /sys/devices/virtual/sec/sensorhub/mcu_power u:object_r:sysfs_sensorhub_writable:s0
+/sys/devices/platform/argos(/.*)?            u:object_r:sysfs_argos:s0
 
 ### SYSTEM
 /system/bin/at_distributor                   u:object_r:at_distributor_exec:s0
@@ -117,6 +119,7 @@
 /system/bin/smdexe                           u:object_r:smdexe_exec:s0
 
 ### VENDOR
+/(vendor|system/vendor)/bin/argosd           u:object_r:argosd_exec:s0
 /(vendor|system/vendor)/bin/cass             u:object_r:cassd_exec:s0
 /(vendor|system/vendor)/bin/cbd              u:object_r:cbd_exec:s0
 /(vendor|system/vendor)/bin/epic             u:object_r:epicd_exec:s0
