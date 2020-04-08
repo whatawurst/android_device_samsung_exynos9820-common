@@ -11,5 +11,4 @@ type npu_device, dev_type;
 type pm_qos_device, dev_type;
 type radio_qos_device, dev_type;
 type secmem_device, dev_type;
-type vendor_radio_device, dev_type;
 type vts_fio_device, dev_type;

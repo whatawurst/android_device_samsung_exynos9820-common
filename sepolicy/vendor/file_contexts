@@ -3,8 +3,6 @@
 /data/vendor/display(/.*)?                   u:object_r:display_vendor_data_file:s0
 /data/vendor/eden(/.*)?                      u:object_r:npu_vendor_data_file:s0
 /data/vendor/eden/gpu(/.*)?                  u:object_r:eden_gpu_vendor_data_file:s0
-/data/vendor/log(/.*)?                       u:object_r:log_vendor_data_file:s0
-/data/vendor/log/cbd(/.*)?                   u:object_r:log_cbd_vendor_data_file:s0
 /data/vendor/media(/.*)?                     u:object_r:media_vendor_data_file:s0
 /data/vendor/mediadrm(/.*)?                  u:object_r:mediadrm_vendor_data_file:s0
 /data/vendor/gk(/.*)?                        u:object_r:gk_vendor_data_file:s0
@@ -46,12 +44,6 @@
 /dev/usb_mtp                                 u:object_r:mtp_device:s0
 
 # Radio
-/dev/umts_boot0                              u:object_r:vendor_radio_device:s0
-/dev/umts_cass                               u:object_r:vendor_radio_device:s0
-/dev/umts_ipc[0-1]                           u:object_r:vendor_radio_device:s0
-/dev/umts_dm0                                u:object_r:vendor_radio_device:s0
-/dev/umts_rfs0                               u:object_r:vendor_radio_device:s0
-/dev/umts_router                             u:object_r:vendor_radio_device:s0
 /dev/network_throughput                      u:object_r:radio_qos_device:s0
 
 # Serial
@@ -121,7 +113,6 @@
 ### VENDOR
 /(vendor|system/vendor)/bin/argosd           u:object_r:argosd_exec:s0
 /(vendor|system/vendor)/bin/cass             u:object_r:cassd_exec:s0
-/(vendor|system/vendor)/bin/cbd              u:object_r:cbd_exec:s0
 /(vendor|system/vendor)/bin/epic             u:object_r:epicd_exec:s0
 /(vendor|system/vendor)/bin/secril_config_svc    u:object_r:secril_config_svc_exec:s0
 
