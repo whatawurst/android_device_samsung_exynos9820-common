@@ -6,3 +6,8 @@ ro.vendor.cscsupported=1
 # Set cmc properties
 ro.cmc.device_type=pd
 ro.cmc.version=2.0
+
+### gfx
+ro.gfx.driver.0=com.samsung.gamedriver.S10MaliG76
+ro.gfx.driver.1=com.samsung.pregpudriver.ex9820
+ro.hardware.egl=mali
