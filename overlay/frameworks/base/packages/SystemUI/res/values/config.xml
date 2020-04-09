@@ -34,4 +34,7 @@
         resource to update the display. For this reason, the CPU must not
         control the display in this mode. -->
     <bool name="doze_suspend_display_state_supported">true</bool>
+
+    <!-- Should "4G" be shown instead of "LTE" when the network is NETWORK_TYPE_LTE? -->
+    <bool name="config_show4GForLTE">false</bool>
 </resources>
