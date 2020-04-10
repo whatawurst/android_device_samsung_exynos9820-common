@@ -97,13 +97,18 @@ Return<void> Power::setInteractive(bool interactive) {
               interactive ? "2730000" : "1560000");
 #endif
 
+    /* Enable dt2w before turning TSP off */
+    if (mDoubleTapEnabled && !interactive) {
+        writeNode("/sys/class/sec/tsp/cmd", "aot_enable,1");
+    }
+
     for (size_t i = 0; i < interactiveNodes.size(); i++) {
         writeNode(interactiveNodes[i], interactive ? "1" : "0");
     }
 
-    if (mDoubleTapEnabled) {
-        /* Enable double tap to wake */
-        writeNode("/sys/class/sec/tsp/cmd", "aot_enable,1");
+    /* Disable dt2w after turning TSP back on */
+    if (mDoubleTapEnabled && interactive) {
+        writeNode("/sys/class/sec/tsp/cmd", "aot_enable,0");
     }
 
     return Void();
