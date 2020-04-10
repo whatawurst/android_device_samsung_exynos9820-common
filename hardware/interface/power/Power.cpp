@@ -81,7 +81,7 @@ Power::Power() {
         std::string node_path = interactive_node_paths[i];
 
         if (doesNodeExist(node_path)) {
-            interactiveNodes.push_back(node_path);
+            mInteractiveNodes.push_back(node_path);
         }
     }
 }
@@ -100,8 +100,8 @@ Return<void> Power::setInteractive(bool interactive) {
         writeNode("/sys/class/sec/tsp/cmd", "aot_enable,1");
     }
 
-    for (size_t i = 0; i < interactiveNodes.size(); i++) {
-        writeNode(interactiveNodes[i], interactive ? "1" : "0");
+    for (size_t i = 0; i < mInteractiveNodes.size(); i++) {
+        writeNode(mInteractiveNodes[i], interactive ? "1" : "0");
     }
 
     /* Disable dt2w after turning TSP back on */
