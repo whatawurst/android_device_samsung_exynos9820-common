@@ -16,9 +16,9 @@ dalvik.vm.lockprof.threshold=500
 ### GRAPHICS
 # gralloc/exynosdisplay
 ro.vendor.ddk.set.afbc=1
-# Display color
-# 1 = COLOR_MODE_SATURATED
-persist.sys.sf.native_mode=1
+# Set the display mode to automatic by default
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.native_mode=2
 
 # https://source.android.com/devices/graphics/renderer
 ro.zygote.disable_gl_preload=true
