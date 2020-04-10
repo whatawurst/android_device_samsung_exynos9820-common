@@ -44,7 +44,7 @@ struct Power : public IPower {
 
     InteractionHandler mInteractionHandler;
     Epic mEpic;
-    std::vector<std::string> interactiveNodes;
+    std::vector<std::string> mInteractiveNodes;
 };
 
 }  // namespace implementation
