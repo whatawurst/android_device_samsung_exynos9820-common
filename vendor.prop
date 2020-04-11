@@ -20,9 +20,6 @@ ro.vendor.ddk.set.afbc=1
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=2
 
-# https://source.android.com/devices/graphics/renderer
-ro.zygote.disable_gl_preload=true
-
 ### KEYSTORE
 ro.hardware.keystore=mdfpp
 ro.security.keystore.keytype=sak,gak
