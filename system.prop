@@ -11,3 +11,6 @@ ro.cmc.version=2.0
 ro.gfx.driver.0=com.samsung.gamedriver.S10MaliG76
 ro.gfx.driver.1=com.samsung.pregpudriver.ex9820
 ro.hardware.egl=mali
+
+# https://source.android.com/devices/graphics/renderer
+ro.zygote.disable_gl_preload=true
