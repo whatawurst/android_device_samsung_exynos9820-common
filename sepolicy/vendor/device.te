@@ -1,6 +1,5 @@
 # device.te
 
-type bt_device, dev_type;
 type geotrans_device, dev_type;
 type jsqz_device, dev_type;
 type m2m1shot_device, dev_type;
