@@ -1,5 +1,8 @@
 # kernel.te
 
+# Allow cpu hotplugging to work
+allow kernel self:capability { sys_admin };
+
 allow kernel self:capability { mknod };
 
 # Allow to create dirs in /dev (devtmpfs)
