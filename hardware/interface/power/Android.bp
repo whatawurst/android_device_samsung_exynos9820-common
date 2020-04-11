@@ -28,6 +28,7 @@ cc_binary {
         "liblog",
         "libutils",
         "libhardware",
+        "libtsp",
         "android.hardware.power@1.0",
     ],
 }
