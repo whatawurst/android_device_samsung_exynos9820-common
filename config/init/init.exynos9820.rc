@@ -1,4 +1,5 @@
 import /vendor/etc/init/hw/init.exynos9820.root.rc
+import /vendor/etc/init/hw/init.exynos9820.powershare.rc
 
 on early-init
     mkdir /mnt/vendor/efs 0771 radio system

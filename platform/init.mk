@@ -3,4 +3,5 @@ PRODUCT_PACKAGES += \
     skip_mount.exynos9820 \
     init.exynos9820 \
     init.exynos9820.root \
-    init.exynos9820.usb
+    init.exynos9820.usb \
+    init.exynos9820.powershare

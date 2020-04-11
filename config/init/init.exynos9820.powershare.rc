@@ -1,0 +1,8 @@
+on fs
+    chown system /sys/class/power_supply/battery/wc_tx_en
+    setprop sys.powershare 0
+    write /sys/class/power_supply/battery/wc_tx_en 0
+    write /sys/class/power_supply/battery/wc_tx_stop_capacity 30
+
+on property:sys.powershare=*
+    write /sys/class/power_supply/battery/wc_tx_en ${sys.powershare}
