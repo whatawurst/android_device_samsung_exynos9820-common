@@ -13,6 +13,7 @@
 #include <android-base/strings.h>
 
 #include "Power.h"
+#include <tsp.h>
 
 #include <iostream>
 
@@ -75,6 +76,7 @@ Power::Power() {
 
     mInteractionHandler.Init();
     mEpic.Init();
+    tsp_init();
 
     LOG(DEBUG) << "Looking for touchsceen/lcd nodes";
     for (size_t i = 0; i < inode_size; i++) {
@@ -97,7 +99,7 @@ Return<void> Power::setInteractive(bool interactive) {
 
     /* Enable dt2w before turning TSP off */
     if (mDoubleTapEnabled && !interactive) {
-        writeNode("/sys/class/sec/tsp/cmd", "aot_enable,1");
+        tsp_enable_doubletap();
     }
 
     for (size_t i = 0; i < mInteractiveNodes.size(); i++) {
@@ -106,7 +108,7 @@ Return<void> Power::setInteractive(bool interactive) {
 
     /* Disable dt2w after turning TSP back on */
     if (mDoubleTapEnabled && interactive) {
-        writeNode("/sys/class/sec/tsp/cmd", "aot_enable,0");
+        tsp_disable_doubletap();
     }
 
     return Void();
