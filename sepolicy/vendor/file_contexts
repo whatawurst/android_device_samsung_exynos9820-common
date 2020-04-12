@@ -48,6 +48,10 @@
 # Secmem
 /dev/s5p-smem                                u:object_r:secmem_device:s0
 
+# Fingerprint
+/dev/qbt2000_fd                              u:object_r:fp_sensor_device:s0
+/dev/qbt2000_ipc                             u:object_r:fp_sensor_device:s0
+
 ### KEYDATA
 /keydata(/.*)?                               u:object_r:keydata_data_file:s0
 /keyrefuge(/.*)?                             u:object_r:keyrefuge_data_file:s0
