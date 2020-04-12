@@ -1,0 +1,98 @@
+# lpm.te
+
+type lpm, domain, coredomain;
+type lpm_exec, exec_type, system_file_type, file_type;
+
+# lpm is started by init, type transit from init domain to lpm domain
+init_daemon_domain(lpm)
+
+hal_client_domain(lpm, hal_light);
+
+allow lpm self:netlink_kobject_uevent_socket { bind create read setopt };
+
+# sys.powerctl
+set_prop(lpm, powerctl_prop)
+
+# /dev/graphics/fb0
+allow lpm graphics_device:chr_file rw_file_perms;
+allow lpm graphics_device:dir r_dir_perms;
+
+# /dev/input
+allow lpm input_device:chr_file rw_file_perms;
+allow lpm input_device:dir r_dir_perms;
+
+# /efs/lpm_boot.log
+allow lpm efs_file:dir rw_dir_perms;
+allow lpm efs_file:file  { create setattr rw_file_perms };
+
+# /efs/Battery/*
+allow lpm battery_efs_file:dir rw_dir_perms;
+allow lpm battery_efs_file:file  { create setattr rw_file_perms };
+
+# /efs/FactoryApp/*
+allow lpm app_efs_file:dir rw_dir_perms;
+allow lpm app_efs_file:file { create setattr rw_file_perms };
+
+# /efs/imei/mps_code.dat
+allow lpm imei_efs_file:dir r_dir_perms;
+allow lpm imei_efs_file:file r_file_perms;
+
+# /efs/lpm/lpm_info.log
+# /efs/usb_hw_param/usb_hw_param.log
+allow lpm sec_efs_file:dir rw_dir_perms;
+allow lpm sec_efs_file:file { create setattr rw_file_perms };
+
+# /dev/graphics/fb0
+allow lpm graphics_device:chr_file rw_file_perms;
+
+# /dev/input
+allow lpm input_device:chr_file rw_file_perms;
+allow lpm input_device:dir r_dir_perms;
+
+# /proc/extra
+allow lpm proc_extra:file r_file_perms;
+
+# /proc/pwrsrc
+allow lpm proc_pwrsrc:file r_file_perms;
+
+# /proc/reset_reason
+allow lpm proc_reset_reason:file r_file_perms;
+
+# /sys/class/leds/
+allow lpm sysfs_leds:dir r_dir_perms;
+
+# /sys/class/power_supply
+allow lpm sysfs_battery:dir r_dir_perms;
+allow lpm sysfs_battery:file r_file_perms;
+
+# /sys/class/rtc/rtc0/alarm_boot
+allow lpm sysfs_rtc:dir r_dir_perms;
+
+# /sys/devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/max77705-charger/type
+# /sys/devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/otg/type
+# /sys/devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type
+# /sys/devices/platform/15d70000.hsi2c/i2c-14/14-003b/power_supply/mfc-charger/type
+allow lpm sysfs_batteryinfo_charger_writable:file rw_file_perms;
+
+# /sys/devices/platform/battery/power_supply/battery
+# /sys/devices/platform/battery/power_supply/battery/batt_capacity_max
+# /sys/devices/platform/battery/power_supply/battery/status
+# /sys/devices/platform/battery/power_supply/battery/type
+# /sys/devices/platform/battery/power_supply/ps/status
+allow lpm sysfs_battery_writable:dir r_dir_perms;
+allow lpm sysfs_battery_writable:file rw_file_perms;
+
+# /sys/devices/platform/panel@0/backlight/panel/brightness
+allow lpm sysfs_backlight_writable:file rw_file_perms;
+
+# sys/devices/virtual/usb_notify/usb_control/usb_hw_param
+allow lpm sysfs_usb_writable:file rw_file_perms;
+
+# /sys/kernel/debug/ocp_info
+allow lpm debugfs_ocp:file r_file_perms;
+
+# /sys/power/rtc_status
+allow lpm sysfs_power_writable:file rw_file_perms;
+
+# /sys/power/state
+allow lpm sysfs_power:file rw_file_perms;
