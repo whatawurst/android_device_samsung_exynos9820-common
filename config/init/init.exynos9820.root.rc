@@ -732,6 +732,7 @@ service lpm /system/bin/lpm
     class sec-charger
     user root
     group system radio input
+    capabilities SYS_BOOT
     critical
 
 # CASS
