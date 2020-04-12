@@ -134,6 +134,11 @@ Return<void> Sensors::getSensorsList(getSensorsList_cb _hidl_cb) {
             dst->type = SensorType::PROXIMITY;
             dst->typeAsString = SENSOR_STRING_TYPE_PROXIMITY;
         }
+        if (dst->typeAsString == "com.samsung.sensor.move_detector") {
+            LOG(INFO) << "Fixing com.samsung.sensor.move_detector";
+            dst->type = SensorType::SIGNIFICANT_MOTION;
+            dst->typeAsString = SENSOR_STRING_TYPE_SIGNIFICANT_MOTION;
+        }
     }
 
     _hidl_cb(out);
