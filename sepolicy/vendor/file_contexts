@@ -68,6 +68,7 @@
 /system/bin/diagexe                          u:object_r:diagexe_exec:s0
 /system/bin/eris                             u:object_r:eris_exec:s0
 /system/bin/ikev2-client                     u:object_r:ikev2-client_exec:s0
+/system/bin/lpm                              u:object_r:lpm_exec:s0
 /system/bin/smdexe                           u:object_r:smdexe_exec:s0
 
 ### VENDOR
