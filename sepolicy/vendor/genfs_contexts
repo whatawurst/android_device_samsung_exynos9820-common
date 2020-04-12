@@ -51,6 +51,11 @@ genfscon sysfs /devices/platform/19050000.decon_t/vsync    u:object_r:sysfs_ss_w
 genfscon sysfs /devices/platform/19060000.decon_s          u:object_r:sysfs_decon:s0
 genfscon sysfs /devices/platform/19060000.decon_s/vsync    u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/platform/bluetooth/rfkill/rfkill0/state u:object_r:sysfs_bt_writable:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery/batt_capacity_max u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery/status u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/battery/power_supply/battery/type u:object_r:sysfs_battery_writable:s0
+genfscon sysfs /devices/platform/battery/power_supply/ps/status u:object_r:sysfs_battery_writable:s0
 genfscon sysfs /devices/platform/npu@17800000/version      u:object_r:sysfs_npu_version:s0
 
 genfscon sysfs /devices/soc0/soc_id                        u:object_r:sysfs_socinfo:s0
