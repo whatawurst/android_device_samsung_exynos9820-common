@@ -16,6 +16,9 @@ type debugfs_ion, fs_type, debugfs_type;
 type debugfs_ion_dma, fs_type, debugfs_type;
 
 # PROC
+type proc_extra, fs_type, proc_type;
+type proc_pwrsrc, fs_type, proc_type;
+type proc_reset_reason, fs_type, proc_type;
 type proc_swapiness, fs_type, proc_type;
 
 # ROOT
