@@ -164,6 +164,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.1-service.exynos9820
 
+### USB TRUST HAL
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
 ### VIBRATOR
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service.exynos
