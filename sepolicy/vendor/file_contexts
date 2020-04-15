@@ -60,6 +60,8 @@
 /sys/devices/platform/10430000.pinctrl/gpiochip50/gpio/gpio145/value u:object_r:sysfs_gps_writable:s0
 /sys/devices/virtual/sec/sensorhub/mcu_power u:object_r:sysfs_sensorhub_writable:s0
 /sys/devices/platform/argos(/.*)?            u:object_r:sysfs_argos:s0
+/sys/class/power_supply/battery/wc_tx_en     u:object_r:sysfs_powershare_writable:s0
+/sys/class/power_supply/battery/wc_tx_stop_capacity u:object_r:sysfs_powershare_writable:s0
 
 ### SYSTEM
 /system/bin/at_distributor                   u:object_r:at_distributor_exec:s0

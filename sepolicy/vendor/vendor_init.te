@@ -5,6 +5,8 @@ set_prop(vendor_init, persist_rmnet_prop)
 set_prop(vendor_init, persist_data_df_prop)
 set_prop(vendor_init, persist_data_wda_prop)
 get_prop(vendor_init, vendor_radio_prop)
+set_prop(vendor_init, vendor_powershare_prop)
+get_prop(vendor_init, vendor_powershare_prop)
 
 # /
 allow vendor_init tmpfs:dir rw_dir_perms;
@@ -22,3 +24,7 @@ allow vendor_init proc_swapiness:file rw_file_perms;
 ### /sys
 # /sys/kernel/debug/tracing/tracing_on
 allow vendor_init debugfs_tracing:file { getattr };
+
+# /sys/class/power_supply/battery/wc_tx_stop_capacity
+# /sys/class/power_supply/battery/wc_tx_en
+allow vendor_init sysfs_powershare_writable:file rw_file_perms;

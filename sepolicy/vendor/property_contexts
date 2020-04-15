@@ -20,3 +20,6 @@ vendor.gsm.                    u:object_r:vendor_radio_prop:s0
 
 # FACTORY
 ro.factory.factory_binary      u:object_r:vendor_factory_prop:s0
+
+# WIRELESS POWERSHARE
+sys.powershare                 u:object_r:vendor_powershare_prop:s0
