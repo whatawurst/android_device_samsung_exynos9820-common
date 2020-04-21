@@ -133,6 +133,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service.exynos9820
 
+### POWERSHARE
+PRODUCT_PACKAGES += \
+    vendor.lineage.powershare@1.0-service.samsung
+
 ### RENDERSCRIPT
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
