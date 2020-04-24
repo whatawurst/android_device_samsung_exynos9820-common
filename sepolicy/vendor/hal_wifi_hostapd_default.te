@@ -1,0 +1,5 @@
+# hal_wifi_hostapd_default.te
+
+# /data/vendor/wifi/hostapd/hostapd_wlan0.conf
+allow hal_wifi_hostapd_default wifi_vendor_data_file:dir r_dir_perms;
+allow hal_wifi_hostapd_default wifi_vendor_data_file:file r_file_perms;
