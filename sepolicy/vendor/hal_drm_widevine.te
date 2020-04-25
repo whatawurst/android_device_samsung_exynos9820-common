@@ -19,4 +19,5 @@ allow hal_drm_widevine secmem_device:chr_file rw_file_perms;
 allow hal_drm_widevine tz_user_device:chr_file rw_file_perms;
 
 # /efs/wv.keys
+allow hal_drm_widevine efs_file:dir search;
 allow hal_drm_widevine sec_efs_file:file r_file_perms;
