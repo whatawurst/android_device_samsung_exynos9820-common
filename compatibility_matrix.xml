@@ -71,26 +71,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.frameworks.security.dsms</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISehDsms</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.samsung.frameworks.security.ucm.crypto</name>
-        <version>1.0</version>
-        <interface>
-            <name>ISehUcmKeystore</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <vendor-ndk>
-        <version>29</version>
-    </vendor-ndk>
-    <system-sdk>
-        <version>28</version>
-    </system-sdk>
 </compatibility-matrix>
