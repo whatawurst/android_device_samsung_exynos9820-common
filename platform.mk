@@ -23,6 +23,9 @@ PRODUCT_SOONG_NAMESPACES += \
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
 
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
 ### RECOVERY
 ifeq ($(WITH_TWRP),true)
 # Add Timezone database
