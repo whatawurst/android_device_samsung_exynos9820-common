@@ -472,26 +472,6 @@
         <fqname>@2.0::ISehChannel/imsd2</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.security.drk</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehDrk</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehDrk/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.security.proca</name>
-        <transport>hwbinder</transport>
-        <version>2.0</version>
-        <interface>
-            <name>ISehProca</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.0::ISehProca/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.security.securestorage</name>
         <transport>hwbinder</transport>
         <version>3.0</version>
@@ -502,16 +482,6 @@
         <fqname>@3.0::ISehSecureStorage/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.samsung.hardware.security.vaultkeeper</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehVaultKeeper</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehVaultKeeper/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.samsung.hardware.security.widevine.keyprovisioning</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -520,16 +490,6 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::ISehWidevineKeyProvisioning/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.samsung.hardware.security.wsm</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>ISehWsm</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::ISehWsm/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.samsung.hardware.snap</name>
@@ -711,7 +671,4 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <sepolicy>
-        <version>28.0</version>
-    </sepolicy>
 </manifest>
