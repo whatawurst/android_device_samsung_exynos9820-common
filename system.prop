@@ -14,3 +14,6 @@ ro.hardware.egl=mali
 
 # https://source.android.com/devices/graphics/renderer
 ro.zygote.disable_gl_preload=true
+
+# wifi direct
+wifi.direct.interface=p2p-dev-wlan0
