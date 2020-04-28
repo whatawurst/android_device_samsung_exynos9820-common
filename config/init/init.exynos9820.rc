@@ -1047,6 +1047,7 @@ on boot
 
 on fs
     mount_all /vendor/etc/fstab.exynos9820
+    swapon_all /vendor/etc/fstab.exynos9820
     # We need to seperate mounting SEC_EFS partition from fstab file due to GSI image loading case
     wait /dev/block/platform/13d60000.ufs/by-name/sec_efs
     mount ext4 /dev/block/platform/13d60000.ufs/by-name/sec_efs /efs nosuid nodev noatime noauto_da_alloc,discard,journal_checksum,data=ordered,errors=panic
@@ -1194,11 +1195,3 @@ service vramdiskd /system/bin/vramdiskd
     capabilities SYS_RESOURCE
     socket vramdiskd seqpacket 0660 system system
     disabled
-
-# SSWAP
-service swapon /sbin/sswap -s -z -f 2560
-    class core
-    user root
-    group root
-    seclabel u:r:sswap:s0
-    oneshot

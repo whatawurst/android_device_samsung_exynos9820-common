@@ -49,6 +49,9 @@
 /dev/qbt2000_fd                              u:object_r:fp_sensor_device:s0
 /dev/qbt2000_ipc                             u:object_r:fp_sensor_device:s0
 
+# zram
+/dev/zram0                                   u:object_r:swap_block_device:s0
+
 ### KEYDATA
 /keydata(/.*)?                               u:object_r:keydata_data_file:s0
 /keyrefuge(/.*)?                             u:object_r:keyrefuge_data_file:s0
