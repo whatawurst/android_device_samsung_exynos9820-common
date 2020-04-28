@@ -8,3 +8,5 @@
 
 /devices/platform/13d00000.dwmmc2/mmc_host*         auto             auto    defaults    voldmanaged=sdcard:auto
 /devices/platform/10c00000.usb*                     auto             auto    defaults    voldmanaged=usb:auto
+
+/dev/block/zram0                                    none             swap    defaults    zramsize=2684354560,max_comp_streams=8
