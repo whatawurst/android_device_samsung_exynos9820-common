@@ -144,6 +144,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.powershare@1.0-service.samsung
 
+### PROTOBUF
+PRODUCT_PACKAGES += \
+    libprotobuf-cpp-full-vendorcompat \
+    libprotobuf-cpp-lite-vendorcompat
+
 ### RENDERSCRIPT
 PRODUCT_PACKAGES += \
     android.hardware.renderscript@1.0-impl
