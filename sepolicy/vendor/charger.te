@@ -1,0 +1,14 @@
+# /proc/last_kmsg
+allow charger proc_last_kmsg:file { getattr open read };
+
+allow charger device:dir { open read };
+
+# /sys/class/power_supply/battery
+allow charger sysfs_battery_writable:file { getattr open read };
+allow charger sysfs_battery:file { getattr open read };
+
+# /sys/devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/max77705-charger/type
+# /sys/devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-charger/power_supply/otg/type
+# /sys/devices/platform/15d60000.hsi2c/i2c-13/13-0066/max77705-fuelgauge/power_supply/max77705-fuelgauge/type
+# /sys/devices/platform/15d70000.hsi2c/i2c-14/14-003b/power_supply/mfc-charger/type
+allow charger sysfs_batteryinfo_charger_writable:file rw_file_perms;
