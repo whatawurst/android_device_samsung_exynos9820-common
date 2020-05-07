@@ -37,7 +37,6 @@
 #define CLICK_TIMING_MS 20
 
 #define VIBRATOR_TIMEOUT_PATH "/sys/class/timed_output/vibrator/enable"
-#define VIBRATOR_HAPTIC_PATH "/sys/class/timed_output/vibrator/haptic_engine"
 #define VIBRATOR_INTENSITY_PATH "/sys/class/timed_output/vibrator/intensity"
 
 namespace android {
@@ -83,6 +82,11 @@ Vibrator::Vibrator()
     if (ok) {
         mIsTimedOutVibriator = true;
     }
+
+    ok = doesNodeExist(VIBRATOR_INTENSITY_PATH);
+    if (ok) {
+        mhasTimedOutIntensity = true;
+    }
 }
 
 Status Vibrator::activate(uint32_t timeoutMs)
@@ -125,18 +129,8 @@ Return<Status> Vibrator::setAmplitude(uint8_t amplitude)
     }
     LOG(DEBUG) << "setting intensity: " << intensity;
 
-    if (doesNodeExist(VIBRATOR_INTENSITY_PATH)) {
+    if (mhasTimedOutIntensity) {
         return writeNode(VIBRATOR_INTENSITY_PATH, intensity);
-    }
-
-    if (doesNodeExist(VIBRATOR_HAPTIC_PATH)) {
-        std::string haptic = android::base::StringPrintf("4 %u %u %u %u",
-                                                         CLICK_TIMING_MS,
-                                                         intensity,
-                                                         2000,
-                                                         1);
-
-        return writeNode(VIBRATOR_HAPTIC_PATH, haptic);
     }
 
     return Status::OK;

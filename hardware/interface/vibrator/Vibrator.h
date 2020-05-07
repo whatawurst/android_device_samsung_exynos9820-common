@@ -52,6 +52,7 @@ class Vibrator : public IVibrator {
     static uint32_t effectToMs(Effect effect, Status* status);
 
     bool mIsTimedOutVibriator;
+    bool mhasTimedOutIntensity;
 };
 
 }  // namespace implementation
