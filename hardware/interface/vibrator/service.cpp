@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "vibrator@1.0-exynos9820"
+#define LOG_TAG "vibrator@1.3-samsung"
 
 #include <android-base/logging.h>
-#include <android/hardware/vibrator/1.0/IVibrator.h>
+#include <android/hardware/vibrator/1.3/IVibrator.h>
 #include <hidl/HidlSupport.h>
 #include <hidl/HidlTransportSupport.h>
 #include <utils/Errors.h>
@@ -27,8 +27,8 @@
 
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
-using android::hardware::vibrator::V1_0::IVibrator;
-using android::hardware::vibrator::V1_0::implementation::Vibrator;
+using android::hardware::vibrator::V1_3::IVibrator;
+using android::hardware::vibrator::V1_3::implementation::Vibrator;
 
 using android::OK;
 using android::sp;
@@ -42,7 +42,8 @@ int main() {
 
     vibrator = new Vibrator();
     if (vibrator == nullptr) {
-        LOG(ERROR) << "Can not create an instance of ExynosVibrator HAL IVibrator, exiting.";
+        LOG(ERROR) << "Can not create an instance of ExynosVibrator HAL IVibrator, "
+                      "exiting.";
         goto shutdown;
     }
 
