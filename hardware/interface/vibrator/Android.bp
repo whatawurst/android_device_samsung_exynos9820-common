@@ -21,7 +21,7 @@ cc_binary {
     init_rc: ["android.hardware.vibrator@1.3-service.samsung.rc"],
     vintf_fragments: ["android.hardware.vibrator@1.3-service.samsung.xml"],
     srcs: ["service.cpp", "Vibrator.cpp"],
-    cflags: ["-Wall", "-Werror"],
+    cflags: ["-Wall", "-Wextra", "-Werror"],
     shared_libs: [
         "libbase",
         "libhidlbase",
