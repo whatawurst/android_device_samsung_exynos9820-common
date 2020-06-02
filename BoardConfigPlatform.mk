@@ -133,6 +133,8 @@ BOARD_CUSTOM_BT_CONFIG := $(PLATFORM_PATH)/hardware/bluetooth/libbt_vndcfg.txt
 ### GRAPHICS
 # hardware/interfaces/configstore/1.1/default/surfaceflinger.mk
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+TARGET_HAS_HDR_DISPLAY := true
+TARGET_HAS_WIDE_COLOR_DISPLAY := true
 
 ### HIDL
 DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/manifest.xml
