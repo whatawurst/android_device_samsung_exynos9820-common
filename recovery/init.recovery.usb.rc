@@ -58,7 +58,7 @@ on property:sys.usb.config=adb && property:sys.usb.configfs=1
     write /sys/class/android_usb/android0/enable 0
     write /sys/kernel/config/usb_gadget/g1/idVendor 0x04e8
     write /sys/kernel/config/usb_gadget/g1/idProduct 0x685d
-    write /sys/class/android_usb/android0/functions acm,adb
+    write /sys/class/android_usb/android0/functions adb
     write /sys/kernel/config/usb_gadget/g1/bDeviceClass 0
     write /sys/kernel/config/usb_gadget/g1/UDC "10c00000.dwc3"
     write /sys/class/android_usb/android0/enable 1
