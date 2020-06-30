@@ -131,7 +131,7 @@ PRODUCT_PACKAGES += \
 
 ### POWER
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.0-service.exynos9820
+    android.hardware.power@1.3-service.samsung-libperfmgr
 
 ### POWERSHARE
 PRODUCT_PACKAGES += \
