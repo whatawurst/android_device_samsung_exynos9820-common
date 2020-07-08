@@ -37,6 +37,7 @@ type ddexe_socket, file_type, data_file_type, core_data_file_type, coredomain_so
 type sysfs_camera, sysfs_type, r_fs_type, fs_type;
 type sysfs_decon, sysfs_type, r_fs_type, fs_type;
 type sysfs_ems, sysfs_type, r_fs_type, fs_type;
+type sysfs_gpu, sysfs_type, r_fs_type, fs_type;
 type sysfs_mmc_host, sysfs_type, r_fs_type, fs_type;
 type sysfs_npu_version, sysfs_type, r_fs_type, fs_type;
 type sysfs_scsi_host, sysfs_type, r_fs_type, fs_type;
@@ -55,6 +56,7 @@ type sysfs_mem_boost_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_mmc_host_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ss_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_usb_writable, sysfs_type, rw_fs_type, fs_type;
+type sysfs_gpu_writable, sysfs_type, rw_fs_type, fs_type;
 
 # VENDOR
 type vendor_eden_gpu_vendor_file, file_type, vendor_file_type;
