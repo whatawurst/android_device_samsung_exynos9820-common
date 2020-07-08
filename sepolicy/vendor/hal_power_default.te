@@ -16,3 +16,7 @@ allow hal_power_default sysfs_battery_writable:file rw_file_perms;
 
 # /sys/devices/platform/19030000.decon_f
 allow hal_power_default sysfs_decon:dir r_dir_perms;
+
+# /sys/kernel/gpu/
+allow hal_power_default sysfs_gpu:dir r_dir_perms;
+allow hal_power_default sysfs_gpu_writable:file rw_file_perms;

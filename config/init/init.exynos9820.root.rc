@@ -725,9 +725,9 @@ on property:sys.boot_completed=1
     chown system system /sys/kernel/gpu/gpu_max_clock
     chown system system /sys/kernel/gpu/gpu_min_clock
     chmod 0444 /sys/kernel/gpu/gpu_freq_table
-    chmod 0644 /sys/kernel/gpu/gpu_governor
-    chmod 0644 /sys/kernel/gpu/gpu_max_clock
-    chmod 0644 /sys/kernel/gpu/gpu_min_clock
+    chmod 0664 /sys/kernel/gpu/gpu_governor
+    chmod 0664 /sys/kernel/gpu/gpu_max_clock
+    chmod 0664 /sys/kernel/gpu/gpu_min_clock
 
 # LPM
 service lpm /system/bin/charger
