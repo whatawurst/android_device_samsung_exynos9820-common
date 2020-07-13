@@ -76,7 +76,6 @@
 ### VENDOR
 /(vendor|system/vendor)/bin/argosd           u:object_r:argosd_exec:s0
 /(vendor|system/vendor)/bin/cass             u:object_r:cassd_exec:s0
-/(vendor|system/vendor)/bin/epic             u:object_r:epicd_exec:s0
 
 /(vendor|system/vendor)/bin/vendor\.samsung\.hardware\.security\.widevine\.keyprovisioning@[0-9]\.[0-9]-service    u:object_r:hal_drm_widevine_exec:s0
 
@@ -97,7 +96,6 @@
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.miscpower@2\.0-service    u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.MultiFrameProcessing20@[0-9]\.[0-9]-service    u:object_r:hal_camera_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.eden_runtime@[0-9]\.[0-9]-service    u:object_r:hal_vendor_eden_runtime_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.epic@[0-9]\.[0-9]-service    u:object_r:hal_vendor_epic_service_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.iva@[0-9]\.[0-9]-service    u:object_r:hal_camera_default_exec:s0
 
 /(vendor|system/vendor)/eden/gpu(/.*)?       u:object_r:vendor_eden_gpu_vendor_file:s0
