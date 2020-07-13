@@ -100,7 +100,7 @@
             "Path": "/dev/gpu_freq_min",
             "Values": [
                 "0x0008ba60",
-                "0x0004f588",
+                "0x0005c0a8",
                 "0x00026160"
             ],
             "HoldFd": true,
@@ -212,6 +212,12 @@
             "Node": "CPULittleClusterMinFreq",
             "Duration": 0,
             "Value": "0x000c4c70"
+        },
+        {
+            "PowerHint": "INTERACTION",
+            "Node": "GPUMinFreq",
+            "Duration": 0,
+            "Value": "0x0005c0a8"
         },
         {
             "PowerHint": "INTERACTION",
@@ -427,7 +433,7 @@
             "PowerHint": "EXPENSIVE_RENDERING",
             "Node": "GPUMinFreq",
             "Duration": 0,
-            "Value": "0x0004f588"
+            "Value": "0x0008ba60"
         },
         {
             "PowerHint": "EXPENSIVE_RENDERING",
