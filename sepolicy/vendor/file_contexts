@@ -93,7 +93,6 @@
 /(vendor|system/vendor)/bin/hw/sec\.android\.hardware\.nfc@[0-9]\.[0-9]-service    u:object_r:hal_nfc_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.camera\.provider@[0-9]\.[0-9]-service    u:object_r:hal_camera_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.gnss@[0-9]\.[0-9]-service    u:object_r:hal_gnss_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.samsung\.hardware\.miscpower@2\.0-service    u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.MultiFrameProcessing20@[0-9]\.[0-9]-service    u:object_r:hal_camera_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.eden_runtime@[0-9]\.[0-9]-service    u:object_r:hal_vendor_eden_runtime_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.samsung_slsi\.hardware\.iva@[0-9]\.[0-9]-service    u:object_r:hal_camera_default_exec:s0

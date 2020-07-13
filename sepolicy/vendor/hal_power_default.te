@@ -1,7 +1,5 @@
 # hal_power_default
 
-allow hal_power_default hal_miscpower_hwservice:hwservice_manager { add find };
-
 get_prop(hal_power_default, vendor_camera_prop)
 
 # /sys/class/power_supply/battery/lcd
