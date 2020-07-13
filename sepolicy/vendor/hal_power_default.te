@@ -4,10 +4,6 @@ allow hal_power_default hal_miscpower_hwservice:hwservice_manager { add find };
 
 get_prop(hal_power_default, vendor_camera_prop)
 
-# /dev/socket/epic
-allow hal_power_default epicd_socket:sock_file write;
-allow hal_power_default epicd_socket:unix_dgram_socket sendto;
-
 # /sys/class/power_supply/battery/lcd
 allow hal_power_default sysfs_battery:dir r_dir_perms;
 allow hal_power_default sysfs_battery:file r_file_perms;

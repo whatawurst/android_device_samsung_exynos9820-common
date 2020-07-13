@@ -28,9 +28,6 @@ allow init tz_user_device:chr_file rw_file_perms;
 # /dev/socket/sap_uim_socket1
 allow init socket_device:sock_file { create setattr unlink };
 
-# /dev/socket/epic
-allow init epicd_socket:unix_dgram_socket { create bind };
-
 # /proc/sys/abi/swp
 allow init proc_abi:file { getattr };
 

@@ -9,5 +9,4 @@ vendor.samsung.hardware.radio.channel::ISehChannel             u:object_r:hal_te
 vendor.samsung.hardware.radio::ISehRadio                       u:object_r:hal_telephony_hwservice:s0
 vendor.samsung_slsi.hardware.MultiFrameProcessing20::IMultiFrameProcessing20   u:object_r:hal_vendor_multiframeprocessing_hwservice:s0
 vendor.samsung_slsi.hardware.eden_runtime::IEdenruntime        u:object_r:hal_vendor_eden_runtime_hwservice:s0
-vendor.samsung_slsi.hardware.epic::IEpicRequest                u:object_r:hal_vendor_epic_hwservice:s0
 vendor.samsung_slsi.hardware.iva::IIvaService                  u:object_r:hal_vendor_iva_hwservice:s0
