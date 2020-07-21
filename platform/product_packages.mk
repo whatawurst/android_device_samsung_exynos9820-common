@@ -161,8 +161,7 @@ PRODUCT_PACKAGES += \
 
 ### THERMAL
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-impl \
-    android.hardware.thermal@1.0-service
+    android.hardware.thermal@2.0-service.samsung
 
 ### USB
 PRODUCT_PACKAGES += \
