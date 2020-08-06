@@ -65,11 +65,11 @@ BOARD_KERNEL_PAGESIZE        := 2048
 # Looks like Samsung's sboot doesn't suppored a zipped Kernel
 BOARD_KERNEL_IMAGE_NAME      := Image
 # Build the device tree base image
-BOARD_KERNEL_SEPARATED_DTB   := true
-BOARD_CUSTOM_DTBIMG_MK       := $(PLATFORM_PATH)/kernel/dtb.mk
+#BOARD_KERNEL_SEPARATED_DTB   := true
+#BOARD_CUSTOM_DTBIMG_MK       := $(PLATFORM_PATH)/kernel/dtb.mk
 # Build a device tree overlay
 BOARD_KERNEL_SEPARATED_DTBO  := true
-BOARD_CUSTOM_DTBOIMG_MK      := $(PLATFORM_PATH)/kernel/dtbo.mk
+BOARD_DTBO_CFG               := $(PLATFORM_PATH)/kernel/$(TARGET_DEVICE).cfg
 
 # See `bbootimg -i boot.img`
 BOARD_KERNEL_OFFSET          := 0x00008000
