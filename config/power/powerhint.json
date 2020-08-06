@@ -212,21 +212,9 @@
         },
         {
             "PowerHint": "INTERACTION",
-            "Node": "CPUBigPlusClusterMinFreq",
-            "Duration": 0,
-            "Value": "0x000c7f38"
-        },
-        {
-            "PowerHint": "INTERACTION",
             "Node": "CPULittleClusterMinFreq",
             "Duration": 0,
             "Value": "0x000c4c70"
-        },
-        {
-            "PowerHint": "INTERACTION",
-            "Node": "GPUMinFreq",
-            "Duration": 0,
-            "Value": "0x0005c0a8"
         },
         {
             "PowerHint": "INTERACTION",
