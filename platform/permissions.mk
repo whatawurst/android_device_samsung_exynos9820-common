@@ -61,4 +61,5 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/handheld_core_hardware.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/handheld_core_hardware.xml
 
 PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/config/permissions/platform-samsung.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/platform-samsung.xml \
     $(PLATFORM_PATH)/config/permissions/privapp-permissions-fdroid.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-fdroid.xml
