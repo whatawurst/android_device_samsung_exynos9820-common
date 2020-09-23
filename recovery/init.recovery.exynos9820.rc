@@ -9,6 +9,9 @@ on post-fs
     write /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration "Conf 1"
     chmod 0444 /config/usb_gadget/g1/configs/b.1/strings/0x409/configuration
 
+on init
+    write /proc/sys/kernel/hung_task_timeout_secs 0
+
 on property:sys.usb.ffs.ready=0 && property:sys.usb.config=none
     write /sys/class/android_usb/android0/enable 0
 
