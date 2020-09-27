@@ -1,6 +1,8 @@
 # hal_nfc_default.te
 init_daemon_domain(hal_nfc_default)
 
+add_hwservice(hal_nfc_default, hal_nfc_hwservice)
+
 # /system/etc/event-log-tags
 allow nfc runtime_event_log_tags_file:file getattr;
 
