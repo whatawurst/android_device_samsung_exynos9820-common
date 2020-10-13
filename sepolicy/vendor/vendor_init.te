@@ -1,6 +1,5 @@
 # vendor_init.te
 
-set_prop(vendor_init, vold_prop)
 set_prop(vendor_init, persist_rmnet_prop)
 set_prop(vendor_init, persist_data_df_prop)
 set_prop(vendor_init, persist_data_wda_prop)
