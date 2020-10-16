@@ -18,7 +18,9 @@ PLATFORM_PATH := device/samsung/exynos9820-common
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
-    $(PLATFORM_PATH)
+    $(PLATFORM_PATH) \
+    hardware/google/pixel \
+    hardware/samsung/hidl/power-libperfmgr
 
 DEVICE_PACKAGE_OVERLAYS += \
     $(PLATFORM_PATH)/overlay
