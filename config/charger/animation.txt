@@ -3,8 +3,8 @@
 # animation: num_cycles, first_frame_repeats, animation_file
 animation: 5 1 charger/battery_scale
 
-# percent_display: text_percent_pos_x, text_percent_pos_y, color_b, color_g, color_r, color_a, font_file
-percent_display: c c 128 124 22 255 charger/main_font
+# percent_display: text_percent_pos_x, text_percent_pos_y, color_r, color_g, color_b, color_a, font_file
+percent_display: c c 22 124 128 255 charger/main_font
 
 fail: charger/battery_fail
 
