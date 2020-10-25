@@ -49,7 +49,6 @@ type sysfs_v4l_gdc, sysfs_type, r_fs_type, fs_type;
 type sysfs_v4l_mfc, sysfs_type, r_fs_type, fs_type;
 
 type sysfs_batteryinfo_charger_writable, sysfs_type, rw_fs_type, fs_type;
-type sysfs_bt_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_camera_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_ems_writable, sysfs_type, rw_fs_type, fs_type;
 type sysfs_mem_boost_writable, sysfs_type, rw_fs_type, fs_type;
