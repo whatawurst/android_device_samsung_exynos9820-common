@@ -112,12 +112,6 @@ on post-fs-data
     mkdir /data/log 0775 system log
     mkdir /data/log/bt 0770 bluetooth bluetooth
 
-    mkdir /data/local/dsms 0710 dsms dsms
-    rm /data/local/dsms/preboot.log
-    write /data/local/dsms/preboot.log ""
-    chown dsms dsms /data/local/dsms/preboot.log
-    chmod 0620 /data/local/dsms/preboot.log
-
     mkdir /data/misc/spqr 0770 system shell
 
     #lpnetConfig AppSync
