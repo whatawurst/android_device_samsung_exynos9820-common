@@ -31,7 +31,8 @@ LOCAL_SRC_FILES := skip_mount.cfg
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE_STEM := skip_mount.cfg
 LOCAL_MODULE_CLASS := ETC
-LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)/init/config
+LOCAL_SYSTEM_EXT_MODULE := true
+LOCAL_MODULE_RELATIVE_PATH := init/config
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)
