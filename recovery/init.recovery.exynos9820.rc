@@ -7,17 +7,11 @@ on init
 
     write /proc/sys/kernel/hung_task_timeout_secs 0
 
-    start hwservicemanager
-
 on fs
     export ANDROID_ROOT /system_root
 
     mkdir /mnt/vendor 0770 root system
     mkdir /mnt/vendor/efs 0770 root system
-
-    # IMPORTANT!
-    # This needs to be supported by the init binary!
-    install_keyring
 
     # Get some teegris logging
     write /sys/module/tzdev/parameters/tzdev_verbosity 1
@@ -25,96 +19,3 @@ on fs
 on post-fs
     mkdir /dev/socket/iwt 0770 system system
     mkdir /dev/socket/iwt/ca 0770 system system
-
-on boot
-    start predecrypt
-    wait_for_prop vendor.predecrypt Ready
-
-    setprop crypto.ready 1
-
-on property:crypto.ready=1
-    mount ext4 /dev/block/platform/13d60000.ufs/by-name/efs /mnt/vendor/efs noatime,nosuid,nodev wait
-
-    start tz_service
-    wait_for_prop vendor.tzdaemon Ready
-    setprop vendor.TEEGRIS.loaded true
-    start tzts_service
-    wait_for_prop vendor.tzts_daemon Ready
-    start servicemanager
-
-    start keymaster-4-0
-    start gatekeeper-1-0
-
-on property:crypto.ready=0
-    stop keymaster-4-0
-    stop gatekeeper-1-0
-
-    stop servicemanager
-    stop tzts_service
-    stop tz_service
-
-    umount /mnt/vendor/efs
-
-service predecrypt /sbin/predecrypt.sh
-    oneshot
-    disabled
-    user root
-    group root
-    seclabel u:r:recovery:s0
-
-service hwservicemanager /sbin/hwservicemanager
-    user root
-    group root
-    disabled
-    onrestart setprop hwservicemanager.ready false
-    seclabel u:r:recovery:s0
-
-service servicemanager /sbin/servicemanager
-    user root
-    group root readproc
-    disabled
-    seclabel u:r:recovery:s0
-    writepid /dev/cpuset/system-background/tasks
-
-service keymaster-4-0 /sbin/android.hardware.keymaster@4.0-service.samsung
-    user root
-    group system
-    disabled
-    seclabel u:r:recovery:s0
-
-service gatekeeper-1-0 /sbin/android.hardware.gatekeeper@1.0-service
-    user root
-    group system
-    disabled
-    seclabel u:r:recovery:s0
-
-# TEEGRIS daemon
-service tz_service /vendor/bin/tzdaemon --verbose=dbg
-    user root
-    group system
-    disabled
-    seclabel u:r:recovery:s0
-
-# TEEGRIS trusted storage daemon
-service tzts_service /vendor/bin/tzts_daemon
-    user root
-    group system
-    disabled
-    seclabel u:r:recovery:s0
-
-# Handled by TWRP
-service keystore /sbin/keystore /tmp/misc/keystore
-    disabled
-    oneshot
-    user root
-    group root drmrpc readproc
-    seclabel u:r:recovery:s0
-    writepid /dev/cpuset/foreground/tasks
-
-# Handled by TWRP
-service keystore_auth /sbin/keystore_auth
-    disabled
-    oneshot
-    user system
-    group root
-    seclabel u:r:recovery:s0
