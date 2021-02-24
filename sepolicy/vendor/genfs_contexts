@@ -81,7 +81,6 @@ genfscon sysfs /devices/virtual/cirrus/cirrus_bd           u:object_r:sysfs_ss_w
 genfscon sysfs /devices/virtual/cirrus/cirrus_cal          u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/virtual/cirrus/cirrus_pwr          u:object_r:sysfs_ss_writable:s0
 
-genfscon sysfs /devices/virtual/sec/switch                 u:object_r:sysfs_sec_switch:s0
 genfscon sysfs /devices/virtual/sec/sensorhub/mcu_power    u:object_r:sysfs_sensorhub_writable:s0
 genfscon sysfs /devices/virtual/usb_notify/usb_control/usb_hw_param u:object_r:sysfs_usb_writable:s0
 
