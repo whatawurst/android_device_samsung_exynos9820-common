@@ -184,6 +184,7 @@ BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 
 WIFI_HIDL_FEATURE_DUAL_INTERFACE := true
 WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
+WIFI_RESET_IFACE_AFTER_MAC_CHANGE := true
 
 # hardware/broadcom/wlan/bcmdhd/config/Android.mk
 # external/wpa_supplicant_8/Android.mk
