@@ -20,6 +20,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := ASensorManager.cpp
 LOCAL_SHARED_LIBRARIES := \
     libbase \
+    libutils \
     libsensorndkbridge
 LOCAL_MODULE := libshim_sensorndkbridge
 LOCAL_MODULE_TAGS := optional
