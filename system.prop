@@ -11,7 +11,7 @@ ro.cmc.version=2.0
 ro.charger.enable_suspend=true
 
 ### gfx
-ro.gfx.driver.0=com.samsung.gamedriver.S10MaliG76
+ro.gfx.driver.0=com.samsung.gamedriver.ex9820
 ro.gfx.driver.1=com.samsung.pregpudriver.ex9820
 ro.hardware.egl=mali
 
