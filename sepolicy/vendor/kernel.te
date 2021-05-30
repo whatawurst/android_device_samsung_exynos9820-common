@@ -15,6 +15,11 @@ allow kernel efs_file:dir r_dir_perms;
 allow kernel app_efs_file:dir r_dir_perms;
 allow kernel app_efs_file:file rw_file_perms;
 
+# /sys/devices/virtual/sec/hall_ic
+allow kernel sysfs_hall_ic:dir r_dir_perms;
+allow kernel sysfs_hall_ic:file r_file_perms;
+allow kernel sysfs_hall_ic:lnk_file r_file_perms;
+
 # /sys/devices/virtual/sec/sec_key/hall_detect
 allow kernel sysfs_sec_key:dir r_dir_perms;
 allow kernel sysfs_sec_key:file r_file_perms;
