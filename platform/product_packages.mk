@@ -115,7 +115,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.0 \
     android.hardware.neuralnetworks@1.1 \
-    android.hardware.neuralnetworks@1.2
+    android.hardware.neuralnetworks@1.2 \
+    android.hardware.neuralnetworks@1.3
 
 PRODUCT_PACKAGES += \
     libtextclassifier_hash.vendor
