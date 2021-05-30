@@ -24,6 +24,7 @@ genfscon sysfs /class/video4linux                          u:object_r:sysfs_v4l:
 
 # devices
 genfscon sysfs /devices/platform/104b0000.hsi2c/i2c-4/4-0048/input/input1/enabled u:object_r:sysfs_touchscreen_writable:s0
+genfscon sysfs /devices/platform/104b0000.hsi2c/i2c-4/4-0048/input/input2/enabled u:object_r:sysfs_touchscreen_writable:s0
 genfscon sysfs /devices/platform/10970000.spi/             u:object_r:sysfs_spi_writeable:s0
 genfscon sysfs /devices/platform/10000.mif_pdata/sim/      u:object_r:sysfs_sim:s0
 genfscon sysfs /devices/platform/10000.mif_pdata/sim/ds_detect u:object_r:sysfs_sim_writable:s0

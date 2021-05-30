@@ -11,5 +11,8 @@ allow hal_power_default sysfs_battery:file r_file_perms;
 allow hal_power_default sysfs_battery_writable:dir r_dir_perms;
 allow hal_power_default sysfs_battery_writable:file rw_file_perms;
 
+# /sys/devices/platform/104b0000.hsi2c/i2c-4/4-0048/input/input2/enabled
+allow hal_power_default sysfs_touchscreen_writable:file rw_file_perms;
+
 # /sys/devices/platform/19030000.decon_f
 allow hal_power_default sysfs_decon:dir r_dir_perms;
