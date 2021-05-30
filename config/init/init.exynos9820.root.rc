@@ -94,14 +94,6 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/scaling_devfreq_min
     chmod 0444 /sys/devices/platform/17000010.devfreq_mif/devfreq/17000010.devfreq_mif/available_frequencies
 
-    #input booster
-    chown radio system /sys/class/input_booster/level
-    chown radio system /sys/class/input_booster/head
-    chown radio system /sys/class/input_booster/tail
-    chmod 0664 /sys/class/input_booster/level
-    chmod 0664 /sys/class/input_booster/head
-    chmod 0664 /sys/class/input_booster/tail
-
     chown radio system /sys/class/input_booster/touchkey/level
     chown radio system /sys/class/input_booster/touchkey/freq
     chown radio system /sys/class/input_booster/touchkey/time
