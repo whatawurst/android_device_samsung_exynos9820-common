@@ -38,6 +38,9 @@
 /dev/v4l-subdev21         0660   system     graphics
 /dev/v4l-subdev32         0660   system     graphics
 
+#score
+/dev/score                0660   cameraserver camera
+
 # gscalers
 /dev/video23              0660   media      graphics
 /dev/video26              0660   media      graphics
@@ -145,6 +148,8 @@
 /dev/is_tuning_json       0660   cameraserver   camera
 /dev/is_tuning_socket     0660   cameraserver   camera
 
+# IVA
+/dev/iva_ctl              0660   cameraserver   camera
 
 # For FRP
 /dev/block/by-name/persist	      0600   system          system
@@ -156,6 +161,13 @@
 
 # audio
 /dev/seiren               0660   system     audio
+
+# TEEGRIS
+/dev/tzdev                0666   system     system
+/dev/tziwsock             0666   system     system
+/dev/ionfd2phys           0660   system     system
+/dev/tzirs                0660   system     system
+/dev/tuihw              0660   system     system
 
 # Secure MEM driver
 /dev/s5p-smem             0660   system     system
@@ -191,7 +203,6 @@
 /dev/drb                0660   system     radio
 
 # SIPC 5G devices
-/dev/block/sda15        0400   radio      radio
 /dev/nr_ramdump0        0660   radio      radio
 /dev/nr_dm0             0660   system      system
 /dev/nr_router          0660   system      system
@@ -227,22 +238,11 @@
 # Voice Trigger Sound (VTS Misc)
 /dev/vts_fio_dev         0660   audioserver   system
 
-/dev/iva_ctl             0660   cameraserver   camera
-/dev/score               0660   cameraserver   camera
-
 # Google FRP solution
 /dev/block/platform/13d60000.ufs/by-name/persistent    0660    system    system
 
 # Reactivation lock
 /dev/block/platform/13d60000.ufs/by-name/steady    0660    system    system
-
-# TEEGRIS
-/dev/tzdev              0666   system     system
-/dev/tziwsock           0666   system     system
-/dev/ionfd2phys         0660   system     system
-/dev/tuihw              0660   system     system
-/dev/tzirs              0660   system     system
-/dev/nwfsdev            0660   system     system
 
 # Sensor sysfs properties
 /sys/devices/virtual/input/input*    poll_delay    0660    system    radio
