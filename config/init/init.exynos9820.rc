@@ -88,16 +88,18 @@ on init
 
 # PAS Setting
     chown system system /sys/kernel/ems/eff_mode
+    chown system system /sys/kernel/ems/energy_weight
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/schedutil/freqvar_st_boost
     chown system system /sys/devices/system/cpu/cpu4/cpufreq/schedutil/freqvar_st_boost
     chown system system /sys/devices/system/cpu/cpu6/cpufreq/schedutil/freqvar_st_boost
 
-    write /sys/kernel/ems/eff_mode 1
+    write /sys/kernel/ems/eff_mode 0
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/freqvar_st_boost 5
     write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/freqvar_st_boost 20
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/freqvar_st_boost 5
 
     chmod 0664 /sys/kernel/ems/eff_mode
+    chmod 0664 /sys/kernel/ems/energy_weight
     chmod 0664 /sys/devices/system/cpu/cpu0/cpufreq/schedutil/freqvar_st_boost
     chmod 0664 /sys/devices/system/cpu/cpu4/cpufreq/schedutil/freqvar_st_boost
     chmod 0664 /sys/devices/system/cpu/cpu6/cpufreq/schedutil/freqvar_st_boost
@@ -614,7 +616,7 @@ on post-fs-data
     chmod 0644 /dev/freezer/thaw/tasks
     chmod 0644 /dev/freezer/thaw/cgroup.procs
 
-# Slowdown freezer
+# SDHMS Slowdown : Freezer
     mkdir /dev/freezer/abnormal
     write /dev/freezer/abnormal/freezer.state THAWED
     chown system system /dev/freezer/abnormal
@@ -658,48 +660,15 @@ on boot
     chmod 0222 /sys/kernel/debug/tracing/trace_marker
     write /sys/kernel/debug/tracing/tracing_on 0
 
-# BarTender
-    mkdir /dev/cpuctl/bg_cached
-    chown system system /dev/cpuctl/bg_cached/tasks
-    chown system system /dev/cpuctl/bg_cached/cpu.cfs_period_us
-    chown system system /dev/cpuctl/bg_cached/cpu.cfs_quota_us
-    chmod 0666 /dev/cpuctl/bg_cached/tasks
-    chmod 0664 /dev/cpuctl/bg_cached/cpu.cfs_period_us
-    chmod 0664 /dev/cpuctl/bg_cached/cpu.cfs_quota_us
-    write /dev/cpuctl/bg_cached/cpu.rt_runtime_us 950000
-    write /dev/cpuctl/bg_cached/cpu.rt_period_us 1000000
-    write /dev/cpuctl/bg_cached/cpu.cfs_period_us 20000
-    write /dev/cpuctl/bg_cached/cpu.cfs_quota_us 10000
-
-    mkdir /dev/cpuctl/bg_abnormal
-    chown system system /dev/cpuctl/bg_abnormal/tasks
-    chown system system /dev/cpuctl/bg_abnormal/cpu.cfs_period_us
-    chown system system /dev/cpuctl/bg_abnormal/cpu.cfs_quota_us
-    chmod 0666 /dev/cpuctl/bg_abnormal/tasks
-    chmod 0664 /dev/cpuctl/bg_abnormal/cpu.cfs_period_us
-    chmod 0664 /dev/cpuctl/bg_abnormal/cpu.cfs_quota_us
-    write /dev/cpuctl/bg_abnormal/cpu.rt_runtime_us 950000
-    write /dev/cpuctl/bg_abnormal/cpu.rt_period_us 1000000
-    write /dev/cpuctl/bg_abnormal/cpu.cfs_period_us 20000
-    write /dev/cpuctl/bg_abnormal/cpu.cfs_quota_us 10000
-
-    mkdir /dev/cpuset/cached
-    write /dev/cpuset/cached/cpus 0-3
-    copy /dev/cpuset/mems /dev/cpuset/cached/mems
+    # SDHMS Slowdown : Cpuset
     mkdir /dev/cpuset/abnormal
     write /dev/cpuset/abnormal/cpus 0-3
     copy /dev/cpuset/mems /dev/cpuset/abnormal/mems
 
-    # change permissions for BarTender's cpusets we'll touch at runtime
-    chown system system /dev/cpuset/cached
     chown system system /dev/cpuset/abnormal
-    chown system system /dev/cpuset/cached/tasks
     chown system system /dev/cpuset/abnormal/tasks
-    chown system system /dev/cpuset/cached/cpus
     chown system system /dev/cpuset/abnormal/cpus
-    chmod 0664 /dev/cpuset/cached/tasks
     chmod 0664 /dev/cpuset/abnormal/tasks
-    chmod 0664 /dev/cpuset/cached/cpus
     chmod 0664 /dev/cpuset/abnormal/cpus
 
 # CPUSET(9820)
@@ -812,12 +781,12 @@ on boot
     chmod 0664 /sys/devices/platform/13ed0000.pcie0/pcie_sysfs
 
     #input booster
-    chown radio system /sys/class/input_booster/level
-    chown radio system /sys/class/input_booster/head
-    chown radio system /sys/class/input_booster/tail
-    chmod 0664 /sys/class/input_booster/level
-    chmod 0664 /sys/class/input_booster/head
-    chmod 0664 /sys/class/input_booster/tail
+    chown system system /sys/class/input_booster/touch/level
+    chown system system /sys/class/input_booster/touch/head
+    chown system system /sys/class/input_booster/touch/tail
+    chmod 0664 /sys/class/input_booster/touch/level
+    chmod 0664 /sys/class/input_booster/touch/head
+    chmod 0664 /sys/class/input_booster/touch/tail
 
     chown radio system /sys/class/input_booster/touchkey/level
     chown radio system /sys/class/input_booster/touchkey/freq
@@ -1005,13 +974,7 @@ on boot
 # Sensors permissions
 # Permissions for Fingerprint sensor
     chmod 0660 /dev/esfp0
-    chmod 0660 /dev/qbt2000_fd
-    chmod 0660 /dev/qbt2000_ipc
-    chmod 0660 /dev/qbtspi
     chown system system /dev/esfp0
-    chown system system /dev/qbt2000_fd
-    chown system system /dev/qbt2000_ipc
-    chown system system /dev/qbtspi
 
     chown system radio /sys/class/fingerprint/fingerprint/type_check
     chown system radio /sys/class/fingerprint/fingerprint/name
@@ -1019,20 +982,12 @@ on boot
     chown system radio /sys/class/fingerprint/fingerprint/adm
     chown system radio /sys/class/fingerprint/fingerprint/bfs_values
     chown system radio /sys/class/fingerprint/fingerprint/hbm
-    chown system radio /sys/class/fingerprint/fingerprint/position
-    chown system radio /sys/class/fingerprint/fingerprint/cbgecnt
     chown system radio /sys/class/fingerprint/fingerprint/intcnt
     chown system radio /sys/class/fingerprint/fingerprint/resetcnt
-    chown system radio /sys/class/fingerprint/fingerprint/wuhbtest
 
-    mkdir /data/vendor/misc 0770 system system
-    mkdir /data/vendor/misc/qti_fp 0770 system system
-    mkdir /data/vendor/misc/qti_fp/bg_estimation 0770 system system
-    mkdir /data/vendor/misc/qti_fp/calib_test 0770 system system
-    mkdir /data/vendor/misc/qti_fp/template 0770 system system
     mkdir /data/vendor/fpSnrTest 0770 system system
-    mkdir /efs/biometrics 0770 system system
-    mkdir /efs/biometrics/meta 0770 system system
+
+    mkdir /data/vendor/misc/arcounter 0770 system system
 
 # Misc Power permissions
 # strings vendor.samsung.hardware.miscpower@2.0-service | grep ^/sys
