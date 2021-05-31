@@ -190,7 +190,7 @@ WPA_SUPPLICANT_VERSION           := VER_0_8_X
 
 # frameworks/opt/net/wifi/libwifi_hal/Android.mk
 # hardware/samsung/wifiloader/Android.mk
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/dhd/parameters/firmware_path"
 
 ### RIL
 # Use stock RIL stack
