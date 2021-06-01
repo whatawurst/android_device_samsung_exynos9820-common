@@ -11,6 +11,9 @@ persist.vendor.sys.camera.     u:object_r:vendor_camera_prop:s0
 # GPS
 ro.spid.gps.                   u:object_r:vendor_gps_prop:s0
 
+# GRAPHICS
+hwc.exynos.vsync_mode          u:object_r:vendor_graphics_prop:s0
+
 # NFC
 vendor.nfc.fw.                 u:object_r:vendor_nfc_prop:s0
 
