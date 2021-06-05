@@ -248,6 +248,7 @@
 /sys/devices/virtual/input/input*    poll_delay    0660    system    radio
 /sys/devices/virtual/input/input*    enable        0660    system    radio
 /dev/input/event*	  0660   system		input
+/dev/ssp_data_injection   0660   system     	system
 
 # Sensorhub IIO
 /dev/ssp_sensorhub        0660   system		system
