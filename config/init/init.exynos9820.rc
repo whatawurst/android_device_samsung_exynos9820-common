@@ -296,6 +296,9 @@ on init
 
     start watchdogd
 
+on load_persist_props_action
+    setprop ro.telephony.default_network ${ro.vendor.radio.default_network}
+
 on fs
 # Permissions for backlight
     chown system system /sys/class/backlight/panel/brightness
