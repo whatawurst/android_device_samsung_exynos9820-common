@@ -77,6 +77,7 @@ genfscon sysfs /devices/virtual/camera/rear/ssrm_camera_info u:object_r:sysfs_ca
 genfscon sysfs /devices/virtual/camera/flash/rear_flash    u:object_r:sysfs_camera_writable:s0
 genfscon sysfs /devices/virtual/input/input4               u:object_r:sysfs_sensors_writable:s0
 genfscon sysfs /devices/virtual/input/input6               u:object_r:sysfs_sensors_writable:s0
+genfscon sysfs /devices/virtual/input/input7               u:object_r:sysfs_sensors_writable:s0
 
 genfscon sysfs /devices/virtual/cirrus/cirrus_bd           u:object_r:sysfs_ss_writable:s0
 genfscon sysfs /devices/virtual/cirrus/cirrus_cal          u:object_r:sysfs_ss_writable:s0
