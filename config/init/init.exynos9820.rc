@@ -790,21 +790,6 @@ on boot
     chown root system /sys/devices/platform/13ed0000.pcie0/pcie_sysfs
     chmod 0664 /sys/devices/platform/13ed0000.pcie0/pcie_sysfs
 
-    #input booster
-    chown system system /sys/class/input_booster/touch/level
-    chown system system /sys/class/input_booster/touch/head
-    chown system system /sys/class/input_booster/touch/tail
-    chmod 0664 /sys/class/input_booster/touch/level
-    chmod 0664 /sys/class/input_booster/touch/head
-    chmod 0664 /sys/class/input_booster/touch/tail
-
-    chown root system /sys/class/input_booster/touchkey/level
-    chown root system /sys/class/input_booster/touchkey/freq
-    chown root system /sys/class/input_booster/touchkey/time
-    chmod 0664 /sys/class/input_booster/touchkey/level
-    chmod 0664 /sys/class/input_booster/touchkey/freq
-    chmod 0664 /sys/class/input_booster/touchkey/time
-
     #CPU SET
     chown root system /dev/cpuset/top-app/cpus
     chown root system /dev/cpuset/foreground/cpus
