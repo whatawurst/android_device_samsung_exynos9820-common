@@ -164,9 +164,6 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.samsung \
     android.hardware.sensors@1.0-service
 
-PRODUCT_PACKAGES += \
-    libsensorndkbridge
-
 ### SHIMS
 PRODUCT_PACKAGES += \
     libshim_stagefright_foundation \
