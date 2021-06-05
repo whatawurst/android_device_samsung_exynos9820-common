@@ -1,0 +1,5 @@
+# secril_config_svc.te
+
+# /efs/imei/
+allow secril_config_svc imei_efs_file:dir r_dir_perms;
+allow secril_config_svc imei_efs_file:file r_file_perms;

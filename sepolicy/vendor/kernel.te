@@ -5,15 +5,15 @@ allow kernel self:capability { sys_admin };
 
 allow kernel self:capability { mknod };
 
-# Allow to create dirs in /dev (devtmpfs)
-allow kernel device:dir rw_dir_perms;
+# Allow to create and remove dirs in /dev (devtmpfs)
+allow kernel device:dir { rmdir rw_dir_perms };
 # neverallow rule
 dontaudit kernel device:file { create };
 
 # /efs/FactoryApp/gyro_cal_data
-allow kernel efs_file:dir r_dir_perms;
+allow kernel efs_file:dir rw_dir_perms;
 allow kernel app_efs_file:dir r_dir_perms;
-allow kernel app_efs_file:file rw_file_perms;
+allow kernel app_efs_file:file { create rw_file_perms };
 
 # /sys/devices/virtual/sec/hall_ic
 allow kernel sysfs_hall_ic:dir r_dir_perms;

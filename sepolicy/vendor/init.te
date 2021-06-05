@@ -3,6 +3,12 @@
 # kmod="crypto-cts(cbc(aes))"
 allow init kernel:system module_request;
 
+# boot
+allow init boot_block_device:lnk_file { relabelto };
+
+# dtbo
+allow init dtbo_block_device:lnk_file { relabelto };
+
 # /efs
 allow init efs_file:dir { mounton };
 # /dqmdbg
@@ -33,6 +39,15 @@ allow init proc_abi:file { getattr };
 
 # /proc/sys/vm/extra_free_kbytes
 allow init proc_extra_free_kbytes:file { getattr };
+
+# /proc/sys/vm/​overcommit_memory
+allow init proc_overcommit_memory:file { getattr };
+
+# /sys/block/mmcblk[0-9]/queue/scheduler
+allow init sysfs_mmc_host_writable:file { setattr };
+
+# /sys/block/sd[a-z]/queue/scheduler
+allow init sysfs_scsi_host_writable:file { setattr };
 
 # /sys/kernel/sysrq
 allow init proc_sysrq:file { getattr };
