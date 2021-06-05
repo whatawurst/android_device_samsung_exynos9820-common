@@ -95,7 +95,7 @@ on init
 
     write /sys/kernel/ems/eff_mode 0
     write /sys/devices/system/cpu/cpu0/cpufreq/schedutil/freqvar_st_boost 5
-    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/freqvar_st_boost 20
+    write /sys/devices/system/cpu/cpu4/cpufreq/schedutil/freqvar_st_boost 5
     write /sys/devices/system/cpu/cpu6/cpufreq/schedutil/freqvar_st_boost 5
 
     chmod 0664 /sys/kernel/ems/eff_mode
@@ -671,6 +671,16 @@ on boot
     chmod 0664 /dev/cpuset/abnormal/tasks
     chmod 0664 /dev/cpuset/abnormal/cpus
 
+    mkdir /dev/cpuset/moderate
+    write /dev/cpuset/moderate/cpus 0-2,4-6
+    copy /dev/cpuset/mems /dev/cpuset/moderate/mems
+
+    chown system system /dev/cpuset/moderate
+    chown system system /dev/cpuset/moderate/tasks
+    chown system system /dev/cpuset/moderate/cpus
+    chmod 0664 /dev/cpuset/moderate/tasks
+    chmod 0664 /dev/cpuset/moderate/cpus
+
 # CPUSET(9820)
     chown system system /dev/cpuset/top-app/cpus
     chown system system /dev/cpuset/foreground/cpus
@@ -686,7 +696,7 @@ on boot
     chmod 664 /dev/cpuset/cpus
     write /dev/cpuset/top-app/cpus 0-7
     write /dev/cpuset/foreground/cpus 0-2,4-7
-    write /dev/cpuset/background/cpus 0-1
+    write /dev/cpuset/background/cpus 0-2
     write /dev/cpuset/system-background/cpus 0-2
     write /dev/cpuset/restricted/cpus 0-2
 
@@ -777,7 +787,7 @@ on boot
 
 # Ownership and permissions for SEC PERFORMANCE
     # PCIE
-    chown radio system /sys/devices/platform/13ed0000.pcie0/pcie_sysfs
+    chown root system /sys/devices/platform/13ed0000.pcie0/pcie_sysfs
     chmod 0664 /sys/devices/platform/13ed0000.pcie0/pcie_sysfs
 
     #input booster
@@ -788,71 +798,71 @@ on boot
     chmod 0664 /sys/class/input_booster/touch/head
     chmod 0664 /sys/class/input_booster/touch/tail
 
-    chown radio system /sys/class/input_booster/touchkey/level
-    chown radio system /sys/class/input_booster/touchkey/freq
-    chown radio system /sys/class/input_booster/touchkey/time
+    chown root system /sys/class/input_booster/touchkey/level
+    chown root system /sys/class/input_booster/touchkey/freq
+    chown root system /sys/class/input_booster/touchkey/time
     chmod 0664 /sys/class/input_booster/touchkey/level
     chmod 0664 /sys/class/input_booster/touchkey/freq
     chmod 0664 /sys/class/input_booster/touchkey/time
 
     #CPU SET
-    chown radio system /dev/cpuset/top-app/cpus
-    chown radio system /dev/cpuset/foreground/cpus
-    chown radio system /dev/cpuset/background/cpus
-    chown radio system /dev/cpuset/system-background/cpus
-    chown radio system /dev/cpuset/abnormal/cpus
-    chown radio system /dev/cpuset/cameraserver/cpus
-    chown radio system /dev/cpuset/audioserver/cpus
-    chown radio system /dev/cpuset/cpus
-    chown radio system /dev/stune/top-app/schedtune.prefer_perf
-    chown radio system /dev/stune/top-app/schedtune.prefer_idle
-    chown radio system /dev/stune/top-app/schedtune.band
-    chown radio system /dev/stune/top-app/schedtune.boost
-    chown radio system /dev/stune/top-app/schedtune.util_est_en
-    chown radio system /dev/stune/top-app/schedtune.ontime_en
-    chown radio system /dev/stune/foreground/schedtune.prefer_perf
-    chown radio system /dev/stune/foreground/schedtune.prefer_idle
-    chown radio system /dev/stune/foreground/schedtune.band;
-    chown radio system /dev/stune/foreground/schedtune.boost
-    chown radio system /dev/stune/foreground/schedtune.util_est_en
-    chown radio system /dev/stune/foreground/schedtune.ontime_en;
-    chown radio system /dev/stune/background/schedtune.prefer_perf
-    chown radio system /dev/stune/background/schedtune.prefer_idle
-    chown radio system /dev/stune/background/schedtune.band
-    chown radio system /dev/stune/background/schedtune.boost
-    chown radio system /dev/stune/background/schedtune.util_est_en
-    chown radio system /dev/stune/background/schedtune.ontime_en
-    chown radio system /sys/kernel/ems/ontime/coregroup0/lower_boundary
-    chown radio system /sys/kernel/ems/ontime/coregroup0/lower_boundary_s
-    chown radio system /sys/kernel/ems/ontime/coregroup0/upper_boundary
-    chown radio system /sys/kernel/ems/ontime/coregroup0/upper_boundary_s
-    chown radio system /sys/kernel/ems/ontime/coregroup0/coverage_ratio
-    chown radio system /sys/kernel/ems/ontime/coregroup1/lower_boundary
-    chown radio system /sys/kernel/ems/ontime/coregroup1/lower_boundary_s
-    chown radio system /sys/kernel/ems/ontime/coregroup1/upper_boundary
-    chown radio system /sys/kernel/ems/ontime/coregroup1/upper_boundary_s
-    chown radio system /sys/kernel/ems/ontime/coregroup1/coverage_ratio
-    chown radio system /sys/kernel/ems/ontime/coregroup2/lower_boundary
-    chown radio system /sys/kernel/ems/ontime/coregroup2/lower_boundary_s
-    chown radio system /sys/kernel/ems/ontime/coregroup2/upper_boundary
-    chown radio system /sys/kernel/ems/ontime/coregroup2/upper_boundary_s
-    chown radio system /sys/kernel/ems/ontime/coregroup2/coverage_ratio
-    chown radio system /sys/kernel/ems/lbt/overutil_ratio_level0
-    chown radio system /sys/kernel/ems/lbt/overutil_ratio_level1
-    chown radio system /sys/kernel/ems/lbt/overutil_ratio_level2
-    chown radio system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_boost
-    chown radio system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_up_rate_limit
-    chown radio system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_down_rate_limit
-    chown radio system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_upscale_ratio
-    chown radio system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_boost
-    chown radio system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_up_rate_limit
-    chown radio system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_down_rate_limit
-    chown radio system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_upscale_ratio
-    chown radio system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_boost
-    chown radio system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_up_rate_limit
-    chown radio system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_down_rate_limit
-    chown radio system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_upscale_ratio
-    chown radio system /sys/kernel/ems/frt/disable_cpufreq
+    chown root system /dev/cpuset/top-app/cpus
+    chown root system /dev/cpuset/foreground/cpus
+    chown root system /dev/cpuset/background/cpus
+    chown root system /dev/cpuset/system-background/cpus
+    chown root system /dev/cpuset/abnormal/cpus
+    chown root system /dev/cpuset/cameraserver/cpus
+    chown root system /dev/cpuset/audioserver/cpus
+    chown root system /dev/cpuset/cpus
+    chown root system /dev/stune/top-app/schedtune.prefer_perf
+    chown root system /dev/stune/top-app/schedtune.prefer_idle
+    chown root system /dev/stune/top-app/schedtune.band
+    chown root system /dev/stune/top-app/schedtune.boost
+    chown root system /dev/stune/top-app/schedtune.util_est_en
+    chown root system /dev/stune/top-app/schedtune.ontime_en
+    chown root system /dev/stune/foreground/schedtune.prefer_perf
+    chown root system /dev/stune/foreground/schedtune.prefer_idle
+    chown root system /dev/stune/foreground/schedtune.band;
+    chown root system /dev/stune/foreground/schedtune.boost
+    chown root system /dev/stune/foreground/schedtune.util_est_en
+    chown root system /dev/stune/foreground/schedtune.ontime_en;
+    chown root system /dev/stune/background/schedtune.prefer_perf
+    chown root system /dev/stune/background/schedtune.prefer_idle
+    chown root system /dev/stune/background/schedtune.band
+    chown root system /dev/stune/background/schedtune.boost
+    chown root system /dev/stune/background/schedtune.util_est_en
+    chown root system /dev/stune/background/schedtune.ontime_en
+    chown root system /sys/kernel/ems/ontime/coregroup0/lower_boundary
+    chown root system /sys/kernel/ems/ontime/coregroup0/lower_boundary_s
+    chown root system /sys/kernel/ems/ontime/coregroup0/upper_boundary
+    chown root system /sys/kernel/ems/ontime/coregroup0/upper_boundary_s
+    chown root system /sys/kernel/ems/ontime/coregroup0/coverage_ratio
+    chown root system /sys/kernel/ems/ontime/coregroup1/lower_boundary
+    chown root system /sys/kernel/ems/ontime/coregroup1/lower_boundary_s
+    chown root system /sys/kernel/ems/ontime/coregroup1/upper_boundary
+    chown root system /sys/kernel/ems/ontime/coregroup1/upper_boundary_s
+    chown root system /sys/kernel/ems/ontime/coregroup1/coverage_ratio
+    chown root system /sys/kernel/ems/ontime/coregroup2/lower_boundary
+    chown root system /sys/kernel/ems/ontime/coregroup2/lower_boundary_s
+    chown root system /sys/kernel/ems/ontime/coregroup2/upper_boundary
+    chown root system /sys/kernel/ems/ontime/coregroup2/upper_boundary_s
+    chown root system /sys/kernel/ems/ontime/coregroup2/coverage_ratio
+    chown root system /sys/kernel/ems/lbt/overutil_ratio_level0
+    chown root system /sys/kernel/ems/lbt/overutil_ratio_level1
+    chown root system /sys/kernel/ems/lbt/overutil_ratio_level2
+    chown root system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_boost
+    chown root system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_up_rate_limit
+    chown root system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_down_rate_limit
+    chown root system /sys/devices/system/cpu/cpufreq/policy0/schedutil/freqvar_upscale_ratio
+    chown root system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_boost
+    chown root system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_up_rate_limit
+    chown root system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_down_rate_limit
+    chown root system /sys/devices/system/cpu/cpufreq/policy4/schedutil/freqvar_upscale_ratio
+    chown root system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_boost
+    chown root system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_up_rate_limit
+    chown root system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_down_rate_limit
+    chown root system /sys/devices/system/cpu/cpufreq/policy6/schedutil/freqvar_upscale_ratio
+    chown root system /sys/kernel/ems/frt/disable_cpufreq
 
     chmod 0664 /dev/cpuset/top-app/cpus
     chmod 0664 /dev/cpuset/foreground/cpus
