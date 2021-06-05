@@ -5,6 +5,9 @@ persist.data.wda.              u:object_r:persist_data_wda_prop:s0
 # BLUETOOTH
 vendor.bluetooth_fw_ver        u:object_r:wifi_log_prop:s0
 
+# BRAND
+ro.product.system.brand        u:object_r:exported2_default_prop:s0
+
 # CAMERA
 persist.vendor.sys.camera.     u:object_r:vendor_camera_prop:s0
 

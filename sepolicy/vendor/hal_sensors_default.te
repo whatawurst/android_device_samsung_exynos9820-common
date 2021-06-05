@@ -2,3 +2,13 @@
 
 # cgroup tasks
 allow hal_sensors_default cgroup:file getattr;
+
+# /sys/devices/virtual/input/input7/poll_delay
+allow hal_sensors_default sysfs_sensors_writable:file rw_file_perms;
+
+# /sys/devices/virtual/sec/hall_ic/hall_detect
+allow hal_sensors_default sysfs_hall_ic:dir r_dir_perms;
+allow hal_sensors_default sysfs_hall_ic:file r_file_perms;
+
+# ro.product.system.brand
+get_prop(hal_sensors_default, exported2_default_prop)
