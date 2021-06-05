@@ -6,6 +6,9 @@ hal_server_domain(hal_neuralnetworks_eden_drv_default, hal_neuralnetworks)
 type hal_neuralnetworks_eden_drv_default_exec, exec_type, vendor_file_type, file_type;
 init_daemon_domain(hal_neuralnetworks_eden_drv_default)
 
+# to connect to /dev/socket/traced_producer
+typeattribute hal_neuralnetworks_eden_drv_default socket_between_core_and_vendor_violators;
+
 # cgroup tasks
 allow hal_neuralnetworks_eden_drv_default cgroup:file getattr;
 
@@ -23,5 +26,15 @@ allow hal_neuralnetworks_eden_drv_default ion_device:chr_file rw_file_perms;
 # /dev/mali0
 allow hal_neuralnetworks_eden_drv_default gpu_device:chr_file rw_file_perms;
 
+# /dev/socket/traced_producer
+unix_socket_connect(hal_neuralnetworks_eden_drv_default, traced_producer, traced)
+allow hal_neuralnetworks_eden_drv_default traced_producer_socket:sock_file write;
+
 # /sys/devices/platform/npu@17800000/version
 allow hal_neuralnetworks_eden_drv_default sysfs_npu_version:file r_file_perms;
+
+# /sys/devices/system/cpu/cpufreq/policy[0|4|7]/scaling_min_freq
+allow hal_neuralnetworks_eden_drv_default sysfs_devices_system_cpu:file rw_file_perms;
+
+# /sys/kernel/gpu/gpu_freq_table
+allow hal_neuralnetworks_eden_drv_default sysfs_gpu:file r_file_perms;

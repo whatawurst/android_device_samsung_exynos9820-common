@@ -8,6 +8,9 @@ get_prop(hal_camera_default, hwservicemanager_prop)
 # ro.build.PDA
 get_prop(hal_camera_default, exported2_default_prop)
 
+# config.disable_cameraservice
+get_prop(hal_camera_default, exported_camera_prop)
+
 # ro.csc
 # mdc.set_partnerid
 get_prop(hal_camera_default, exported_config_prop)
